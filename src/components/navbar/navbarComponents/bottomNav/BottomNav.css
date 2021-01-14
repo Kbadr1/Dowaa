@@ -1,0 +1,29 @@
+.BottomNav ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  
+}
+
+.BottomNav ul::-webkit-scrollbar {
+  display: none;
+}
+
+.BottomNav ul li {
+  padding: 0px 5px 0px 15px;
+  display: inline-block;
+}
+
+.BottomNav h6 {
+  color: gray;
+}
+
+
+@media all and (max-width: 991.98px) {
+  .BottomNav ul li {
+    font-size: 13px;
+  }
+}

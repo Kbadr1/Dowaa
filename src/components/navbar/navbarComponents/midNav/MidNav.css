@@ -1,0 +1,109 @@
+.MidNav {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.MidNav .form input{
+  all: unset;
+  font-weight: 500;
+  border: 1px solid lightgray;
+  border-radius: 5px 0px 0px 5px;
+  padding: 10px;
+  width: 80%;
+}
+.MidNav .form button{
+  all: unset;
+  border: 1px solid #00CD7C;
+  background-color: #00CD7C;
+  color: white;
+  border-radius: 0px 5px 5px 0px;
+  padding: 10px;
+  cursor: pointer;
+  display: inline-block !important;
+}
+
+.MidNav .location i {
+  color: #00CD7C;
+  font-size: 20px;
+}
+
+.MidNav .location  span {
+  color: gray;
+  font-size: small;
+}
+
+.MidNav .location button{
+  all: unset;
+  border: 1px solid #00CD7C;
+  color: #00CD7C;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.MidNav .location button:hover{
+  color: white;
+  background-color: #152F5F;
+}
+
+.MidNav .cart{
+  justify-content: center;
+}
+
+.MidNav .cart i{
+  color: #00CD7C;
+  font-size: 30px;
+}
+
+@media all and (max-width: 991.98px) {
+  .MidNav .logo {
+    font-size: 12px;
+  }
+
+  .MidNav .form input{
+    padding: 1px;
+    width: 100%;
+  }
+
+  .MidNav .form {
+    display: flex;
+    align-items: center;
+  }
+
+  .MidNav .form button {
+    display: none !important;
+  }
+  .MidNav .location {
+    font-size: 12px;
+  }
+
+  .MidNav .location button {
+    display: none;
+  }
+
+  .MidNav .location i {
+    font-size: 16px;
+  }
+
+  .MidNav .cart i{
+    font-size: 24px;
+  }
+
+}
+
+
+@media all and (max-width: 767.98px) {
+  .MidNav .form input{
+    width: 140%;
+    font-size: 13px;
+  }
+
+  .MidNav .location i{
+    padding-left: 27px;
+  }
+
+  .MidNav .cart{
+    justify-content: flex-end;
+  }
+
+}
