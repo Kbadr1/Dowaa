@@ -1,13 +1,35 @@
-
-
-.navbar-light .navbar-nav .nav-link, .navbar-light .navbar-nav .nav-link:hover{
-  color: white;
-  padding-right: 20px;
-  padding-left: 20px;
-  font-size: 13px;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 .navbar {
   background-color: #00CD7C !important;
   padding: 0px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.navbar-light .navbar-nav .nav-link{
+  color: white;
+  padding: 0px 25px;
+  font-size: 13px;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  background-color: white;
+  color: #00CD7C;
+  transition: 0.5s ease-in-out;
+}
+
+.navbar-light .navbar-nav .custom-link {
+  background-color: #152F5F;
+}
+
+span {
+  padding-left: 20px;
+}
+
+.navbar-toggler {
+  all: unset;
+}
+
+.navbar-toggler:focus {
+  all: unset;
 }

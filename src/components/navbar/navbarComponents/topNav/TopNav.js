@@ -3,10 +3,10 @@ import "./TopNav.css";
 
 const TopNav = () => {
   return (
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container">
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-toggle="collapse"
           data-target="#navbarSupportedContent"
@@ -14,55 +14,46 @@ const TopNav = () => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#">
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav mr-auto">
+            <li className="nav-item">
+              <a className="nav-link" href="#">
                 About Us
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
+            <li className="nav-item">
+              <a className="nav-link" href="#">
                 Blog
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
+            <li className="nav-item">
+              <a className="nav-link" href="#">
                 Contact Us
               </a>
             </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="#"
-                style={{ backgroundColor: "#152F5F" }}
-              >
+            <li className="nav-item">
+              <a className="nav-link custom-link" href="#">
                 Pharmacy Owner?
               </a>
             </li>
           </ul>
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#">
+          <ul className="navbar-nav ml-auto">
+            <li className="nav-item">
+              <a className="nav-link" href="#">
                 Install App <i className="fa fa-android pl-2"></i>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                العربية
+            <li className="nav-item">
+              <a className="nav-link" href="#">
+                العربية <span className="d-none d-lg-inline-block">|</span>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                |
-              </a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="#">
-                <i class="far fa-user pr-2"></i> Login
+            <li className="nav-item ">
+              <a className="nav-link" href="#">
+                <i className="far fa-user pr-2"></i> Login
               </a>
             </li>
           </ul>
