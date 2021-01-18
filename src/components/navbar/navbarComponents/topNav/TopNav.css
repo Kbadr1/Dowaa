@@ -28,8 +28,10 @@
 
 .navbar-toggler {
   all: unset;
+  padding: 0px 20px;
 }
 
 .navbar-toggler:focus {
   all: unset;
+  padding: 0px 20px;
 }

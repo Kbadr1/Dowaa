@@ -110,6 +110,10 @@
 
 @media (max-width: 767.98px) {
   
+  .MidNav {
+    padding-bottom: 0px;
+  }
+
   .MidNav .form input{
     font-size: 13px;
   }
