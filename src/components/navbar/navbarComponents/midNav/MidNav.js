@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./MidNav.css";
 
 const MidNav = () => {
@@ -10,26 +10,39 @@ const MidNav = () => {
           ICON + LOGO
         </div>
         {/* search form 4 columns */}
-        <div className="form col-8 col-md-5">
-          <form action="">
-            <input type="text" placeholder="Search for any product" />
-            <button className="d-none d-lg-block d-xl-block ">
-              <i className="fas fa-search"></i>
-            </button>
-          </form>
+        <div className="form col-lg-4 col-md-6 col-8">
+          <div class="input-group">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Search for any product"
+              aria-label="Recipient's username"
+              aria-describedby="button-addon2"
+            />
+            <div class="input-group-append">
+              <button
+                class="btn btn-outline-secondary"
+                type="button"
+                id="button-addon2"
+              >
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </div>
         </div>
+        <hr className="d-block d-md-none" />
         {/* location 4 columns */}
-        <div className="location col-6 col-md-4">
+        <div className="location col-md-3 col-lg-4 col-6">
           <div className="row">
             {/* location name and icons 6 columns */}
-            <div className="col-12 col-md-12 col-lg-6 justify-content-center">
+            <div className="col-lg-6 col-12 col-md-12  d-flex justify-content-center">
               <div className="row">
                 {/*locarion icon 2 columns*/}
-                <div className="col-2 col-md-2 d-flex align-items-center ">
+                <div className="col-lg-2 col-2 col-md-2 d-flex align-items-center ">
                   <i className="fas fa-map-marker-alt"></i>
                 </div>
                 {/* location name 10 columns */}
-                <div className=" col-10 col-md-10">
+                <div className="col-lg-10 col-10 col-md-10">
                   <div className="row">
                     <div className="col-12 col-md-12">
                       <span>Your Location</span>
@@ -47,9 +60,12 @@ const MidNav = () => {
         </div>
         {/* shopping cart 2 columns*/}
         <div className="cart col-6 col-md-1 d-flex align-items-center">
-          <i className="fas fa-shopping-cart"></i>
+          <button>
+            <i className="fas fa-shopping-cart"></i>
+          </button>
         </div>
       </div>
+      <hr className="d-block d-md-none" />
     </div>
   );
 };
