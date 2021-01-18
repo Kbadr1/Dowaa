@@ -12,18 +12,27 @@
   display: none;
 }
 
+.BottomNav .sub {
+  padding: 0px 25px;
+}
+
 .BottomNav ul li {
-  padding: 0px 5px 0px 15px;
+  padding: 0px 9px;
   display: inline-block;
 }
 
-.BottomNav h6 {
+.BottomNav span {
   color: gray;
 }
 
 
 @media all and (max-width: 991.98px) {
-  .BottomNav ul li {
+  .BottomNav .sub {
+    padding: 0px 5px;
     font-size: 13px;
+  }
+  .BottomNav ul li {
+    font-size: 12px;
+    padding: 0px 5px;
   }
 }

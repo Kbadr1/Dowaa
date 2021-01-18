@@ -5,8 +5,8 @@ const BottomNav = () => {
   return (
     <div className="BottomNav container">
       <ul>
-        <li>
-          <h6>Sub Categories</h6>
+        <li className="sub">
+          <span>Sub Categories</span>
         </li>
         <li>Baby Care</li>
         <li>Women Care</li>
