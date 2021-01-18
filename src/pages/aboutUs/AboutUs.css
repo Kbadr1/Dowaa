@@ -1,0 +1,139 @@
+/* header */
+
+.header {
+  background-color: #00CD7C;
+  color: white;
+  padding-top: 75px;
+}
+
+.header h3 {
+  font-size: 40px;
+}
+
+.header h6 {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+
+.header .download img {
+  width: 30%;
+}
+
+.header span {
+  border: 1px solid white;
+  padding: 10px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.header button {
+  all: unset;
+  background-color: white;
+  color: #00CD7C;
+  padding: 13px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.header img {
+  width: 80%;
+}
+
+/* features */
+
+.features {
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+.features h1 {
+  text-align: center;
+  padding-bottom: 75px;
+  color: #00CD7C;
+}
+
+.features .box {
+  margin-bottom: 25px;
+}
+
+.features .box-content {
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.features .box-content-prime {
+  background-color: #00CD7C;
+  color: white;
+}
+
+.features .box-content-prime .far {
+  background-color: white;
+}
+
+.features .box i {
+  color: #00CD7C;
+  background-color: #ACEED4;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.features .box span {
+  color: #00CD7C;
+}
+
+/* carousel */
+.carousel h5 {
+  color: #00CD7C;
+  font-size: 2.5rem;
+}
+
+.carousel p {
+  color: gray;
+  font-size: 1.5rem;
+}
+
+.carousel-caption {
+  bottom: unset;
+  text-align: left;
+}
+
+.carousel-indicators li {
+  background-color: gray;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+}
+
+.carousel-indicators .active{
+  background-color: #00CD7C !important;
+}
+
+.carousel .carousel-inner .carousel-item img {
+  width: 75% !important;
+}
+
+/* pharmacy owner */
+.owner {
+  margin-top: 150px;
+}
+
+.owner h1 {
+  color: #00CD7C;
+}
+
+.owner p {
+  font-size: 18px;
+}
+
+.owner button {
+  all: unset;
+  cursor: pointer;
+  color: white;
+  background-color: #00CD7C;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.owner img {
+  width: 100%;
+}

@@ -1,0 +1,27 @@
+.Footer {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.logo p {
+  font-size: 12px;
+}
+
+a, a:hover {
+  text-decoration: none;
+  color: black;
+  line-height: 40px;
+}
+
+.follow p {
+  text-align: center;
+}
+
+.follow i {
+  color: #00CD7C;
+  font-size: 30px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 50%;
+  border: 1px solid lightgray;
+}
