@@ -1,0 +1,32 @@
+.PrivacyPolicy {
+  margin-bottom: 75px;
+  margin-top: 75px;
+}
+
+.PrivacyPolicy h2 {
+  text-align: center;
+  margin-bottom: 75px;
+  font-weight: 700;
+}
+.PrivacyPolicy .content {
+  padding: 50px;
+  box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(112, 112, 112, 0.2);
+}
+
+.PrivacyPolicy .box {
+  padding-bottom: 50px;
+}
+
+.PrivacyPolicy h4 {
+  font-weight: 400;
+  padding-bottom: 25px;
+}
+
+.PrivacyPolicy h3 {
+  padding-bottom: 50px;
+}
+
+.PrivacyPolicy p {
+  font-weight: 300;
+}
