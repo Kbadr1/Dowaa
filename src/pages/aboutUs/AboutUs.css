@@ -13,16 +13,23 @@
 .header h6 {
   font-size: 20px;
   line-height: 24px;
+  font-weight: 400;
 }
 
 
 .header .download img {
-  width: 30%;
+  width: 25%;
+  margin-left: -10px;
+}
+
+.header .download img:hover {
+  transform: scale(1.1);
+  transition: 0.3s ease-in-out;
 }
 
 .header span {
   border: 1px solid white;
-  padding: 10px;
+  padding: 10px 12px;
   border-radius: 50%;
   margin-right: 10px;
 }
@@ -36,9 +43,62 @@
   cursor: pointer;
 }
 
+.header button:hover {
+  transform: translateY(-5px);
+  transition: 0.3s ease-in-out;
+}
+
 .header img {
   width: 80%;
 }
+
+@media (min-width: 768px) and (max-width: 991.98px) { 
+
+  .header{
+    padding-bottom: 60px;
+  }
+
+  .header h3 {
+    font-size: 20px;
+  }
+
+  .header h6 {
+    font-size: 14px;
+  }
+
+  .header .download img {
+    width: 33%;
+  }
+
+  .header span {
+    font-size: 12px;
+  }
+
+  .header button {
+    padding: 8px;
+  }
+
+ }
+
+@media (max-width: 767.98px) { 
+    .header {
+      text-align: center;
+    }
+
+    .header h3 {
+      font-size: 20px;
+    }
+
+    .header h6 {
+      font-size: 14px;
+    }
+
+    .header button {
+      margin-bottom: 15px;
+    }
+
+}
+
 
 /* features */
 
@@ -81,6 +141,12 @@
   color: #00CD7C;
 }
 
+@media (max-width: 992px) {
+  .features h1 {
+    font-size: 24px;
+  }
+}
+
 /* carousel */
 .carousel h5 {
   color: #00CD7C;
@@ -112,9 +178,25 @@
   width: 75% !important;
 }
 
+@media (max-width: 992px) {
+  .carousel-item {
+    display: flex;
+    justify-content: center;
+  }
+  .carousel .carousel-inner .carousel-item img{
+    width: 100% !important;
+  }
+
+.carousel-indicators {
+  bottom: -100px;
+}
+
+}
+
 /* pharmacy owner */
 .owner {
   margin-top: 150px;
+  margin-bottom: 50px;
 }
 
 .owner h1 {
@@ -134,6 +216,26 @@
   border-radius: 5px;
 }
 
+.owner button:hover {
+  transition: 0.3s ease-in-out;
+  transform: scale(1.1);
+}
+
 .owner img {
   width: 100%;
+}
+
+@media (max-width: 992px) {
+  .owner {
+    text-align: center;
+  }
+  .owner h1 {
+    font-size: 20px;
+  }
+  .owner p {
+    font-size: 14px;
+  }
+  .owner button {
+    padding: 5px;
+  }
 }

@@ -15,7 +15,7 @@ const AboutUs = () => {
       <div className="header">
         <div className="container">
           <div className="row">
-            <div className="col-lg-6">
+            <div className="col-md-6">
               <h3>Order Online All Your Pharmacy Needs In Egypt.</h3>
               <br />
               <h6>
@@ -31,20 +31,22 @@ const AboutUs = () => {
                 </a>
               </div>
               <br />
-              <span>Or</span> <button>Order Through Website</button>
+              <span>Or</span> <br className="d-block d-md-none" />{" "}
+              <br className="d-block d-md-none" />
+              <button>Order Through Website</button>
             </div>
-            <div className="col-lg-6">
+            <div className="col-md-6 d-flex justify-content-center">
               <img src={mobileImage} alt="" />
             </div>
           </div>
         </div>
       </div>
-
+      {/* features */}
       <div className="features">
         <div className="container">
           <h1>Chefaa Features</h1>
           <div className="row">
-            <div className="box col-lg-3">
+            <div className="box col-md-4 col-lg-3">
               <div className="box-content col-lg-12">
                 <i class="far fa-comments"></i>
                 <br />
@@ -54,7 +56,7 @@ const AboutUs = () => {
                 <p>Reach Out To Us For Help, Suggestions Or Complaints</p>
               </div>
             </div>
-            <div className="box col-lg-3">
+            <div className="box col-md-4 col-lg-3">
               <div className="box-content col-lg-12">
                 <i class="fas fa-credit-card"></i>
                 <br />
@@ -64,7 +66,7 @@ const AboutUs = () => {
                 <p>You Can Pay Online Using Credit Card Safely</p>
               </div>
             </div>
-            <div className="box col-lg-3">
+            <div className="box col-md-4 col-lg-3">
               <div className="box-content col-lg-12">
                 <i class="far fa-bell"></i>
                 <br />
@@ -74,7 +76,7 @@ const AboutUs = () => {
                 <p>Remind You When It Is Time To Take Your Dosage</p>
               </div>
             </div>
-            <div className="box col-lg-3">
+            <div className="box col-md-4 col-lg-3">
               <div className="box-content col-lg-12">
                 <i class="fas fa-truck"></i>
                 <br />
@@ -84,7 +86,7 @@ const AboutUs = () => {
                 <p>Your Order Is Delivered By The Nearest Pharmacy</p>
               </div>
             </div>
-            <div className="box col-lg-3">
+            <div className="box col-md-4 col-lg-3">
               <div className="box-content col-lg-12">
                 <i class="far fa-comments"></i>
                 <br />
@@ -94,7 +96,7 @@ const AboutUs = () => {
                 <p>You Can Refill Your Monthly Prescription</p>
               </div>
             </div>
-            <div className="box col-lg-3">
+            <div className="box col-md-4 col-lg-3">
               <div className="box-content col-lg-12">
                 <i class="far fa-comments"></i>
                 <br />
@@ -104,7 +106,7 @@ const AboutUs = () => {
                 <p>Get All Offers Available On Non-Pharmaceuticals</p>
               </div>
             </div>
-            <div className="box col-lg-3">
+            <div className="box col-md-4 col-lg-3">
               <div className="box-content col-lg-12">
                 <i class="far fa-comments"></i>
                 <br />
@@ -114,12 +116,12 @@ const AboutUs = () => {
                 <p>An Archive Of All Your Previous Orders</p>
               </div>
             </div>
-            <div className="box col-lg-3">
+            <div className="box col-md-4 col-lg-3">
               <div className="box-content box-content-prime col-lg-12">
                 <i class="far fa-comments"></i>
                 <br />
                 <br />
-                <span>Chefaa Prime</span>
+                <span style={{ color: "white" }}>Chefaa Prime</span>
                 <br /> <br />
                 <p>A New Service To Be Added To Chefaa Features Soon</p>
               </div>
@@ -147,7 +149,7 @@ const AboutUs = () => {
         <div class="carousel-inner">
           <div class="carousel-item active">
             <div className="row">
-              <div className="col-lg-6">
+              <div className="col-md-12 col-lg-6">
                 <img src={CarouselBox} class="d-block w-100" alt="..." />
               </div>
               <div className="col-lg-6">
@@ -163,7 +165,7 @@ const AboutUs = () => {
           </div>
           <div class="carousel-item">
             <div className="row">
-              <div className="col-lg-6">
+              <div className="col-md-12 col-lg-6">
                 <img src={CarouselMedc} class="d-block w-100" alt="..." />
               </div>
               <div className="col-lg-6">
@@ -179,7 +181,7 @@ const AboutUs = () => {
           </div>
           <div class="carousel-item">
             <div className="row">
-              <div className="col-lg-6">
+              <div className="col-md-12 col-lg-6">
                 <img src={CarouselPre} class="d-block w-100" alt="..." />
               </div>
               <div className="col-lg-6">
@@ -196,7 +198,7 @@ const AboutUs = () => {
           </div>
           <div class="carousel-item">
             <div className="row">
-              <div className="col-lg-6">
+              <div className="col-md-12 col-lg-6">
                 <img src={CarouselStore} class="d-block w-100" alt="..." />
               </div>
               <div className="col-lg-6">
@@ -215,7 +217,7 @@ const AboutUs = () => {
       {/* pharmacy owner */}
       <div className="owner container">
         <div className="row d-flex align-items-center">
-          <div className="col-lg-6 ">
+          <div className="col-md-6 ">
             <h1>Are You A Pharmacy Owner?</h1>
             <br />
             <br />
@@ -227,7 +229,7 @@ const AboutUs = () => {
             <br />
             <button>Join Chefaa Network Of Pharmacies</button>
           </div>
-          <div className="col-lg-6">
+          <div className="col-md-6">
             <img src={Owner} alt="" />
           </div>
         </div>
