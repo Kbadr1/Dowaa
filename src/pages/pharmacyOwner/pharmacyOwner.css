@@ -21,29 +21,30 @@
   padding-bottom: 25px;
 }
 
-.PharmacyOwner form {
-  padding: 30px;
-  border: 1px solid lightgray;
+.PharmacyOwner .form {
+  box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(112, 112, 112, 0.2);
+  padding: 50px;
 }
 
 .PharmacyOwner form input {
-  border: 1px solid lightgray;
-  border-radius: 5px;
-  background-color: #EEEEEE;
-  padding: 10px;
-  margin-top: 10px;
-  width: 140%;
+  padding: 25px 10px;
+  background-color: rgb(238, 238, 238);
+  font-weight: 300;
 }
 
-.PharmacyOwner form label {
-  margin-bottom: 20px;
-}
-
-.PharmacyOwner form button {
-  all: unset;
-  cursor: pointer;
-  color: white;
-  border-radius: 5px;
-  padding: 10px 50px;
+.PharmacyOwner form button, .PharmacyOwner form button:hover {
   background-color: #00CD7C;
+  border: 0;
+  padding: 10px 50px;
+}
+
+@media (max-width: 992px) {
+  .PharmacyOwner h3 {
+    font-size: 18px;
+  }
+
+  .PharmacyOwner p {
+    font-size: 13px;
+  }
 }
