@@ -1,15 +1,13 @@
 import "./App.css";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
-import PharmacyOwner from "./pages/pharmacyOwner/PharmacyOwner";
-import PrivacyPolicy from "./pages/privacyPolicy/PrivacyPolicy";
-import TermsOfService from "./pages/termsOfService/TermsOfService";
+import ContactUs from "./pages/contactUs/ContactUs";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <TermsOfService />
+      <ContactUs />
       <Footer />
     </div>
   );
