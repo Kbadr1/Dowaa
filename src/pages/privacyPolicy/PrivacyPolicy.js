@@ -1,13 +1,15 @@
 import React from "react";
-import "./privacyPolicy.css";
+import "./privacyPolicy.scss";
 
 const PrivacyPolicy = () => {
   return (
     <div className="PrivacyPolicy container">
-      <h2>Privacy Policy</h2>
+      <h1>Privacy Policy</h1>
       <div className="content">
         <div className="box">
-          <h4>Privacy policy at CHEFAA</h4>
+          <h4>
+            Privacy policy at <span>CHEFAA</span>
+          </h4>
           <p>
             Chefaa application and the associated website www.Chefaa.Com is
             owned and operated by chefaa, and the chefaa application and website
