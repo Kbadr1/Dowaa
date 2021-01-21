@@ -1,6 +1,6 @@
-@import "../../styles//variables.scss";
+@import "../../styles/variables.scss";
 
-.PrivacyPolicy {
+.TermsOfService  {
   margin-bottom: 75px;
   margin-top: 75px;
 
@@ -25,6 +25,7 @@
         span {
           color: $primary-color;
         }
+
       }
 
       p {
@@ -32,12 +33,7 @@
       }
 
     }
-
-    h3 {
-      padding-bottom: 50px;
-      font-weight: 400;
-    }
-
+    
   }
-  
+
 }
