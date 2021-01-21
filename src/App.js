@@ -1,13 +1,13 @@
 import "./styles/App.scss";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
-import ContactUs from "./pages/contactUs/ContactUs";
+import PharmacyOwner from "./pages/pharmacyOwner/PharmacyOwner";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <ContactUs />
+      <PharmacyOwner />
       <Footer />
     </div>
   );
