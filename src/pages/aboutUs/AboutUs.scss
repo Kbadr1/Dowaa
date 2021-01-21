@@ -1,0 +1,206 @@
+@import "../../styles/variables.scss";
+
+
+.AboutUs {
+  /* header */
+  .header {
+    background-color: $primary-color;
+    color: white;
+    padding-top: 100px;
+
+    p {
+      font-size: 18px;
+      line-height: 26px;
+      font-weight: 500;
+    }
+
+    .download {
+
+      img {
+        width: 35%;
+        margin-left: -10px;
+        &:hover {
+          transform: scale(1.1);
+          transition: 0.3s ease-in-out;
+        }
+      }
+
+      span {
+        border: 1px solid white;
+        padding: 10px 12px;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+      
+      button {
+        all: unset;
+        background-color: white;
+        color: $primary-color;
+        padding: 13px;
+        border-radius: 5px;
+        cursor: pointer;
+        &:hover {
+          transform: translateY(-5px);
+          transition: 0.3s ease-in-out;
+        }
+      }
+
+    }
+
+    img {
+      width: 100%;
+    }
+
+  }  
+  
+  /* features */
+  .features {
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    h1 {
+      text-align: center;
+      padding-bottom: 75px;
+      color: $primary-color;
+    }
+
+    .box {
+      margin-bottom: 25px;
+
+      .box-content {
+        padding: 20px;
+        border-radius: 10px;
+        border: $border;
+        box-shadow: $box-shadow;
+
+        i {
+          color: $primary-color;
+          background-color: $light-primary-color;
+          padding: 10px;
+          border-radius: 50%;
+        }
+
+        span {
+          color: $primary-color;
+        }
+
+      }
+
+      .box-content-prime {
+        background-color: $primary-color;
+        color: white;
+
+        i {
+          background-color: white;
+        }
+      }
+    }
+    
+  }
+
+  /* pharmacy owner */
+  .owner {
+    padding-top: 25px;
+    padding-bottom: 125px;
+
+    h1 {
+      color: $primary-color;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    button {
+      all: unset;
+      cursor: pointer;
+      color: white;
+      background-color: $primary-color;
+      padding: 10px;
+      border-radius: 5px;
+      &:hover {
+        transition: 0.3s ease-in-out;
+        transform: scale(1.1);
+      }
+    }
+
+    img {
+      width: 100%;
+    }
+
+  }
+
+}
+
+
+
+
+
+@media (min-width: 768px) and (max-width: 991.98px) { 
+
+  .AboutUs {
+    // header
+    .header {
+      text-align: center;
+
+      h1 {
+        text-align: center;
+      }
+
+      .download {
+        padding-bottom: 50px;
+
+        img {
+          width: 23%;
+        }
+
+        span {
+          font-size: 12px;
+        }
+
+        button {
+          padding: 8px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767.98px) { 
+
+  .AboutUs {
+    .header {
+      text-align: center;
+
+      .download {
+        padding-bottom: 50px;
+
+        button {
+          padding: 5px;
+        }
+      }
+    }
+
+  }
+
+}
+
+
+
+@media (max-width: 992px) {
+
+  .AboutUs {
+
+    .owner {
+      text-align: center;
+
+      button {
+        padding: 5px;
+      }
+
+    }
+
+  }
+
+}
+
