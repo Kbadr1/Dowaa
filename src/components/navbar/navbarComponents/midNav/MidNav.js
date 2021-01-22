@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, NavLink } from "react-router-dom";
 import "./MidNav.css";
 
 const MidNav = () => {
@@ -61,7 +62,9 @@ const MidNav = () => {
         {/* shopping cart 2 columns*/}
         <div className="cart col-6 col-md-1 d-flex align-items-center">
           <button>
-            <i className="fas fa-shopping-cart"></i>
+            <Link to="/cart">
+              <i className="fas fa-shopping-cart"></i>
+            </Link>
           </button>
         </div>
       </div>
