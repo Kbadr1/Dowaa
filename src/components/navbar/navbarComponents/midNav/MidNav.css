@@ -15,8 +15,8 @@
 }
 .MidNav .form button{
   all: unset;
-  border: 1px solid #00CD7C;
-  background-color: #00CD7C;
+  border: 1px solid #3089FC;
+  background-color: #3089FC;
   color: white;
   border-radius: 0px 5px 5px 0px;
   padding: 9px;
@@ -25,7 +25,7 @@
 }
 
 .MidNav .location i {
-  color: #00CD7C;
+  color: #3089FC;
   font-size: 20px;
 }
 
@@ -36,8 +36,8 @@
 
 .MidNav .location button{
   all: unset;
-  border: 1px solid #00CD7C;
-  color: #00CD7C;
+  border: 1px solid #3089FC;
+  color: #3089FC;
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
@@ -55,7 +55,7 @@
 }
 
 .MidNav .cart i{
-  color: #00CD7C;
+  color: #3089FC;
   font-size: 30px;
 }
 

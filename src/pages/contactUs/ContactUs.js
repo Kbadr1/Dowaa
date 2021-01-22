@@ -1,5 +1,5 @@
 import React from "react";
-import "./contactUs.css";
+import "./contactUs.scss";
 
 const ContactUs = () => {
   return (
@@ -7,7 +7,7 @@ const ContactUs = () => {
       <div className="row">
         <div className="col-12 col-lg-5">
           <i class="fas fa-hands-helping"></i>
-          <h3>Contact Us</h3>
+          <h1>Contact Us</h1>
           <p>
             We Are Constantly Working to Ease Your Online Experience To Order
             Your Medicine To By-Pass The Hassle Of Looking For Your Medicine
@@ -21,6 +21,7 @@ const ContactUs = () => {
               <div class="form-group col-md-6">
                 <label for="inputEmail4">Name</label>
                 <input
+                  required
                   type="text"
                   class="form-control"
                   placeholder="Ahmed Mohamed"
@@ -29,6 +30,7 @@ const ContactUs = () => {
               <div class="form-group col-md-6">
                 <label for="inputPassword4">Phone Number</label>
                 <input
+                  required
                   type="text"
                   class="form-control"
                   placeholder="01XXXXXXXXX"
@@ -39,6 +41,7 @@ const ContactUs = () => {
               <div class="form-group col-md-12">
                 <label for="inputCity">E-Mail</label>
                 <input
+                  required
                   type="text"
                   class="form-control"
                   placeholder="your@gmail.com"
@@ -49,6 +52,7 @@ const ContactUs = () => {
               <div className="form-group col-md-12">
                 <label for="inputCity">Your Message</label>
                 <textarea
+                  required
                   class="form-control"
                   placeholder="Type Your Message Here"
                   rows="6"

@@ -1,5 +1,5 @@
 import React from "react";
-import "./pharmacyOwner.css";
+import "./pharmacyOwner.scss";
 
 const PharmacyOwner = () => {
   return (
@@ -7,7 +7,7 @@ const PharmacyOwner = () => {
       <div className="row">
         <div className="col-12 col-lg-5">
           <i class="fas fa-briefcase-medical"></i>
-          <h3>Are You A Pharmacy Owner?</h3>
+          <h1>Are You A Pharmacy Owner?</h1>
           <p>
             Chefaa App Helps Customers Order All Their Pharmacy Needs;
             Pharmaceuticals & Non-Pharmaceuticals, To Be Directed To Nearest

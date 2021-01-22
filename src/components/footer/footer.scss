@@ -1,0 +1,64 @@
+@import "../../styles//variables.scss";
+
+.Footer {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  border-top: $border;
+  font-weight: 700;
+
+  .logo {
+    p {
+      font-size: 13px;
+      font-weight: 300;
+    }
+  }
+
+  a{
+    text-decoration: none;
+    color: rgb(58, 58, 58);
+    font-size: 15px;
+    line-height: 40px;
+    &:hover {
+      color: $primary-color;
+      transition: 0.3s ease-in-out;
+      text-decoration: none;
+      font-size: 15px;
+      line-height: 40px;
+    }
+  }
+
+  .follow {
+    text-align: center;
+
+    i {
+      color: $secondary-color;
+      font-size: 30px;
+      padding: 10px;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      box-shadow: $box-shadow;
+      border: $border;
+      &:hover {
+        transform: scale(1.1);
+        transition: 0.3s ease-in-out ;
+        color: $primary-color;
+      }
+    }
+
+  }
+
+}
+
+
+@media (max-width: 767.98px) { 
+  .Footer {
+    .logo {
+      text-align: center;
+      padding-bottom: 25px;
+    }
+    .follow {
+      padding-top: 25px;
+    }
+  }
+}

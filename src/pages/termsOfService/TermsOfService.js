@@ -1,13 +1,15 @@
 import React from "react";
-import "./termsOfService.css";
+import "./termsOfService.scss";
 
 const TermsOfService = () => {
   return (
     <div className="TermsOfService container">
-      <h2>Privacy Policy</h2>
+      <h1>Terms of service</h1>
       <div className="content">
         <div className="box">
-          <h4>Terms of service at CHEFAA</h4>
+          <h4>
+            Terms of service at <span>CHEFAA</span>
+          </h4>
           <p>
             The following terms and conditions represent a binding agreement
             between you and (Chefaa), so we hope you read the following
