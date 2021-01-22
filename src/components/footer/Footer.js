@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, NavLink } from "react-router-dom";
 import "./footer.scss";
 
 const Footer = () => {
@@ -11,18 +12,18 @@ const Footer = () => {
             <p>&copy; 2021 Chefaa. All Rights Reserved</p>
           </div>
           <div className="col-6 col-md-3">
-            <a href="">About Chefaa</a>
+            <Link to="/about-us">About Chefaa</Link>
             <br />
-            <a href="">Blog</a>
+            <Link to="">Blog</Link>
             <br />
-            <a href="">Are You A Pharmacy Owner?</a>
+            <Link to="/pharmacy-owner">Are You A Pharmacy Owner?</Link>
           </div>
           <div className=" col-6 col-md-3">
-            <a href="">Privacy Policy</a>
+            <Link to="/privacy-policy">Privacy Policy</Link>
             <br />
-            <a href="">Contact Us</a>
+            <Link to="/contact-us">Contact Us</Link>
             <br />
-            <a href="">Terms & Conditions</a>
+            <Link to="/terms-service">Terms & Conditions</Link>
           </div>
           <div className="follow col-12 col-md-3">
             <p>Follow Us</p>
