@@ -1,0 +1,88 @@
+@import "../../styles//variables.scss";
+
+.Prescription {
+  padding-top: 75px;
+  padding-bottom: 75px;
+
+  h3 {
+    padding-bottom: 40px;
+  }
+
+  .upload {
+    width: 100%;
+    label {
+      width: 100%;
+      a {
+        cursor: pointer;
+        border: 1px dashed $primary-color;
+        background-color: #e3f1ff;
+        border-radius: 10px;
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+        text-align: center;
+        display: block;
+        font-size: 14px;
+        font-weight: 300;
+        margin-bottom: 10px;
+        &:hover {
+          background-color: $light-primary-color;
+          transition: 0.2s ease-in-out;
+        }
+        i {
+          padding-right: 10px;
+          color: $primary-color;
+        }
+      }
+  }
+
+ 
+  }
+  .or {
+   width: 100%; 
+   text-align: center; 
+   border-bottom: 1px solid lightgray; 
+   line-height: 0.1em;
+   margin: 10px 0 20px;
+   span {
+    background:#fff; 
+    padding:0 10px; 
+   }
+  }
+
+  .submit {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    background-color: $primary-color;
+  }
+
+  .right {
+    h5 {
+      padding-bottom: 40px;
+      color: $primary-color;
+    }
+    .row {
+      box-shadow: $box-shadow;
+      border: $border;
+      border-radius: 10px;
+      padding: 30px ;
+    }
+    .box {
+      h5 {
+        color: $primary-color;
+        font-weight: 400;
+        padding-bottom: 15px;
+
+        span {
+          font-weight: 700;
+        }
+      }
+      p {
+        font-weight: 300;
+        line-height: 25px;
+      }
+    }
+  }
+
+}

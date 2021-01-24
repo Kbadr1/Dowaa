@@ -7,7 +7,7 @@ import ContactUs from "./pages/contactUs/ContactUs";
 import PharmacyOwner from "./pages/pharmacyOwner/PharmacyOwner";
 import PrivacyPolicy from "./pages/privacyPolicy/PrivacyPolicy";
 import TermsOfService from "./pages/termsOfService/TermsOfService";
-import Home from "./pages/home/Home";
+import Prescription from "./pages/prescription/Prescription";
 import Cart from "./pages/cart/Cart";
 import CartContextProvider from "./contexts/CartContext";
 
@@ -18,7 +18,7 @@ function App() {
         <div className="App">
           <Navbar />
           <Switch>
-            <Route exact path="/" component={Home} />
+            <Route path="/prescription" component={Prescription} />
             <Route path="/cart" component={Cart} />
             <Route path="/about-us" component={AboutUs} />
             <Route path="/contact-us" component={ContactUs} />
