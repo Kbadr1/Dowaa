@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+
+import { CartContext } from "../../../../contexts/CartContext";
 import "./MidNav.css";
 
 const MidNav = () => {
+  const { products, setProducts, cart, setCart, getCartTotal } = useContext(
+    CartContext
+  );
   return (
     <div className="MidNav container">
       <div className="row">
@@ -64,6 +69,7 @@ const MidNav = () => {
           <button>
             <Link to="/cart">
               <i className="fas fa-shopping-cart"></i>
+              {getCartTotal()}
             </Link>
           </button>
         </div>
