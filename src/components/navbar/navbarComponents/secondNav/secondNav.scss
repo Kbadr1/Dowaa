@@ -1,0 +1,70 @@
+@import "../../../../styles//variables.scss";
+
+.SecondNav {
+  padding-top: 15px;
+  .logo {
+    display: flex;
+    align-items: center;
+    img {
+      margin-top: -20px;
+      width: 50px;
+      height: 50px;
+    }
+    span {
+      font-weight: 700;
+      font-size: 30px;
+      padding-left: 10px;
+      letter-spacing: 2px;
+      color: $primary-color;
+    }
+  }
+
+  .form {
+    button {
+      background-color: $primary-color;
+      color: white;
+      border-color: $primary-color;
+    }
+  }
+
+  .dropdown-menu {
+    left: -50px !important;
+  }
+
+  .dropdown-toggle {
+    background-color: $primary-color;
+    border: $primary-color;
+    &:focus {
+      background-color: $secondary-color;
+    }
+    i {
+      padding-right: 8px;
+    }
+  }
+
+  .dropdown-menu {
+    a {
+      margin-bottom: 10px;
+    }
+    .login {
+      text-align: center;
+      background-color: $primary-color;
+      width: 75%;
+      color: white;
+      border-radius: 5px;
+      margin-left: 12.5%;
+    }
+    .create {
+      color: $primary-color;
+    }
+  }
+
+  .cart {
+    color: $primary-color;
+    font-size: 17px;
+    i {
+      font-size: 24px;
+    }
+  }
+
+}

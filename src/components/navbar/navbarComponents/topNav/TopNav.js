@@ -1,11 +1,23 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
-import "./TopNav.css";
+import { Link } from "react-router-dom";
+import "./TopNav.scss";
+import logo from "../../../../styles/logo.png";
 
 const TopNav = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
       <div className="container">
+        <a className="navbar-brand d-lg-none" href="#">
+          <img
+            src={logo}
+            width="50"
+            height="50"
+            className="d-inline-block align-top"
+            alt=""
+            loading="lazy"
+          />
+          <span className="logo">Dowaa</span>
+        </a>
         <button
           className="navbar-toggler"
           type="button"
@@ -19,15 +31,10 @@ const TopNav = () => {
         </button>
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav mr-auto">
+          <ul className="navbar-nav mx-auto">
             <li className="nav-item">
               <Link className="nav-link" to="/about-us">
                 About Us
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="">
-                Blog
               </Link>
             </li>
             <li className="nav-item">
@@ -35,32 +42,16 @@ const TopNav = () => {
                 Contact Us
               </Link>
             </li>
+
             <li className="nav-item">
-              <Link className="nav-link custom-link" to="/pharmacy-owner">
+              <Link className="nav-link" to="/pharmacy-owner">
                 Pharmacy Owner?
               </Link>
             </li>
-          </ul>
-          <ul className="navbar-nav ml-auto">
             <li className="nav-item">
               <a className="nav-link" href="#">
-                Install App <i className="fa fa-android pl-2"></i>
+                Install App
               </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                العربية <span className="d-none d-lg-inline-block">|</span>
-              </a>
-            </li>
-            <li className="nav-item ">
-              <Link className="nav-link" to="/sign-in">
-                <i className="far fa-user pr-2"></i> Login
-              </Link>
-            </li>
-            <li className="nav-item ">
-              <Link className="nav-link" to="/sign-up">
-                <i className="far fa-user pr-2"></i> Register
-              </Link>
             </li>
           </ul>
         </div>

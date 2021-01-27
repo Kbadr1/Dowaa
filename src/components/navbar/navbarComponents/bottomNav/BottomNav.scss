@@ -1,0 +1,54 @@
+@import "../../../../styles/variables.scss";
+
+.BottomNav {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  // box-shadow: 0 4px 2px -2px lightgray;
+  box-shadow: $box-shadow;
+
+  ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+
+    li {
+      padding: 0px 9px;
+      display: inline-block;
+      
+    }
+    
+  }
+
+  ul::-webkit-scrollbar {
+    display: none;
+  }
+
+  .sub {
+    padding: 0px 25px;
+    span {
+      color: gray;
+    }
+  }
+  
+}
+
+
+@media all and (max-width: 991.98px) {
+  .BottomNav {
+    .sub {
+      padding: 0px 5px;
+      font-size: 13px;
+    }
+
+    ul {
+
+      li {
+        font-size: 12px;
+        padding: 0px 5px;
+      }
+    }
+  }
+}

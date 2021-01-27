@@ -1,13 +1,14 @@
 import React from "react";
+import "./navbar.scss";
 import BottomNav from "./navbarComponents/bottomNav/BottomNav";
-import MidNav from "./navbarComponents/midNav/MidNav";
+import SecondNav from "./navbarComponents/secondNav/SecondNav";
 import TopNav from "./navbarComponents/topNav/TopNav";
 
 const Navbar = () => {
   return (
-    <div>
+    <div className="Navbar">
       <TopNav />
-      <MidNav />
+      <SecondNav />
       <BottomNav />
     </div>
   );

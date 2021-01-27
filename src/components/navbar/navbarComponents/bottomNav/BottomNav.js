@@ -1,5 +1,5 @@
 import React from "react";
-import "./BottomNav.css";
+import "./BottomNav.scss";
 
 const BottomNav = () => {
   return (
