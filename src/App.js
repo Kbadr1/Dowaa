@@ -10,6 +10,8 @@ import TermsOfService from "./pages/termsOfService/TermsOfService";
 import Prescription from "./pages/prescription/Prescription";
 import Cart from "./pages/cart/Cart";
 import CartContextProvider from "./contexts/CartContext";
+import SignIn from "./pages/signIn/SignIn";
+import SignUp from "./pages/signUp/SignUp";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <div className="App">
           <Navbar />
           <Switch>
+            <Route path="/sign-up" component={SignUp} />
+            <Route path="/sign-in" component={SignIn} />
             <Route path="/prescription" component={Prescription} />
             <Route path="/cart" component={Cart} />
             <Route path="/about-us" component={AboutUs} />

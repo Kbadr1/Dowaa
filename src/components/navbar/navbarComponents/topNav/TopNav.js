@@ -53,9 +53,14 @@ const TopNav = () => {
               </a>
             </li>
             <li className="nav-item ">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to="/sign-in">
                 <i className="far fa-user pr-2"></i> Login
-              </a>
+              </Link>
+            </li>
+            <li className="nav-item ">
+              <Link className="nav-link" to="/sign-up">
+                <i className="far fa-user pr-2"></i> Register
+              </Link>
             </li>
           </ul>
         </div>

@@ -1,0 +1,51 @@
+@import "../../styles//variables.scss";
+
+.SignUp {
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  img {
+    width: 100%;
+  }
+
+  form {
+    box-shadow: $box-shadow;
+    border: $border;
+    border-radius: 5px;
+    padding: 50px;
+
+    p {
+      font-size: small;
+      text-align: center;
+      padding-top: 30px;
+      padding-bottom: 12px;
+    }
+
+    i {
+      border-radius: 50%;
+      color: white;
+      padding: 10px;
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+      margin: 0px 5px;
+      
+    }
+    .fa-facebook-f {
+      background-color:  #4267B2;
+    }
+    .fa-google {
+      background-color: #DB4437;
+    }
+
+
+
+    button {
+      background-color: $primary-color;
+      width: 100%;
+      padding-top: 13px;
+      padding-bottom: 13px;
+    }
+  }
+
+}
