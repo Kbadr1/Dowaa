@@ -4,25 +4,27 @@
   padding-top: 50px;
   padding-bottom: 50px;
   border-top: $border;
-  font-weight: 700;
+  font-weight: 500;
 
   .logo {
     p {
       font-size: 13px;
       font-weight: 300;
     }
+    img {
+      padding-bottom: 10px;
+    }
   }
 
   a{
     text-decoration: none;
     color: rgb(58, 58, 58);
-    font-size: 15px;
+    font-size: 16px;
     line-height: 40px;
     &:hover {
       color: $primary-color;
       transition: 0.3s ease-in-out;
       text-decoration: none;
-      font-size: 15px;
       line-height: 40px;
     }
   }
