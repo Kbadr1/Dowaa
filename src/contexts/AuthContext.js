@@ -21,6 +21,7 @@ const AuthContextProvider = (props) => {
   const [user, setUser] = useState("");
   const [waitToken, setWaitToken] = useState(true);
   const [loggedIn, setLoggedIn] = useState(false);
+  const [signUpSuccess, setSignUpSuccess] = useState(false);
   const [loginError, setLoginError] = useState(false);
   const [signupError, setSignupError] = useState(false);
 
@@ -42,6 +43,7 @@ const AuthContextProvider = (props) => {
       .post("https://boiling-waters-85095.herokuapp.com/api/users", signUpdata)
       .then((res) => {
         console.log(res);
+        setSignUpSuccess(true);
         // signUpRedirect();
       })
       .catch((err) => {
@@ -113,6 +115,7 @@ const AuthContextProvider = (props) => {
         loginError,
         signupError,
         setSignupError,
+        signUpSuccess,
       }}
     >
       {props.children}

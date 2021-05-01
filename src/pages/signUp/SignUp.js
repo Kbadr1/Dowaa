@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import "./signUp.scss";
 import signUpImage from "./signup.svg";
 import { AuthContext } from "../../contexts/AuthContext";
+import { Redirect } from "react-router";
 
 const SignUp = () => {
   const {
@@ -10,7 +11,12 @@ const SignUp = () => {
     setEmail,
     setPassword,
     signupError,
+    signUpSuccess,
   } = useContext(AuthContext);
+
+  if (signUpSuccess) {
+    return <Redirect to={"/sign-in"} />;
+  }
 
   return (
     <div className="SignUp container">
