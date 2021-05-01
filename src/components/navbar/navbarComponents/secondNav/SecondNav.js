@@ -1,14 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./secondNav.scss";
 import { Link } from "react-router-dom";
 
 import { CartContext } from "../../../../contexts/CartContext";
 import logo from "../../../../styles/logo.png";
 
+import { AuthContext } from "../../../../contexts/AuthContext";
+
 const SecondNav = () => {
-  const { products, setProducts, cart, setCart, getCartTotal } = useContext(
-    CartContext
-  );
+  const { getCartTotal } = useContext(CartContext);
+  const { user, loggedIn, handleLogOut, setLoggedIn } = useContext(AuthContext);
 
   return (
     <div className="SecondNav container">
@@ -48,16 +49,32 @@ const SecondNav = () => {
                   aria-haspopup="true"
                   aria-expanded="false"
                 >
-                  <i class="far fa-user"></i> Login
+                  <i class="far fa-user"></i>
+                  {user ? `${user}` : "Login"}
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <Link class="dropdown-item login" to="/sign-in">
-                    LOGIN
-                  </Link>
+                  {!loggedIn ? (
+                    <Link class="dropdown-item login" to="/sign-in">
+                      LOGIN
+                    </Link>
+                  ) : (
+                    <button
+                      onClick={handleLogOut}
+                      className="dropdown-item login"
+                    >
+                      Log out
+                    </button>
+                  )}
+
                   <div class="dropdown-divider"></div>
-                  <Link class="create dropdown-item" to="/sign-up">
-                    CREATE AN ACCOUNT
-                  </Link>
+                  {!loggedIn ? (
+                    <Link class="create dropdown-item" to="/sign-up">
+                      CREATE AN ACCOUNT
+                    </Link>
+                  ) : (
+                    ""
+                  )}
+
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="#">
                     <i class="far fa-user"></i> Account

@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import "./signUp.scss";
 import signUpImage from "./signup.svg";
+import { AuthContext } from "../../contexts/AuthContext";
+
 const SignUp = () => {
+  const {
+    handleSignUpSubmit,
+    setName,
+    setEmail,
+    setPassword,
+    signupError,
+  } = useContext(AuthContext);
+
   return (
     <div className="SignUp container">
       <div className="row">
@@ -9,52 +19,67 @@ const SignUp = () => {
           <img src={signUpImage} alt="" />
         </div>
         <div className="col-lg-6">
-          <form>
-            <div class="form-group">
+          <form onSubmit={handleSignUpSubmit}>
+            {signupError ? (
+              <div className="signup-error">This Email already registered</div>
+            ) : (
+              ""
+            )}
+            <div className="form-group">
               <label>Full Name</label>
-              <input type="text" class="form-control" />
+              <input
+                type="text"
+                className="form-control"
+                onChange={(e) => setName(e.target.value)}
+                required
+                minLength="8"
+              />
             </div>
-            <div class="form-group">
+            {/* <div className="form-group">
+              <label>Phone number</label>
+              <input
+                type="text"
+                className="form-control"
+                onChange={(e) => setPhoneNumber(e.target.value)}
+              />
+            </div> */}
+            <div className="form-group">
               <label for="exampleInputEmail1">Email address</label>
               <input
                 type="email"
-                class="form-control"
+                className="form-control"
                 id="exampleInputEmail1"
                 aria-describedby="emailHelp"
+                onChange={(e) => setEmail(e.target.value)}
+                required
               />
-              <small id="emailHelp" class="form-text text-muted">
+              <small id="emailHelp" className="form-text text-muted">
                 We'll never share your email with anyone else.
               </small>
             </div>
-            <div class="form-group">
+            <div className="form-group">
               <label for="exampleInputPassword1">Password</label>
               <input
                 type="password"
-                class="form-control"
+                className="form-control"
                 id="exampleInputPassword1"
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                minLength="8"
               />
             </div>
-            <div class="form-group">
+            {/* <div className="form-group">
               <label for="exampleInputPassword1">Re-Type Password</label>
               <input
                 type="password"
-                class="form-control"
+                className="form-control"
                 id="exampleInputPassword1"
               />
-            </div>
+            </div> */}
 
-            <button type="submit" class="btn btn-primary">
+            <button type="submit" className="btn btn-primary">
               Create New Account
             </button>
-            <div className="text-center">
-              <p>or register with</p>
-              <a href="">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a href="">
-                <i class="fab fa-google"></i>
-              </a>
-            </div>
           </form>
         </div>
       </div>

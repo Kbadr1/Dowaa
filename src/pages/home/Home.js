@@ -1,14 +1,14 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../contexts/CartContext";
 import "./home.scss";
+import axios from "axios";
 
 const Home = () => {
-  const { products, addToCart, cart } = useContext(CartContext);
+  const { products, addToCart } = useContext(CartContext);
 
   return (
     <div className="Home container">
       <h1>Home page</h1>
-
       <div className="row">
         {products.map((product, idx) => (
           <div className="product col-lg-6" key={idx}>

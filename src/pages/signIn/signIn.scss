@@ -12,6 +12,15 @@
     box-shadow: $box-shadow;
     border: $border;
 
+    .login-error {
+      background-color: rgb(255, 173, 173);
+      text-align: center;
+      padding: 10px 0px;
+      margin: 0px 0px 25px 0px;
+      color: rgb(134, 0, 0);
+      border-radius: 5px;
+    }
+
     a {
       
       color: $primary-color;

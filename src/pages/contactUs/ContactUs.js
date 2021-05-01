@@ -1,7 +1,34 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
 import "./contactUs.scss";
 
 const ContactUs = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+
+  const data = {
+    name: name,
+    email: email,
+    message: message,
+    phoneNumber: phoneNumber,
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("form submitted");
+
+    axios
+      .post("https://boiling-waters-85095.herokuapp.com/", data)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <div className="ContactUs container">
       <div className="row">
@@ -16,7 +43,7 @@ const ContactUs = () => {
           </p>
         </div>
         <div className="form col-12 col-lg-7">
-          <form>
+          <form onSubmit={handleSubmit}>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputEmail4">Name</label>
@@ -25,6 +52,7 @@ const ContactUs = () => {
                   type="text"
                   class="form-control"
                   placeholder="Ahmed Mohamed"
+                  onChange={(e) => setName(e.target.value)}
                 />
               </div>
               <div class="form-group col-md-6">
@@ -34,6 +62,7 @@ const ContactUs = () => {
                   type="text"
                   class="form-control"
                   placeholder="01XXXXXXXXX"
+                  onChange={(e) => setPhoneNumber(e.target.value)}
                 />
               </div>
             </div>
@@ -45,6 +74,7 @@ const ContactUs = () => {
                   type="text"
                   class="form-control"
                   placeholder="your@gmail.com"
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
             </div>
@@ -56,6 +86,7 @@ const ContactUs = () => {
                   class="form-control"
                   placeholder="Type Your Message Here"
                   rows="6"
+                  onChange={(e) => setMessage(e.target.value)}
                 ></textarea>
               </div>
             </div>

@@ -1,37 +1,62 @@
-import React from "react";
+import React, { useState, useContext } from "react";
+import axios from "axios";
 import "./signIn.scss";
 import signinImage from "./signin.svg";
+import { AuthContext } from "../../contexts/AuthContext";
+import { Redirect } from "react-router";
 
 const SignIn = () => {
+  const {
+    handleLogInSubmit,
+    setEmail,
+    setPassword,
+    history,
+    loggedIn,
+    loginError,
+  } = useContext(AuthContext);
+
+  if (loggedIn) {
+    return <Redirect to={"/"} />;
+  }
+
   return (
     <div className="SignIn container">
       <div className="row">
         <div className="col-12 col-lg-5">
-          <form>
-            <div class="form-group">
+          <form onSubmit={handleLogInSubmit}>
+            {loginError ? (
+              <div className="login-error">Wrong Email or Password !</div>
+            ) : (
+              ""
+            )}
+            <div className="form-group">
               <label for="exampleInputEmail1">Email address</label>
               <input
                 type="email"
-                class="form-control"
+                className="form-control"
                 id="exampleInputEmail1"
                 aria-describedby="emailHelp"
+                onChange={(e) => setEmail(e.target.value)}
+                required
               />
             </div>
-            <div class="form-group">
+            <div className="form-group">
               <label for="exampleInputPassword1">Password</label>
               <input
                 type="password"
-                class="form-control"
+                className="form-control"
                 id="exampleInputPassword1"
+                onChange={(e) => setPassword(e.target.value)}
+                required
               />
             </div>
-            <div class="form-group form-check">
+            <div className="form-group form-check">
               <input
                 type="checkbox"
-                class="form-check-input"
+                className="form-check-input"
                 id="exampleCheck1"
               />
-              <label class="form-check-label" for="exampleCheck1">
+              <label className="form-check-label" for="exampleCheck1">
                 Remember Me
               </label>
               <a href="" className="float-right">
@@ -39,18 +64,13 @@ const SignIn = () => {
               </a>
             </div>
 
-            <button type="submit" class="btn btn-primary">
+            <button
+              // onClick={() => history.push("/")}
+              type="submit"
+              className="btn btn-primary"
+            >
               Log in
             </button>
-            <div className="text-center">
-              <p>or login with</p>
-              <a href="">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a href="">
-                <i class="fab fa-google"></i>
-              </a>
-            </div>
           </form>
         </div>
         <div className="col-lg-7 d-flex p-4">
