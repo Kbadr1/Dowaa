@@ -15,7 +15,9 @@ const SecondNav = () => {
     <div className="SecondNav container">
       <div className="row">
         <div className="logo d-none d-lg-block col-lg-3">
-          <img src={logo} alt="" /> <span>Dowaa</span>
+          <Link to="/">
+            <img src={logo} alt="" /> <span>Dowaa</span>
+          </Link>
         </div>
         <div className="form col-6 col-md-6">
           <div class="input-group mb-3">

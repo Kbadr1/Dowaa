@@ -1,6 +1,5 @@
 import React from "react";
 import "./AboutUs.scss";
-import download from "./download.png";
 import mobile from "./mobile.svg";
 import pharmacyOwner from "./pharmacyOwner.svg";
 
@@ -22,16 +21,9 @@ const AboutUs = () => {
               <br />
               <p>Install App Now</p>
               <div className="download">
-                <a href="">
-                  <img src={download} alt="" />
-                </a>
-
-                <br className="d-block d-md-none" />
-                <br className="d-block d-md-none" />
-                <span>Or</span>
-                <br className="d-block d-md-none" />
-                <br className="d-block d-md-none" />
-                <button>Order Through Website</button>
+                <button type="button" class="btn btn-primary">
+                  Download App
+                </button>
               </div>
             </div>
             <div className="col-md-12 col-lg-6 d-flex justify-content-center">
@@ -43,7 +35,7 @@ const AboutUs = () => {
       {/* features */}
       <div className="features">
         <div className="container">
-          <h1>Chefaa Features</h1>
+          <h1>Dowaa Features</h1>
           <div className="row">
             <div className="box col-md-6 col-lg-3">
               <div className="box-content col-lg-12">
@@ -120,9 +112,9 @@ const AboutUs = () => {
                 <i class="fas fa-award"></i>
                 <br />
                 <br />
-                <span style={{ color: "white" }}>Chefaa Prime</span>
+                <span style={{ color: "white" }}>Dowaa Prime</span>
                 <br /> <br />
-                <p>A New Service To Be Added To Chefaa Features Soon</p>
+                <p>A New Service To Be Added To Dowaa Features Soon</p>
               </div>
             </div>
           </div>
@@ -136,12 +128,14 @@ const AboutUs = () => {
             <br />
             <br />
             <p>
-              Join Chefaa Now! Bring Your Pharmacy To The Digital Era And
+              Join Dowaa Now! Bring Your Pharmacy To The Digital Era And
               Increase Your Sales. Just Fill This Form
             </p>
             <br />
             <br />
-            <button>Join Chefaa Network Of Pharmacies</button>
+            <button type="button" class="btn btn-primary">
+              Join Dowaa Network Of Pharmacies Now
+            </button>
           </div>
           <div className="col-md-6">
             <img src={pharmacyOwner} alt="" />

@@ -1,4 +1,5 @@
 import React, { createContext, useState, useEffect } from "react";
+import axios from "axios";
 
 export const CartContext = createContext();
 
@@ -6,20 +7,31 @@ const CartContextProvider = (props) => {
   const cartFromLocalStorage = JSON.parse(localStorage.getItem("cart") || "[]");
   const [cart, setCart] = useState(cartFromLocalStorage);
 
-  const [products, setProducts] = useState([
-    {
-      name: "AA Battery",
-      cost: 2.99,
-      image:
-        "https://images.pexels.com/photos/4219862/pexels-photo-4219862.jpeg?cs=srgb&dl=pexels-karolina-grabowska-4219862.jpg&fm=jpg",
-    },
-    {
-      name: "blanket",
-      cost: 19.99,
-      image:
-        "https://images.pexels.com/photos/1421176/pexels-photo-1421176.jpeg?cs=srgb&dl=pexels-isabelle-taylor-1421176.jpg&fm=jpg",
-    },
-  ]);
+  // const [products, setProducts] = useState([
+  //   {
+  //     name: "AA Battery",
+  //     cost: 2.99,
+  //     image:
+  //       "https://images.pexels.com/photos/4219862/pexels-photo-4219862.jpeg?cs=srgb&dl=pexels-karolina-grabowska-4219862.jpg&fm=jpg",
+  //   },
+  //   {
+  //     name: "blanket",
+  //     cost: 19.99,
+  //     image:
+  //       "https://images.pexels.com/photos/1421176/pexels-photo-1421176.jpeg?cs=srgb&dl=pexels-isabelle-taylor-1421176.jpg&fm=jpg",
+  //   },
+  // ]);
+
+  useEffect(() => {
+    axios
+      .get("https://boiling-waters-85095.herokuapp.com/api/products")
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  });
 
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
@@ -67,8 +79,8 @@ const CartContextProvider = (props) => {
       value={{
         cart,
         setCart,
-        products,
-        setProducts,
+        // products,
+        // setProducts,
         addToCart,
         removeFromCart,
         clearCart,

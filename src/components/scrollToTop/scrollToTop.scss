@@ -1,0 +1,23 @@
+@import "../../styles/variables.scss";
+
+.ScrollToTOp {
+  i {
+    padding: 5px;
+    color: $primary-color;
+    font-size: 2.5rem;
+    z-index: 9999;
+    position: fixed;
+    bottom: 40px;
+    left: 20px;
+    cursor: pointer;
+  }
+}
+
+// hide scroll to top button on small screens
+@media screen and (max-width: 991px){
+  .ScrollToTOp {
+    i {
+      visibility: hidden;
+    }
+  }
+}

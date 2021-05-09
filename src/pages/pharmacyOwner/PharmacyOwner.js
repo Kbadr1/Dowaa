@@ -9,12 +9,12 @@ const PharmacyOwner = () => {
           <i class="fas fa-briefcase-medical"></i>
           <h1>Are You A Pharmacy Owner?</h1>
           <p>
-            Chefaa App Helps Customers Order All Their Pharmacy Needs;
+            Dowaa App Helps Customers Order All Their Pharmacy Needs;
             Pharmaceuticals & Non-Pharmaceuticals, To Be Directed To Nearest
             Pharmacy Then Delivered To Customer, Hassle-Free.
           </p>
           <p>
-            Increase Customer Base & Sales, Just Fill This Form To Join Chefaa
+            Increase Customer Base & Sales, Just Fill This Form To Join Dowaa
             and Bring Your Pharmacy To The Digital Era
           </p>
           <p>For More Info, Fill The Form To Contact Us</p>
@@ -56,7 +56,7 @@ const PharmacyOwner = () => {
               />
             </div>
             <div class="form-row">
-              <div class="form-group col-md-6">
+              <div class="form-group col-12">
                 <label for="inputCity">E-Mail</label>
                 <input
                   type="text"

@@ -15,8 +15,14 @@ import SignUp from "./pages/signUp/SignUp";
 import AuthContextProvider, { AuthContext } from "./contexts/AuthContext";
 import Home from "./pages/home/Home";
 import { useContext, useEffect } from "react";
+import ScrollToTop from "./components/scrollToTop/ScrollToTop";
 
 function App() {
+  useEffect(() => {
+    // website title in browser
+    document.title = "Dowaa";
+  });
+
   return (
     <BrowserRouter>
       <AuthContextProvider>
@@ -35,6 +41,7 @@ function App() {
               <Route path="/privacy-policy" component={PrivacyPolicy} />
               <Route path="/terms-service" component={TermsOfService} />
             </Switch>
+            <ScrollToTop />
             <Footer />
           </div>
         </CartContextProvider>

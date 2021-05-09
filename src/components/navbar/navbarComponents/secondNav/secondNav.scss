@@ -3,6 +3,9 @@
 .SecondNav {
   padding-top: 15px;
   .logo {
+    a {
+      text-decoration: none;
+    }
     display: flex;
     align-items: center;
     img {
