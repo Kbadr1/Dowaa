@@ -380,7 +380,7 @@ const Home = () => {
         <Slider {...bestSellingSettings}>
           <div class="product">
             <img
-              src="https://chefaa.com/public/uploads/products/VCDkt7c25war5HanVsgzyntlZzY5u63xlA9ditUm.png"
+              src="https://via.placeholder.com/200/5a0da6/FFFFFF/?text=Product+Image"
               alt="..."
             />
             <div class="prdouct-body">

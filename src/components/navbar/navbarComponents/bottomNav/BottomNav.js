@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import { CartContext } from "../../../../contexts/CartContext";
 import "./BottomNav.scss";
 
 const BottomNav = () => {
+  const { categories } = useContext(CartContext);
+
   return (
     <div className="BottomNav ">
       <div className="container">
@@ -9,15 +13,11 @@ const BottomNav = () => {
           <li className="sub">
             <span>Sub Categories</span>
           </li>
-          <li>Baby Care</li>
-          <li>Women Care</li>
-          <li>Men Care</li>
-          <li>Hair Care</li>
-          <li>Skin Care</li>
-          <li>Oral Care</li>
-          <li>Organic Products</li>
-          <li>Medical Supplies</li>
-          <li>Protection 101</li>
+          {categories.map((category) => (
+            <li key={category._id}>
+              <Link to={`/${category._id}`}>{category.name}</Link>
+            </li>
+          ))}
         </ul>
       </div>
     </div>

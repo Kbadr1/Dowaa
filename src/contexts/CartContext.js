@@ -6,6 +6,7 @@ export const CartContext = createContext();
 const CartContextProvider = (props) => {
   const cartFromLocalStorage = JSON.parse(localStorage.getItem("cart") || "[]");
   const [cart, setCart] = useState(cartFromLocalStorage);
+  const [categories, setCategories] = useState([]);
 
   // const [products, setProducts] = useState([
   //   {
@@ -22,8 +23,20 @@ const CartContextProvider = (props) => {
   //   },
   // ]);
 
+  const getCategories = () => {
+    axios
+      .get("https://boiling-waters-85095.herokuapp.com/api/categories")
+      .then((res) => {
+        setCategories(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
+    getCategories();
   }, [cart]);
 
   const addToCart = (product) => {
@@ -76,6 +89,7 @@ const CartContextProvider = (props) => {
         getTotalSum,
         getCartTotal,
         setQuantity,
+        categories,
       }}
     >
       {props.children}

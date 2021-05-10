@@ -98,7 +98,6 @@ const AuthContextProvider = (props) => {
     axios
       .get("https://boiling-waters-85095.herokuapp.com/api/users/me", config)
       .then((res) => {
-        console.log(res);
         setCurrentUser(res.data.name);
         setCurrentUserEmail(res.data.email);
         setCurrentUserPhone(res.data.phone);

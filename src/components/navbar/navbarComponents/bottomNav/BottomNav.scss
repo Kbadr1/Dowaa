@@ -19,7 +19,12 @@
       display: inline-block;
       
     }
-    
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+
   }
 
   ul::-webkit-scrollbar {
