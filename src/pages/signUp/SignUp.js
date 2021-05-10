@@ -11,12 +11,14 @@ const SignUp = () => {
     setEmail,
     setPassword,
     signupError,
-    signUpSuccess,
+    // signUpSuccess,
+    setPhone,
+    setGendre,
   } = useContext(AuthContext);
 
-  if (signUpSuccess) {
-    return <Redirect to={"/sign-in"} />;
-  }
+  // if (signUpSuccess) {
+  //   return <Redirect to={"/sign-in"} />;
+  // }
 
   return (
     <div className="SignUp container">
@@ -41,12 +43,34 @@ const SignUp = () => {
                 minLength="8"
               />
             </div>
-            {/* <div className="form-group">
+            <div className="form-group">
               <label>Phone number</label>
               <input
                 type="text"
                 className="form-control"
-                onChange={(e) => setPhoneNumber(e.target.value)}
+                onChange={(e) => setPhone(e.target.value)}
+              />
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlSelect1">Gendre</label>
+              <select
+                class="form-control"
+                id="exampleFormControlSelect1"
+                onChange={(e) => setGendre(e.target.value)}
+              >
+                <option selected disabled>
+                  -
+                </option>
+                <option>Male</option>
+                <option>Female</option>
+              </select>
+            </div>
+            {/* <div className="form-group">
+              <label>Gendre</label>
+              <input
+                type="text"
+                className="form-control"
+                onChange={(e) => setGendre(e.target.value)}
               />
             </div> */}
             <div className="form-group">

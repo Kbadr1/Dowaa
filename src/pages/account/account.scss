@@ -1,0 +1,34 @@
+@import "../../styles/variables.scss";
+
+.Account {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  border: $border;
+  box-shadow: $box-shadow;
+  border-radius: 8px;
+  .left{
+    background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
+
+    border-radius: 8px 0px 0px 8px;
+    .profile-pic {
+      img{
+        width: 100%;
+        padding: 100px 100px 20px 100px;
+      }
+    }
+    h2 {
+      text-align: center;
+      color: white;
+      text-transform: capitalize;
+      padding-bottom: 100px;
+    }
+  }
+
+  .right {
+    padding: 30px;
+    p {
+      color: gray;
+      font-weight: 500;
+    }
+  }
+}

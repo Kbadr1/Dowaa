@@ -23,17 +23,6 @@ const CartContextProvider = (props) => {
   // ]);
 
   useEffect(() => {
-    axios
-      .get("https://boiling-waters-85095.herokuapp.com/api/products")
-      .then((res) => {
-        console.log(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  });
-
-  useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 

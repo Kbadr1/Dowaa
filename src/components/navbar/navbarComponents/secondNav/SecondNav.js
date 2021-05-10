@@ -9,7 +9,9 @@ import { AuthContext } from "../../../../contexts/AuthContext";
 
 const SecondNav = () => {
   const { getCartTotal } = useContext(CartContext);
-  const { user, loggedIn, handleLogOut, setLoggedIn } = useContext(AuthContext);
+  const { currentUser, loggedIn, handleLogOut, setLoggedIn } = useContext(
+    AuthContext
+  );
 
   return (
     <div className="SecondNav container">
@@ -52,7 +54,7 @@ const SecondNav = () => {
                   aria-expanded="false"
                 >
                   <i class="far fa-user"></i>
-                  {user ? `${user}` : "Login"}
+                  {currentUser ? `${currentUser}` : "Login"}
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   {!loggedIn ? (
@@ -78,9 +80,9 @@ const SecondNav = () => {
                   )}
 
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">
+                  <Link class="dropdown-item" to="/account">
                     <i class="far fa-user"></i> Account
-                  </a>
+                  </Link>
                   <a class="dropdown-item" href="#">
                     <i class="fas fa-inbox"></i> Orders
                   </a>

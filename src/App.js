@@ -16,6 +16,7 @@ import AuthContextProvider, { AuthContext } from "./contexts/AuthContext";
 import Home from "./pages/home/Home";
 import { useContext, useEffect } from "react";
 import ScrollToTop from "./components/scrollToTop/ScrollToTop";
+import Account from "./pages/account/Account";
 
 function App() {
   useEffect(() => {
@@ -40,6 +41,7 @@ function App() {
               <Route path="/pharmacy-owner" component={PharmacyOwner} />
               <Route path="/privacy-policy" component={PrivacyPolicy} />
               <Route path="/terms-service" component={TermsOfService} />
+              <Route path="/account" component={Account} />
             </Switch>
             <ScrollToTop />
             <Footer />

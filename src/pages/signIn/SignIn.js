@@ -15,9 +15,9 @@ const SignIn = () => {
     loginError,
   } = useContext(AuthContext);
 
-  if (loggedIn) {
-    return <Redirect to={"/"} />;
-  }
+  // if (loggedIn) {
+  //   return <Redirect to={"/"} />;
+  // }
 
   return (
     <div className="SignIn container">

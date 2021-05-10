@@ -1,24 +1,32 @@
 import React, { createContext, useState, useEffect } from "react";
 import axios from "axios";
-import { useHistory } from "react-router";
+import { Redirect, useHistory } from "react-router";
 
 export const AuthContext = createContext();
 
 const AuthContextProvider = (props) => {
-  // let history = useHistory();
-  // const loginRedirect = () => {
-  //   history.push("/");
-  // };
+  let history = useHistory();
+  const loginRedirect = () => {
+    history.push("/");
+  };
 
-  // const signUpRedirect = () => {
-  //   history.push("/sign-in");
-  // };
+  const signUpRedirect = () => {
+    history.push("/sign-in");
+  };
+
+  const logOutRedirect = () => {
+    history.push("/");
+  };
 
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
-  // const [phoneNumber, setPhoneNumber] = useState("");
-  const [user, setUser] = useState("");
+  const [phone, setPhone] = useState("");
+  const [gendre, setGendre] = useState("");
+  const [currentUser, setCurrentUser] = useState("");
+  const [currentUserEmail, setCurrentUserEmail] = useState("");
+  const [currentUserPhone, setCurrentUserPhone] = useState("");
+  const [currentUserGendre, setCurrentUserGendre] = useState("");
   const [waitToken, setWaitToken] = useState(true);
   const [loggedIn, setLoggedIn] = useState(false);
   const [signUpSuccess, setSignUpSuccess] = useState(false);
@@ -29,7 +37,8 @@ const AuthContextProvider = (props) => {
     name: name,
     password: password,
     email: email,
-    // phoneNumber: phoneNumber,
+    phone: phone,
+    gendre: gendre,
   };
   const logIndata = {
     email: email,
@@ -44,7 +53,7 @@ const AuthContextProvider = (props) => {
       .then((res) => {
         console.log(res);
         setSignUpSuccess(true);
-        // signUpRedirect();
+        signUpRedirect();
       })
       .catch((err) => {
         console.log(err);
@@ -64,7 +73,7 @@ const AuthContextProvider = (props) => {
         localStorage.setItem("token", res.data);
         setLoggedIn(true);
         setWaitToken(!waitToken);
-        // loginRedirect();
+        loginRedirect();
       })
       .catch((err) => {
         console.log(err);
@@ -74,8 +83,9 @@ const AuthContextProvider = (props) => {
 
   const handleLogOut = () => {
     localStorage.clear();
-    setUser("");
+    setCurrentUser("");
     setLoggedIn(!loggedIn);
+    logOutRedirect();
   };
 
   useEffect(() => {
@@ -89,7 +99,10 @@ const AuthContextProvider = (props) => {
       .get("https://boiling-waters-85095.herokuapp.com/api/users/me", config)
       .then((res) => {
         console.log(res);
-        setUser(res.data.name);
+        setCurrentUser(res.data.name);
+        setCurrentUserEmail(res.data.email);
+        setCurrentUserPhone(res.data.phone);
+        setCurrentUserGendre(res.data.gendre);
       })
       .catch((err) => {
         console.log(err);
@@ -107,15 +120,22 @@ const AuthContextProvider = (props) => {
         setPassword,
         email,
         setEmail,
-        user,
-        // history,
+        phone,
+        setPhone,
+        gendre,
+        setGendre,
+        currentUser,
+        currentUserEmail,
+        currentUserGendre,
+        currentUserPhone,
+        history,
         loggedIn,
         setLoggedIn,
         handleLogOut,
         loginError,
         signupError,
         setSignupError,
-        signUpSuccess,
+        // signUpSuccess,
       }}
     >
       {props.children}
