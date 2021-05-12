@@ -5,6 +5,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 // sub categories images
 import prescriptionIcon from "../../styles/icons/prescrption_icon.png";
+import Box from "../../styles/icons/box_icon.png";
 import medicine from "../../styles/icons/med_icon.png";
 import babyCare from "../../styles/icons/baby-care.png";
 import hairCare from "../../styles/icons/hair-care.png";
@@ -273,8 +274,8 @@ const Home = () => {
               </div>
               <div className="presc-med col-6 col-md-4 col-lg-12">
                 <div className="presc-med-content col-12">
-                  <img src={medicine} alt="" />
-                  <Link to="">Medicines</Link>
+                  <img src={Box} alt="" />
+                  <Link to="/all-products">All Products</Link>
                 </div>
               </div>
             </div>
