@@ -10,16 +10,14 @@ const Category = (props) => {
   const [productsPerPage, setProductsPerPage] = useState(40);
 
   const getProductsByCategory = () => {
-    let id = props.match.params.category_id;
+    let categoryId = props.match.params.category_id;
     axios
       .get(
-        `https://boiling-waters-85095.herokuapp.com/api/products?categories=${id}`
+        `https://boiling-waters-85095.herokuapp.com/api/products?categories=${categoryId}`
       )
       .then((res) => {
         setProducts(res.data);
         setCurrentCategory(res.data[0].category.name);
-        console.log(res.data);
-        console.log(id);
       })
       .catch((err) => {
         console.log(err);
@@ -107,12 +105,13 @@ const Category = (props) => {
         {currentProducts.map((product) => (
           <div className="product col-6 col-md-4 col-lg-3 ">
             <div className="prdouct-content col-12">
-              <img
-                src="https://via.placeholder.com/200/5a0da6/FFFFFF/?text=Product+Image"
-                alt="..."
-              />
+              <Link to={`/product/${product._id}`}>
+                <img src={product.image} alt="..." />
+              </Link>
               <div class="prdouct-body">
-                <p class="product-name">{product.name}</p>
+                <Link to={`/product/${product._id}`}>
+                  <p class="product-name">{product.name}</p>
+                </Link>
                 <h5 class="product-price">{product.price} EGP</h5>
                 <button type="button" class="btn btn-primary">
                   Add to cart

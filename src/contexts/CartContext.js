@@ -8,21 +8,6 @@ const CartContextProvider = (props) => {
   const [cart, setCart] = useState(cartFromLocalStorage);
   const [categories, setCategories] = useState([]);
 
-  // const [products, setProducts] = useState([
-  //   {
-  //     name: "AA Battery",
-  //     cost: 2.99,
-  //     image:
-  //       "https://images.pexels.com/photos/4219862/pexels-photo-4219862.jpeg?cs=srgb&dl=pexels-karolina-grabowska-4219862.jpg&fm=jpg",
-  //   },
-  //   {
-  //     name: "blanket",
-  //     cost: 19.99,
-  //     image:
-  //       "https://images.pexels.com/photos/1421176/pexels-photo-1421176.jpeg?cs=srgb&dl=pexels-isabelle-taylor-1421176.jpg&fm=jpg",
-  //   },
-  // ]);
-
   const getCategories = () => {
     axios
       .get("https://boiling-waters-85095.herokuapp.com/api/categories")
@@ -63,7 +48,7 @@ const CartContextProvider = (props) => {
   };
 
   const getTotalSum = () => {
-    return cart.reduce((sum, { cost, quantity }) => sum + cost * quantity, 0);
+    return cart.reduce((sum, { price, quantity }) => sum + price * quantity, 0);
   };
 
   const getCartTotal = () => {

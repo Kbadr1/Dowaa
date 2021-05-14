@@ -373,9 +373,11 @@ const Home = () => {
             <h4>Best Selling Products</h4>
           </div>
           <div className="col-6">
-            <button type="button" class="btn btn-primary float-right">
-              Show all <i class="fas fa-angle-right"></i>
-            </button>
+            <Link to="/all-products">
+              <button type="button" class="btn btn-primary float-right">
+                Show all <i class="fas fa-angle-right"></i>
+              </button>
+            </Link>
           </div>
         </div>
         <Slider {...bestSellingSettings}>
@@ -529,9 +531,11 @@ const Home = () => {
             <h4>Latest Offers</h4>
           </div>
           <div className="col-6">
-            <button type="button" class="btn btn-primary float-right">
-              Show all <i class="fas fa-angle-right"></i>
-            </button>
+            <Link to="/all-products">
+              <button type="button" class="btn btn-primary float-right">
+                Show all <i class="fas fa-angle-right"></i>
+              </button>
+            </Link>
           </div>
         </div>
         <Slider {...bestSellingSettings}>

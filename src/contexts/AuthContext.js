@@ -20,6 +20,7 @@ const AuthContextProvider = (props) => {
 
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
+  const [rePassword, setRePassword] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [gendre, setGendre] = useState("");
@@ -30,6 +31,7 @@ const AuthContextProvider = (props) => {
   const [waitToken, setWaitToken] = useState(true);
   const [loggedIn, setLoggedIn] = useState(false);
   const [signUpSuccess, setSignUpSuccess] = useState(false);
+  const [signUpRePasswordError, setSignUpRePasswordError] = useState(false);
   const [loginError, setLoginError] = useState(false);
   const [signupError, setSignupError] = useState(false);
 
@@ -48,17 +50,25 @@ const AuthContextProvider = (props) => {
   const handleSignUpSubmit = (e) => {
     e.preventDefault();
 
-    axios
-      .post("https://boiling-waters-85095.herokuapp.com/api/users", signUpdata)
-      .then((res) => {
-        console.log(res);
-        setSignUpSuccess(true);
-        signUpRedirect();
-      })
-      .catch((err) => {
-        console.log(err);
-        setSignupError(true);
-      });
+    if (password !== rePassword) {
+      setSignUpRePasswordError(true);
+    } else {
+      setSignUpRePasswordError(false);
+      axios
+        .post(
+          "https://boiling-waters-85095.herokuapp.com/api/users",
+          signUpdata
+        )
+        .then((res) => {
+          console.log(res);
+          setSignUpSuccess(true);
+          signUpRedirect();
+        })
+        .catch((err) => {
+          console.log(err);
+          setSignupError(true);
+        });
+    }
   };
 
   const handleLogInSubmit = (e) => {
@@ -117,6 +127,8 @@ const AuthContextProvider = (props) => {
         setName,
         password,
         setPassword,
+        rePassword,
+        setRePassword,
         email,
         setEmail,
         phone,
@@ -134,6 +146,8 @@ const AuthContextProvider = (props) => {
         loginError,
         signupError,
         setSignupError,
+        signUpRePasswordError,
+        setSignUpRePasswordError,
         // signUpSuccess,
       }}
     >

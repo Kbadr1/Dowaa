@@ -11,9 +11,12 @@ const SignUp = () => {
     setEmail,
     setPassword,
     signupError,
+    rePassword,
+    setRePassword,
     // signUpSuccess,
     setPhone,
     setGendre,
+    signUpRePasswordError,
   } = useContext(AuthContext);
 
   // if (signUpSuccess) {
@@ -33,6 +36,11 @@ const SignUp = () => {
             ) : (
               ""
             )}
+            {signUpRePasswordError ? (
+              <div className="signup-error">Password must match</div>
+            ) : (
+              ""
+            )}
             <div className="form-group">
               <label>Full Name</label>
               <input
@@ -42,6 +50,20 @@ const SignUp = () => {
                 required
                 minLength="8"
               />
+            </div>
+            <div className="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input
+                type="email"
+                className="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              <small id="emailHelp" className="form-text text-muted">
+                We'll never share your email with anyone else.
+              </small>
             </div>
             <div className="form-group">
               <label>Phone number</label>
@@ -65,28 +87,7 @@ const SignUp = () => {
                 <option>Female</option>
               </select>
             </div>
-            {/* <div className="form-group">
-              <label>Gendre</label>
-              <input
-                type="text"
-                className="form-control"
-                onChange={(e) => setGendre(e.target.value)}
-              />
-            </div> */}
-            <div className="form-group">
-              <label for="exampleInputEmail1">Email address</label>
-              <input
-                type="email"
-                className="form-control"
-                id="exampleInputEmail1"
-                aria-describedby="emailHelp"
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-              <small id="emailHelp" className="form-text text-muted">
-                We'll never share your email with anyone else.
-              </small>
-            </div>
+
             <div className="form-group">
               <label for="exampleInputPassword1">Password</label>
               <input
@@ -98,14 +99,15 @@ const SignUp = () => {
                 minLength="8"
               />
             </div>
-            {/* <div className="form-group">
+            <div className="form-group">
               <label for="exampleInputPassword1">Re-Type Password</label>
               <input
                 type="password"
                 className="form-control"
                 id="exampleInputPassword1"
+                onChange={(e) => setRePassword(e.target.value)}
               />
-            </div> */}
+            </div>
 
             <button type="submit" className="btn btn-primary">
               Create New Account

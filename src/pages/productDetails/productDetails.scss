@@ -1,0 +1,152 @@
+@import "../../styles//variables.scss";
+
+.ProductDetails {
+  padding-top: 20px;
+  padding-bottom: 100px;
+  .small-nav {
+    font-size: 0.9rem;
+    a {
+      text-decoration: none;
+    }
+    i {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    span {
+      color: #707070;
+    }
+  }
+
+  .header {
+    padding-top: 10px;
+    .header-left {
+      img {
+        width: 100%;
+        border-radius: 5px;
+      }
+    }
+    .header-middle {
+      a{
+        text-decoration: none;
+        font-size: 14px;
+      }
+      h6 {
+        padding-top: 20px;
+        font-weight: 400;
+        margin-bottom: 24px;
+      }
+      h5 {
+        margin-bottom: 34px;
+      }
+      p{
+        font-size: 14px;
+        font-weight: 300;
+        
+      }
+      .brand-count{
+        padding-right: 5px;
+        font-size: 20px;
+        color: $secondary-color;
+      }
+      span {
+        font-weight: 500;
+      }
+      button {
+        padding-right: 5rem;
+        padding-left: 5rem;
+        line-height: 30px;
+      }
+    }
+    .header-right {
+      border: $border;
+      border-radius: 10px;
+      i {
+        border: $border;
+        padding: 5px;
+        border-radius: 8px;
+        color: $primary-color;
+        font-size: 20px;
+      }
+      p {
+        font-size: 14px;
+        font-weight: 300;
+      }
+      
+      .share {
+        text-align: center;
+        .react-share__ShareButton {
+          &:focus {
+            all: unset;
+          }
+        }
+        i {
+          margin: 10px 7px;
+          border-radius: 50%;
+          width: 32px;
+          height: 31px;
+          &:hover {
+            transform: scale((1.2,1.2));
+            transition: ease-in-out 0.3s;
+          }
+        }
+      }
+    }
+  }
+
+  .order-description {
+    background-color: #f8f8f8;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    h4 {
+      margin-bottom: 40px;
+    }
+  }
+
+  .also-like {
+    h4 {
+      font-weight: 700;
+      margin-bottom: 30px;
+    }
+    .slick-prev:before, .slick-next:before {
+      color: black;
+      opacity: 0.8;
+    }
+    .slick-slide {
+      padding: 2px 5px;
+    }
+    .product {
+      padding: 10px;
+      border-radius: 10px;
+      a {
+        text-decoration: none;
+      }
+      img {
+        width: 100%;
+        margin-bottom: 15px;
+        height: 200px;
+      }
+      p {
+        font-size: 14px;
+        color: #404040;
+        margin-bottom: 25px;
+      }
+      h5 {
+        color: #404040;
+        font-size: 16px;
+        font-weight: 700;
+      }
+      button {
+        width: 100%;
+        background-color: $primary-color;
+        color: white;
+        border-radius: 8px;
+      }
+      &:hover {
+        box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.267);
+        transition: ease-in-out 0.2s;
+      }
+    }
+  }
+}

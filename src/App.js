@@ -19,6 +19,7 @@ import ScrollToTop from "./components/scrollToTop/ScrollToTop";
 import Account from "./pages/account/Account";
 import Category from "./pages/category/Category";
 import AllProducts from "./pages/allProducts/AllProducts";
+import ProductDetails from "./pages/productDetails/ProdutDetails";
 
 function App() {
   useEffect(() => {
@@ -45,7 +46,8 @@ function App() {
               <Route path="/terms-service" component={TermsOfService} />
               <Route path="/all-products" component={AllProducts} />
               <Route path="/account" component={Account} />
-              <Route path="/:category_id" component={Category} />
+              <Route path="/product/:product_id" component={ProductDetails} />
+              <Route path="/category/:category_id" component={Category} />
             </Switch>
             <ScrollToTop />
             <Footer />

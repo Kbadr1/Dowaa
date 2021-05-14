@@ -15,7 +15,7 @@ const BottomNav = () => {
           </li>
           {categories.map((category) => (
             <li key={category._id}>
-              <Link to={`/${category._id}`}>{category.name}</Link>
+              <Link to={`/category/${category._id}`}>{category.name}</Link>
             </li>
           ))}
         </ul>

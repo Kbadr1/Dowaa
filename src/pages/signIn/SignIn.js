@@ -49,6 +49,9 @@ const SignIn = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 required
               />
+              <div id="validationServer03Feedback" class="invalid-feedback">
+                Please provide a valid city.
+              </div>
             </div>
             <div className="form-group form-check">
               <input

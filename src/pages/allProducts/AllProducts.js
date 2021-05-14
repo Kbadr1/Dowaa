@@ -42,7 +42,6 @@ const AllProducts = () => {
       .get("https://boiling-waters-85095.herokuapp.com/api/products")
       .then((res) => {
         setProducts(res.data);
-        console.log(res.data);
       })
       .catch((err) => {
         console.log(err);
@@ -92,14 +91,15 @@ const AllProducts = () => {
       </div>
       <div className="row">
         {currentProducts.map((product) => (
-          <div className="product col-6 col-md-4 col-lg-3 ">
+          <div className="product col-6 col-md-4 col-lg-3 " key={product._id}>
             <div className="prdouct-content col-12">
-              <img
-                src="https://via.placeholder.com/200/5a0da6/FFFFFF/?text=Product+Image"
-                alt="..."
-              />
+              <Link to={`/product/${product._id}`}>
+                <img src={product.image} alt="..." />
+              </Link>
               <div class="prdouct-body">
-                <p class="product-name">{product.name}</p>
+                <Link to={`/product/${product._id}`}>
+                  <p class="product-name">{product.name}</p>
+                </Link>
                 <h5 class="product-price">{product.price} EGP</h5>
                 <button type="button" class="btn btn-primary">
                   Add to cart

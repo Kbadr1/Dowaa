@@ -4,13 +4,8 @@ import "./cart.scss";
 import { CartContext } from "../../contexts/CartContext";
 
 const Cart = () => {
-  const {
-    cart,
-    removeFromCart,
-    clearCart,
-    getTotalSum,
-    setQuantity,
-  } = useContext(CartContext);
+  const { cart, removeFromCart, clearCart, getTotalSum, setQuantity } =
+    useContext(CartContext);
   return (
     <div className="Cart container">
       <h1>Cart</h1>
@@ -20,7 +15,7 @@ const Cart = () => {
         {cart.map((product, idx) => (
           <div className="product col-lg-6" key={idx}>
             <h3>product name: {product.name}</h3>
-            <h4>product cost: ${product.cost}</h4>
+            <h4>product cost: ${product.price}</h4>
             <h4>quantity: {product.quantity}</h4>
             <input
               value={product.quantity}
