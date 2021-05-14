@@ -1,10 +1,132 @@
+@import "../../styles//variables.scss";
+
 .Cart {
-  h1 {
-    text-align: center;
+  padding-top: 50px;
+  padding-bottom: 100px;
+  .continue {
+    color: $primary-color;
+    background-color: white;
+    border-color: $primary-color;
+    float: right;
   }
-  
-  .product {
-    padding: 50px;
-    border: 1px solid gray;
+  .shipment{
+    border: $border;
+    margin-top: 20px;
+    border-radius: 8px;
+    padding: 20px;
+    h5 {
+      margin-bottom: 20px;
+    }
+    .delivered-within{
+      color: #D9352B;
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+    .product {
+      display: flex;
+      align-items: center;
+      border-top: $border;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      a{
+        all: unset;
+        color: black;
+        cursor: pointer;
+      }
+      img{
+        width: 100%;
+        padding: 5px;
+      }
+      .quantity {
+        border: $border;
+        text-align: center;
+        border-radius: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        input {
+          width: 50%;
+          text-align: center;
+          border: 0;
+          background-color: transparent;
+        }
+        .quantity-button {
+          all: unset;
+          cursor: pointer;
+          i{
+            font-size: 12px;
+            color: black;
+          }
+        }
+      }
+      
+      .remove-item{
+        all: unset;
+        i{
+          font-size: 25px;
+          cursor: pointer;
+          color: #EC9791;
+        }
+      }
+    }
+    span{
+      float: right;
+      font-weight: 500;
+    }
   }
+  .right-shipment {
+    border: $border;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 60px;
+    form {
+      margin-bottom: 40px;
+      .apply {
+        margin-right: 5%;
+        height: 48px;
+        border-radius: 8px;
+        padding-right: 20px;
+        padding-left: 20px;
+        background-color: $primary-color;
+      }
+      input{
+        background-color: #F7F7F7;
+        height: 48px;
+        border-radius: 8px;
+      }
+    }
+
+    span{
+      float: right;
+      font-weight: 500;
+    }
+    .checkout{
+      width: 100%;
+      border-radius: 8px;
+      background-color: $primary-color;
+      height: 50px;
+    }
+  }
+  .total {
+    font-weight: 500;
+  }
+
+
+  .empty-cart{
+    .cart-image{
+      padding: 30px;
+      text-align: center;
+      border-radius: 50%;
+      img {
+        width: 50px;
+      }
+    }
+    button {
+      width: 100%;
+      margin-top: 20px;
+      border-radius: 8px;
+      height: 50px;
+      background-color: $primary-color;
+    }
+  }
+
 }
