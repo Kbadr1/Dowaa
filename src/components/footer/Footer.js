@@ -29,17 +29,17 @@ const Footer = () => {
             <div className="icons row">
               <div className="col-4">
                 <a href="https://www.instagram.com" target="_blank">
-                  <i class="fab fa-instagram"></i>
+                  <i style={{ color: "#833AB4" }} class="fab fa-instagram"></i>
                 </a>
               </div>
               <div className="col-4">
                 <a href="https://twitter.com/" target="_blank">
-                  <i class="fab fa-twitter"></i>
+                  <i style={{ color: "#1DA1F2" }} class="fab fa-twitter"></i>
                 </a>
               </div>
               <div className="col-4">
                 <a href="https://www.facebook.com" target="_blank">
-                  <i class="fab fa-facebook-f"></i>
+                  <i style={{ color: "#4267B2" }} class="fab fa-facebook-f"></i>
                 </a>
               </div>
             </div>
