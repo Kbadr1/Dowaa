@@ -1,0 +1,65 @@
+@import "../../styles/variables.scss";
+
+.SavedProducts{
+  padding-top: 30px;
+  padding-bottom: 100px;
+  .small-nav {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    a {
+      text-decoration: none;
+    }
+    i {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    span {
+      color: #707070;
+    }
+  }
+
+  .saved-product {
+    margin-bottom: 50px;
+    border: $border;
+    padding: 20px 5px;
+    border-radius: 10px;
+    img{
+      width: 100%;
+    }
+
+    h6{
+      margin-bottom: 20px;
+    }
+    h5 {
+      margin-bottom: 25px;
+    }
+    i {
+      color: $secondary-color;
+    }
+    span {
+      font-weight: 500;
+    }
+    button {
+      background-color: $primary-color;
+      margin-right: 10px;
+      margin-top: 20px;
+    }
+
+    .fa-trash-alt {
+      color: white;
+    }
+
+  }
+
+  .empty-saved{
+    .saved-icon{
+      padding: 30px;
+      text-align: center;
+      border-radius: 50%;
+      i {
+        color: $primary-color;
+        font-size: 4rem;
+      }
+    }
+  }
+}

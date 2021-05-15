@@ -1,23 +1,11 @@
-import React, { useState, useContext } from "react";
-import axios from "axios";
+import React, { useContext } from "react";
 import "./signIn.scss";
 import signinImage from "./signin.svg";
 import { AuthContext } from "../../contexts/AuthContext";
-import { Redirect } from "react-router";
 
 const SignIn = () => {
-  const {
-    handleLogInSubmit,
-    setEmail,
-    setPassword,
-    history,
-    loggedIn,
-    loginError,
-  } = useContext(AuthContext);
-
-  // if (loggedIn) {
-  //   return <Redirect to={"/"} />;
-  // }
+  const { handleLogInSubmit, setEmail, setPassword, loginError } =
+    useContext(AuthContext);
 
   return (
     <div className="SignIn container">

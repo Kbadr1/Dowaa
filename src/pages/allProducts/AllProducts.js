@@ -2,10 +2,12 @@ import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../contexts/CartContext";
+import { SavedContext } from "../../contexts/SavedContext";
 import "./allProducts.scss";
 
 const AllProducts = () => {
   const { addToCart } = useContext(CartContext);
+  const { addToSaved } = useContext(SavedContext);
   const [products, setProducts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [productsPerPage, setProductsPerPage] = useState(40);
@@ -109,6 +111,13 @@ const AllProducts = () => {
                   class="btn btn-primary"
                 >
                   Add to cart
+                </button>
+                <button
+                  onClick={() => addToSaved(product)}
+                  type="button"
+                  class="btn btn-primary"
+                >
+                  <i class="fas fa-heart"></i>
                 </button>
               </div>
             </div>

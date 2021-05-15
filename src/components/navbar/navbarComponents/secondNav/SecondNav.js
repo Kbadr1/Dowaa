@@ -91,9 +91,9 @@ const SecondNav = () => {
                   <a class="dropdown-item" href="#">
                     <i class="fas fa-inbox"></i> Orders
                   </a>
-                  <a class="dropdown-item" href="#">
+                  <Link class="dropdown-item" to="/saved">
                     <i class="far fa-heart"></i> Saved Items
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

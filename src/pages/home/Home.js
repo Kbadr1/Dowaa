@@ -7,15 +7,6 @@ import { Link } from "react-router-dom";
 import prescriptionIcon from "../../styles/icons/prescrption_icon.png";
 import Box from "../../styles/icons/box_icon.png";
 import medicine from "../../styles/icons/med_icon.png";
-import babyCare from "../../styles/icons/baby-care.png";
-import hairCare from "../../styles/icons/hair-care.png";
-import medicalSupplies from "../../styles/icons/medical-supplies.png";
-import menCare from "../../styles/icons/men-care.png";
-import oralCare from "../../styles/icons/oral-care.png";
-import organicProducts from "../../styles/icons/organic-products.png";
-import protection from "../../styles/icons/protection.png";
-import skinCare from "../../styles/icons/skin-care.png";
-import womenCare from "../../styles/icons/women-care.png";
 // owl carousel
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
