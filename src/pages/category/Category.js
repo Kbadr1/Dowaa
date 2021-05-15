@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./category.scss";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { CartContext } from "../../contexts/CartContext";
 
 const Category = (props) => {
+  const { addToCart } = useContext(CartContext);
   const [currentCategory, setCurrentCategory] = useState("");
   const [products, setProducts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -113,7 +115,11 @@ const Category = (props) => {
                   <p class="product-name">{product.name}</p>
                 </Link>
                 <h5 class="product-price">{product.price} EGP</h5>
-                <button type="button" class="btn btn-primary">
+                <button
+                  onClick={() => addToCart(product)}
+                  type="button"
+                  class="btn btn-primary"
+                >
                   Add to cart
                 </button>
               </div>

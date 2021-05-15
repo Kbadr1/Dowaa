@@ -31,7 +31,7 @@ const Account = () => {
   return (
     <div className="Account container">
       <div className="row">
-        <div className="left col-lg-4">
+        <div className="left col-md-4">
           <div className="profile-pic">
             <img src={profilePic} alt="" />
           </div>
@@ -39,15 +39,15 @@ const Account = () => {
             <h2>{currentUser}</h2>
           </div>
         </div>
-        <div className="right col-lg-8">
+        <div className="right col-md-8">
           <h5>Information</h5>
           <hr />
           <div className="row">
-            <div className="col-lg-6">
+            <div className="col-md-6">
               <h5>Email</h5>
               <p>{currentUserEmail}</p>
             </div>
-            <div className="col-lg-6">
+            <div className="col-md-6">
               <h5>Phone Number</h5>
               <p>{currentUserPhone}</p>
             </div>

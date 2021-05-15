@@ -1,0 +1,28 @@
+@import "../../styles/variables.scss";
+
+.AllBrands{
+  padding-top: 50px;
+  .small-nav {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    a {
+      text-decoration: none;
+    }
+    i {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    span {
+      color: #707070;
+    }
+  }
+  .brand-image{
+    margin-bottom: 30px;
+    padding: 50px;
+    border: $border;
+    border-radius: 10px;
+    img {
+      width: 100%;
+    }
+  }
+}

@@ -29,6 +29,37 @@ import "slick-carousel/slick/slick-theme.css";
 
 const Home = () => {
   const { addToCart } = useContext(CartContext);
+  const [brands, setBrands] = useState([]);
+  const [categories, setCategories] = useState([]);
+
+  const getAllBrands = () => {
+    axios
+      .get("https://boiling-waters-85095.herokuapp.com/api/brands")
+      .then((res) => {
+        setBrands(res.data);
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const getAllCategories = () => {
+    axios
+      .get("https://boiling-waters-85095.herokuapp.com/api/categories")
+      .then((res) => {
+        setCategories(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  useEffect(() => {
+    getAllBrands();
+    getAllCategories();
+  }, []);
+
   // slick carousel best selling settings
   const bestSellingSettings = {
     infinite: true,
@@ -141,17 +172,6 @@ const Home = () => {
 
   return (
     <div className="Home container">
-      {/* <div className="row">
-        {products.map((product, idx) => (
-          <div className="product col-lg-6" key={idx}>
-            <h3>{product.name}</h3>
-            <h4>${product.cost}</h4>
-            <img src={product.image} alt="" />
-            <button onClick={() => addToCart(product)}>Add to Cart</button>
-          </div>
-        ))}
-      </div> */}
-
       {/* header */}
       <div className="header">
         <div className="row">
@@ -328,42 +348,16 @@ const Home = () => {
       <div className="sub-categories">
         <h4>Sub Categories</h4>
         <div className="row">
-          <div className="sub-categ-box col-2 col-md-1">
-            <img src={babyCare} alt="" />
-            <p>Baby Care</p>
-          </div>
-          <div className="sub-categ-box col-2 col-md-1">
-            <img src={womenCare} alt="" />
-            <p>Women Care</p>
-          </div>
-          <div className="sub-categ-box col-2 col-md-1">
-            <img src={menCare} alt="" />
-            <p>Men Care</p>
-          </div>
-          <div className="sub-categ-box col-2 col-md-1">
-            <img src={hairCare} alt="" />
-            <p>Hair Care</p>
-          </div>
-          <div className="sub-categ-box col-2 col-md-1">
-            <img src={skinCare} alt="" />
-            <p>Skin Care</p>
-          </div>
-          <div className="sub-categ-box col-2 col-md-1">
-            <img src={oralCare} alt="" />
-            <p>Oral Care</p>
-          </div>
-          <div className="sub-categ-box col-2 col-md-1">
-            <img src={organicProducts} alt="" />
-            <p>Organic Products</p>
-          </div>
-          <div className="sub-categ-box col-2 col-md-1">
-            <img src={medicalSupplies} alt="" />
-            <p>Medical Supplies</p>
-          </div>
-          <div className="sub-categ-box col-2 col-md-1">
-            <img src={protection} alt="" />
-            <p>Protection</p>
-          </div>
+          {categories.map((category) => (
+            <div className="sub-categ-box col-2 col-md-1">
+              <Link to={`/category/${category._id}`}>
+                <img src={category.image} alt="" />
+              </Link>
+              <Link to={`/category/${category._id}`}>
+                <p>{category.name}</p>
+              </Link>
+            </div>
+          ))}
         </div>
       </div>
       {/* best selling products */}
@@ -455,73 +449,22 @@ const Home = () => {
             <h4>Brands</h4>
           </div>
           <div className="col-6">
-            <button type="button" class="btn btn-primary float-right">
-              Show all <i class="fas fa-angle-right"></i>
-            </button>
+            <Link to="/all-brands">
+              <button type="button" class="btn btn-primary float-right">
+                Show all <i class="fas fa-angle-right"></i>
+              </button>
+            </Link>
           </div>
         </div>
 
         <Slider {...brandsSettings}>
-          <div className="slide">
-            <img
-              src="https://chefaa.com/public/uploads/brands/44mGye864S2EUxYA98XeU37sGy3iUTaTMrcquhMP.png"
-              alt=""
-            />
-          </div>
-          <div className="slide">
-            <img
-              src="https://chefaa.com/public/uploads/brands/44mGye864S2EUxYA98XeU37sGy3iUTaTMrcquhMP.png"
-              alt=""
-            />
-          </div>
-          <div className="slide">
-            <img
-              src="https://chefaa.com/public/uploads/brands/44mGye864S2EUxYA98XeU37sGy3iUTaTMrcquhMP.png"
-              alt=""
-            />
-          </div>
-          <div className="slide">
-            <img
-              src="https://chefaa.com/public/uploads/brands/44mGye864S2EUxYA98XeU37sGy3iUTaTMrcquhMP.png"
-              alt=""
-            />
-          </div>
-          <div className="slide">
-            <img
-              src="https://chefaa.com/public/uploads/brands/44mGye864S2EUxYA98XeU37sGy3iUTaTMrcquhMP.png"
-              alt=""
-            />
-          </div>
-          <div className="slide">
-            <img
-              src="https://chefaa.com/public/uploads/brands/44mGye864S2EUxYA98XeU37sGy3iUTaTMrcquhMP.png"
-              alt=""
-            />
-          </div>
-          <div className="slide">
-            <img
-              src="https://chefaa.com/public/uploads/brands/44mGye864S2EUxYA98XeU37sGy3iUTaTMrcquhMP.png"
-              alt=""
-            />
-          </div>
-          <div className="slide">
-            <img
-              src="https://chefaa.com/public/uploads/brands/44mGye864S2EUxYA98XeU37sGy3iUTaTMrcquhMP.png"
-              alt=""
-            />
-          </div>
-          <div className="slide">
-            <img
-              src="https://chefaa.com/public/uploads/brands/44mGye864S2EUxYA98XeU37sGy3iUTaTMrcquhMP.png"
-              alt=""
-            />
-          </div>
-          <div className="slide">
-            <img
-              src="https://chefaa.com/public/uploads/brands/44mGye864S2EUxYA98XeU37sGy3iUTaTMrcquhMP.png"
-              alt=""
-            />
-          </div>
+          {brands.map((brand) => (
+            <div className="slide">
+              <Link to={`/brand/${brand._id}`}>
+                <img src={brand.image} alt="" />
+              </Link>
+            </div>
+          ))}
         </Slider>
       </div>
       {/* latest offers */}

@@ -1,12 +1,12 @@
 import axios from "axios";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
+import { SearchContext } from "../../contexts/SearchContext";
 import { Link } from "react-router-dom";
-import { CartContext } from "../../contexts/CartContext";
-import "./allProducts.scss";
+import "./filteredProducts.scss";
 
-const AllProducts = () => {
-  const { addToCart } = useContext(CartContext);
-  const [products, setProducts] = useState([]);
+const FilteredProducts = () => {
+  const { products, searchTerm } = useContext(SearchContext);
+
   const [currentPage, setCurrentPage] = useState(1);
   const [productsPerPage, setProductsPerPage] = useState(40);
   const indexOfLastProduct = currentPage * productsPerPage;
@@ -39,29 +39,18 @@ const AllProducts = () => {
     }
   };
 
-  useEffect(() => {
-    axios
-      .get("https://boiling-waters-85095.herokuapp.com/api/products")
-      .then((res) => {
-        setProducts(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
-
   return (
-    <div className="AllProducts container">
+    <div className="FilteredProducts container">
       <div className="small-nav">
         <Link to="/">Main</Link>
         <i class="fas fa-angle-right"></i>
-        <span>Products</span>
+        <span>Search Resuslts {searchTerm}</span>
       </div>
       <div className="row pb-3">
-        <div className="col-lg-3">
-          <h3 className="current-page">All Products</h3>
+        <div className="col-lg-5">
+          <h3 className="current-page">Searh Results for "{searchTerm}"</h3>
         </div>
-        <div className=" offset-lg-6 col-lg-3">
+        <div className=" offset-lg-4 col-lg-3">
           <div className="pagination-nav">
             <nav aria-label="Page navigation example">
               <ul class="pagination justify-content-end">
@@ -92,28 +81,34 @@ const AllProducts = () => {
         </div>
       </div>
       <div className="row">
-        {currentProducts.map((product) => (
-          <div className="product col-6 col-md-4 col-lg-3 " key={product._id}>
-            <div className="prdouct-content col-12">
-              <Link to={`/product/${product._id}`}>
-                <img src={product.image} alt="..." />
-              </Link>
-              <div class="prdouct-body">
+        {currentProducts
+          .filter((product) => {
+            if (searchTerm == "") {
+              return product;
+            } else if (
+              product.name.toLowerCase().includes(searchTerm.toLowerCase())
+            ) {
+              return product;
+            }
+          })
+          .map((product) => (
+            <div className="product col-6 col-md-4 col-lg-3 " key={product._id}>
+              <div className="prdouct-content col-12">
                 <Link to={`/product/${product._id}`}>
-                  <p class="product-name">{product.name}</p>
+                  <img src={product.image} alt="..." />
                 </Link>
-                <h5 class="product-price">{product.price} EGP</h5>
-                <button
-                  onClick={() => addToCart(product)}
-                  type="button"
-                  class="btn btn-primary"
-                >
-                  Add to cart
-                </button>
+                <div class="prdouct-body">
+                  <Link to={`/product/${product._id}`}>
+                    <p class="product-name">{product.name}</p>
+                  </Link>
+                  <h5 class="product-price">{product.price} EGP</h5>
+                  <button type="button" class="btn btn-primary">
+                    Add to cart
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
       </div>
       <div className="pagination-nav">
         <nav aria-label="Page navigation example">
@@ -142,4 +137,4 @@ const AllProducts = () => {
   );
 };
 
-export default AllProducts;
+export default FilteredProducts;

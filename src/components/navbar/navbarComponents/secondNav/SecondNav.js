@@ -6,12 +6,14 @@ import { CartContext } from "../../../../contexts/CartContext";
 import logo from "../../../../styles/logo.png";
 
 import { AuthContext } from "../../../../contexts/AuthContext";
+import { SearchContext } from "../../../../contexts/SearchContext";
 
 const SecondNav = () => {
   const { getCartTotal } = useContext(CartContext);
-  const { currentUser, loggedIn, handleLogOut, setLoggedIn } = useContext(
-    AuthContext
-  );
+  const { currentUser, loggedIn, handleLogOut, setLoggedIn } =
+    useContext(AuthContext);
+
+  const { products, searchTerm, setSearchTerm } = useContext(SearchContext);
 
   return (
     <div className="SecondNav container">
@@ -29,15 +31,18 @@ const SecondNav = () => {
               placeholder="Search For Any Product"
               aria-label="Recipient's username"
               aria-describedby="button-addon2"
+              onChange={(e) => setSearchTerm(e.target.value)}
             />
             <div class="input-group-append">
-              <button
-                class="btn btn-outline-secondary"
-                type="button"
-                id="button-addon2"
-              >
-                <i class="fas fa-search"></i>
-              </button>
+              <Link to={searchTerm == "" ? "/all-products" : "/filtered"}>
+                <button
+                  class="btn btn-outline-secondary"
+                  type="button"
+                  id="button-addon2"
+                >
+                  <i class="fas fa-search"></i>
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -95,7 +100,7 @@ const SecondNav = () => {
             <div className="cart col-6">
               <Link class="nav-link" to="/cart">
                 <i className="fas fa-shopping-cart"></i>
-                {getCartTotal()} <span>Cart</span>
+                {getCartTotal() > 0 ? getCartTotal() : ""} <span>Cart</span>
               </Link>
             </div>
           </div>
