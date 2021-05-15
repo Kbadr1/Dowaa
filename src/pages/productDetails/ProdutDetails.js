@@ -212,8 +212,19 @@ const ProductDetails = (props) => {
                   <p class="product-name">{product.name}</p>
                 </Link>
                 <h5 class="product-price">{product.price} EGP</h5>
-                <button type="button" class="btn btn-primary">
+                <button
+                  onClick={() => addToCart(product)}
+                  type="button"
+                  class="btn btn-primary add-to-cart"
+                >
                   Add to cart
+                </button>
+                <button
+                  onClick={() => addToSaved(product)}
+                  type="button"
+                  class="btn btn-primary add-to-saved"
+                >
+                  <i class="fas fa-heart"></i>
                 </button>
               </div>
             </div>
