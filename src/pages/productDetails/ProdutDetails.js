@@ -14,11 +14,14 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { CartContext } from "../../contexts/CartContext";
+import { SavedContext } from "../../contexts/SavedContext";
 
 const ProductDetails = (props) => {
   const { addToCart } = useContext(CartContext);
+  const { addToSaved } = useContext(SavedContext);
   const [product, setProduct] = useState({});
   const [category, setCategory] = useState({});
+  const [brand, setBrand] = useState({});
   const [alsoLikeProducts, setAlsoLikeProducts] = useState([]);
   const alsoLikeSettings = {
     infinite: true,
@@ -65,6 +68,7 @@ const ProductDetails = (props) => {
       .then((res) => {
         setProduct(res.data);
         setCategory(res.data.category);
+        setBrand(res.data.brand);
       })
       .catch((err) => {
         console.log(err);
@@ -114,7 +118,9 @@ const ProductDetails = (props) => {
             <h5>{product.price} EGP</h5>
             <p>
               <i class="fas fa-store brand-count"></i> Brand:{" "}
-              <span>{product.brand}</span>
+              <Link to={`/brand/${brand._id}`}>
+                <span>{brand.name}</span>
+              </Link>
             </p>
             <hr />
             <p>
@@ -124,9 +130,16 @@ const ProductDetails = (props) => {
             <button
               onClick={() => addToCart(product)}
               type="button"
-              class="btn btn-primary"
+              class="btn btn-primary add-to-cart"
             >
               Add To Cart
+            </button>
+            <button
+              onClick={() => addToSaved(product)}
+              type="button"
+              class="btn btn-primary add-to-saved"
+            >
+              <i class="fas fa-heart"></i>
             </button>
           </div>
           <div className="header-right mt-3 col-md-3">

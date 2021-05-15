@@ -108,14 +108,14 @@ const AllProducts = () => {
                 <button
                   onClick={() => addToCart(product)}
                   type="button"
-                  class="btn btn-primary"
+                  class="btn btn-primary add-to-cart"
                 >
                   Add to cart
                 </button>
                 <button
                   onClick={() => addToSaved(product)}
                   type="button"
-                  class="btn btn-primary"
+                  class="btn btn-primary add-to-saved"
                 >
                   <i class="fas fa-heart"></i>
                 </button>

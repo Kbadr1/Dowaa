@@ -3,9 +3,11 @@ import "./category.scss";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../contexts/CartContext";
+import { SavedContext } from "../../contexts/SavedContext";
 
 const Category = (props) => {
   const { addToCart } = useContext(CartContext);
+  const { addToSaved } = useContext(SavedContext);
   const [currentCategory, setCurrentCategory] = useState("");
   const [products, setProducts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -118,9 +120,16 @@ const Category = (props) => {
                 <button
                   onClick={() => addToCart(product)}
                   type="button"
-                  class="btn btn-primary"
+                  class="btn btn-primary add-to-cart"
                 >
                   Add to cart
+                </button>
+                <button
+                  onClick={() => addToSaved(product)}
+                  type="button"
+                  class="btn btn-primary add-to-saved"
+                >
+                  <i class="fas fa-heart"></i>
                 </button>
               </div>
             </div>

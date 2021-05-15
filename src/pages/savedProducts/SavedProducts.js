@@ -20,40 +20,52 @@ const SavedProducts = () => {
             <span>Favourite Products</span>
           </div>
           <div>
-            {saved.map((product) => (
-              <div key={product._id} className="row saved-product">
-                <div className="col-3">
-                  <img src={product.image} alt="" />
+            <div className="row">
+              {saved.map((product) => (
+                <div key={product._id} className="col-lg-6 col-12 ">
+                  <div className="saved-product">
+                    <div className="row">
+                      <div className="col-6">
+                        <Link to={`/product/${product._id}`}>
+                          <img src={product.image} alt="" />
+                        </Link>
+                      </div>
+                      <div className="col-6">
+                        <Link to={`/product/${product._id}`}>
+                          <h6>{product.name}</h6>
+                        </Link>
+                        <h5>{product.price} EGP</h5>
+                        <p>
+                          <i class="fas fa-store brand-count"></i> Seller:{" "}
+                          <Link to={`/brand/${product._id}`}>
+                            <span>{product.brand.name}</span>
+                          </Link>
+                        </p>
+                        <p>
+                          {" "}
+                          <i class="fas fa-box-open brand-count"></i> Count in
+                          stock: <span>{product.countInStock}</span>
+                        </p>
+                        <button
+                          onClick={() => addToCart(product)}
+                          type="button"
+                          class="btn btn-primary"
+                        >
+                          Add to cart
+                        </button>
+                        <button
+                          onClick={() => removeFromSaved(product)}
+                          type="button"
+                          class="btn btn-primary"
+                        >
+                          <i class="far fa-trash-alt"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="col-6">
-                  <h6>{product.name}</h6>
-                  <h5>{product.price} EGP</h5>
-                  <p>
-                    <i class="fas fa-store brand-count"></i> Seller:{" "}
-                    {product.brand}
-                  </p>
-                  <p>
-                    {" "}
-                    <i class="fas fa-box-open brand-count"></i> Count in stock:{" "}
-                    <span>{product.countInStock}</span>
-                  </p>
-                  <button
-                    onClick={() => addToCart(product)}
-                    type="button"
-                    class="btn btn-primary"
-                  >
-                    Add to cart
-                  </button>
-                  <button
-                    onClick={() => removeFromSaved(product)}
-                    type="button"
-                    class="btn btn-primary"
-                  >
-                    <i class="far fa-trash-alt"></i>
-                  </button>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       ) : (

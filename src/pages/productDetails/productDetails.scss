@@ -51,10 +51,14 @@
       span {
         font-weight: 500;
       }
-      button {
-        padding-right: 5rem;
-        padding-left: 5rem;
+      .add-to-cart {
+        width: 60%;
         line-height: 30px;
+        margin-right: 5%;
+      }
+      .add-to-saved{
+        line-height: 30px;
+        width: 15%;
       }
     }
     .header-right {

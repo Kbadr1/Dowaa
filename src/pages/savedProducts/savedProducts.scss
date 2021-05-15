@@ -21,14 +21,18 @@
   .saved-product {
     margin-bottom: 50px;
     border: $border;
-    padding: 20px 5px;
+    padding: 20px;
     border-radius: 10px;
     img{
       width: 100%;
     }
+    a {
+      text-decoration: none;
+    }
 
     h6{
       margin-bottom: 20px;
+      color: black;
     }
     h5 {
       margin-bottom: 25px;
