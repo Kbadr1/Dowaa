@@ -4,37 +4,41 @@ import React, { createContext, useState, useEffect } from "react";
 export const ApiContext = createContext();
 
 const ApiContextProvider = (props) => {
-  const [allCategories, setAllCategories] = useState([]);
-  const [allBrands, setAllBrands] = useState([]);
-  const [allProducts, setAllProducts] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const [brands, setBrands] = useState([]);
+  const [products, setProducts] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
+  // get all categories
   const getAllCategories = () => {
     axios
       .get(`https://boiling-waters-85095.herokuapp.com/api/categories`)
       .then((res) => {
-        setAllCategories(res.data);
+        setCategories(res.data);
       })
       .catch((err) => {
         console.log(err);
       });
   };
 
+  // get all brands
   const getAllBrands = () => {
     axios
       .get(`https://boiling-waters-85095.herokuapp.com/api/brands`)
       .then((res) => {
-        setAllBrands(res.data);
+        setBrands(res.data);
       })
       .catch((err) => {
         console.log(err);
       });
   };
 
+  // get all products
   const getAllProducts = () => {
     axios
       .get(`https://boiling-waters-85095.herokuapp.com/api/products`)
       .then((res) => {
-        setAllProducts(res.data);
+        setProducts(res.data);
       })
       .catch((err) => {
         console.log(err);
@@ -50,9 +54,11 @@ const ApiContextProvider = (props) => {
   return (
     <ApiContext.Provider
       value={{
-        allCategories,
-        allBrands,
-        allProducts,
+        categories,
+        brands,
+        products,
+        searchTerm,
+        setSearchTerm,
       }}
     >
       {props.children}

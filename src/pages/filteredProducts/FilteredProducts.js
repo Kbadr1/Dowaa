@@ -1,11 +1,11 @@
 import axios from "axios";
 import React, { useContext, useState } from "react";
-import { SearchContext } from "../../contexts/SearchContext";
+import { ApiContext } from "../../contexts/ApiContext";
 import { Link } from "react-router-dom";
 import "./filteredProducts.scss";
 
 const FilteredProducts = () => {
-  const { products, searchTerm } = useContext(SearchContext);
+  const { products, searchTerm } = useContext(ApiContext);
 
   const [currentPage, setCurrentPage] = useState(1);
   const [productsPerPage, setProductsPerPage] = useState(40);

@@ -4,7 +4,7 @@ import { ApiContext } from "../../../../contexts/ApiContext";
 import "./BottomNav.scss";
 
 const BottomNav = () => {
-  const { allCategories } = useContext(ApiContext);
+  const { categories } = useContext(ApiContext);
 
   return (
     <div className="BottomNav ">
@@ -13,7 +13,7 @@ const BottomNav = () => {
           <li className="sub">
             <span>Sub Categories</span>
           </li>
-          {allCategories.map((category) => (
+          {categories.map((category) => (
             <li key={category._id}>
               <Link to={`/category/${category._id}`}>{category.name}</Link>
             </li>

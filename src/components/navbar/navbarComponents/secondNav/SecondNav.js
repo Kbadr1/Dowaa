@@ -1,19 +1,15 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import "./secondNav.scss";
 import { Link } from "react-router-dom";
-
 import { CartContext } from "../../../../contexts/CartContext";
-import logo from "../../../../styles/logo.png";
-
 import { AuthContext } from "../../../../contexts/AuthContext";
-import { SearchContext } from "../../../../contexts/SearchContext";
+import { ApiContext } from "../../../../contexts/ApiContext";
+import logo from "../../../../images/logo.png";
 
 const SecondNav = () => {
   const { getCartTotal } = useContext(CartContext);
-  const { currentUser, loggedIn, handleLogOut, setLoggedIn } =
-    useContext(AuthContext);
-
-  const { products, searchTerm, setSearchTerm } = useContext(SearchContext);
+  const { currentUser, loggedIn, handleLogOut } = useContext(AuthContext);
+  const { searchTerm, setSearchTerm } = useContext(ApiContext);
 
   return (
     <div className="SecondNav container">

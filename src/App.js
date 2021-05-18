@@ -13,7 +13,6 @@ import CartContextProvider from "./contexts/CartContext";
 import SignIn from "./pages/signIn/SignIn";
 import SignUp from "./pages/signUp/SignUp";
 import AuthContextProvider, { AuthContext } from "./contexts/AuthContext";
-import SearchContextProvider from "./contexts/SearchContext";
 import Home from "./pages/home/Home";
 import { useContext, useEffect } from "react";
 import ScrollToTop from "./components/scrollToTop/ScrollToTop";
@@ -40,36 +39,34 @@ function App() {
         <ApiContextProvider>
           <SavedContextProvider>
             <CartContextProvider>
-              <SearchContextProvider>
-                <div className="App">
-                  <Navbar />
-                  <Switch>
-                    <Route exact path="/" component={Home} />
-                    <Route path="/sign-up" component={SignUp} />
-                    <Route path="/sign-in" component={SignIn} />
-                    <Route path="/prescription" component={Prescription} />
-                    <Route path="/cart" component={Cart} />
-                    <Route path="/saved" component={SavedProducts} />
-                    <Route path="/about-us" component={AboutUs} />
-                    <Route path="/contact-us" component={ContactUs} />
-                    <Route path="/pharmacy-owner" component={PharmacyOwner} />
-                    <Route path="/privacy-policy" component={PrivacyPolicy} />
-                    <Route path="/terms-service" component={TermsOfService} />
-                    <Route path="/all-products" component={AllProducts} />
-                    <Route path="/account" component={Account} />
-                    <Route path="/all-brands" component={AllBrands} />
-                    <Route path="/brand/:brand_id" component={Brand} />
-                    <Route
-                      path="/product/:product_id"
-                      component={ProductDetails}
-                    />
-                    <Route path="/category/:category_id" component={Category} />
-                    <Route path="/filtered" component={FilteredProducts} />
-                  </Switch>
-                  <ScrollToTop />
-                  <Footer />
-                </div>
-              </SearchContextProvider>
+              <div className="App">
+                <Navbar />
+                <Switch>
+                  <Route exact path="/" component={Home} />
+                  <Route path="/sign-up" component={SignUp} />
+                  <Route path="/sign-in" component={SignIn} />
+                  <Route path="/prescription" component={Prescription} />
+                  <Route path="/cart" component={Cart} />
+                  <Route path="/saved" component={SavedProducts} />
+                  <Route path="/about-us" component={AboutUs} />
+                  <Route path="/contact-us" component={ContactUs} />
+                  <Route path="/pharmacy-owner" component={PharmacyOwner} />
+                  <Route path="/privacy-policy" component={PrivacyPolicy} />
+                  <Route path="/terms-service" component={TermsOfService} />
+                  <Route path="/all-products" component={AllProducts} />
+                  <Route path="/account" component={Account} />
+                  <Route path="/all-brands" component={AllBrands} />
+                  <Route path="/brand/:brand_id" component={Brand} />
+                  <Route
+                    path="/product/:product_id"
+                    component={ProductDetails}
+                  />
+                  <Route path="/category/:category_id" component={Category} />
+                  <Route path="/filtered" component={FilteredProducts} />
+                </Switch>
+                <ScrollToTop />
+                <Footer />
+              </div>
             </CartContextProvider>
           </SavedContextProvider>
         </ApiContextProvider>
