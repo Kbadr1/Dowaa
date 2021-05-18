@@ -26,6 +26,7 @@
       font-weight: 400;
       font-size: 15px;
       &:hover {
+        font-weight: 500;
         color: $secondary-color;
         transition: 0.3s ease-in-out;
       }

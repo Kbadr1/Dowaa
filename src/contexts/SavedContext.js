@@ -32,8 +32,14 @@ const SavedContextProvider = (props) => {
     setSaved(saved.filter((product) => product !== productToRemove));
   };
 
+  const getSavedTotal = () => {
+    return saved.reduce((sum, { quantity }) => sum + quantity, 0);
+  };
+
   return (
-    <SavedContext.Provider value={{ saved, addToSaved, removeFromSaved }}>
+    <SavedContext.Provider
+      value={{ saved, addToSaved, removeFromSaved, getSavedTotal }}
+    >
       {props.children}
     </SavedContext.Provider>
   );

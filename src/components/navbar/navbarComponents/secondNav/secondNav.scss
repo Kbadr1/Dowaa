@@ -3,30 +3,53 @@
 .SecondNav {
   padding-top: 15px;
   .logo {
+    display: flex;
+    align-items: center;
     a {
       text-decoration: none;
     }
-    display: flex;
-    align-items: center;
     img {
       margin-top: -20px;
       width: 50px;
       height: 50px;
     }
     span {
-      font-weight: 700;
-      font-size: 30px;
+      font-weight: 900;
+      font-size: 27px;
       padding-left: 10px;
-      letter-spacing: 2px;
+      letter-spacing: 3px;
       color: $primary-color;
     }
   }
 
+  .phone {
+    text-align: right;
+    img {
+      width: 60%;
+      &:hover{
+        transform: scale(1.1,1.1);
+        transition: ease-in-out 0.3s;
+      }
+    }
+  }
+
   .form {
+    input {
+      font-weight: 500;
+      padding-left: 20px;
+      color: #000000;
+      
+    }
+    ::placeholder{
+      color: #8a8a8a;
+      font-weight: 400;
+    }
     button {
       background-color: $primary-color;
       color: white;
       border-color: $primary-color;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
     }
   }
 
@@ -46,6 +69,7 @@
   }
 
   .dropdown-menu {
+    border-radius: 8px;
     a {
       margin-bottom: 10px;
     }
@@ -59,12 +83,46 @@
     }
     .create {
       color: $primary-color;
+      font-weight: 500;
+      &:focus{
+        color: white;
+      }
     }
   }
 
   .cart {
     color: $primary-color;
     font-size: 17px;
+    a {
+      display: contents;
+    }
+    img {
+      width: 24%;
+    }
+    .heart {
+      margin-right: 20px;
+    }
+    span {
+      background-color: #E2254C;
+      border-radius: 50%;
+      width: 18px;
+      height: 18px;
+      color: white;
+      font-size: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      z-index: 9999;
+    }
+    .saved-total {
+      right: 84%;
+      top: -8%;
+    }
+    .cart-total {
+      right: 47%;
+      top: -8%;
+    }
     i {
       font-size: 24px;
     }
