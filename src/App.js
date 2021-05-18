@@ -26,6 +26,7 @@ import Brand from "./pages/brand/Brand";
 import AllBrands from "./pages/allBrands/AllBrands";
 import SavedProducts from "./pages/savedProducts/SavedProducts";
 import SavedContextProvider from "./contexts/SavedContext";
+import ApiContextProvider from "./contexts/ApiContext";
 
 function App() {
   useEffect(() => {
@@ -36,40 +37,42 @@ function App() {
   return (
     <BrowserRouter>
       <AuthContextProvider>
-        <SavedContextProvider>
-          <CartContextProvider>
-            <SearchContextProvider>
-              <div className="App">
-                <Navbar />
-                <Switch>
-                  <Route exact path="/" component={Home} />
-                  <Route path="/sign-up" component={SignUp} />
-                  <Route path="/sign-in" component={SignIn} />
-                  <Route path="/prescription" component={Prescription} />
-                  <Route path="/cart" component={Cart} />
-                  <Route path="/saved" component={SavedProducts} />
-                  <Route path="/about-us" component={AboutUs} />
-                  <Route path="/contact-us" component={ContactUs} />
-                  <Route path="/pharmacy-owner" component={PharmacyOwner} />
-                  <Route path="/privacy-policy" component={PrivacyPolicy} />
-                  <Route path="/terms-service" component={TermsOfService} />
-                  <Route path="/all-products" component={AllProducts} />
-                  <Route path="/account" component={Account} />
-                  <Route path="/all-brands" component={AllBrands} />
-                  <Route path="/brand/:brand_id" component={Brand} />
-                  <Route
-                    path="/product/:product_id"
-                    component={ProductDetails}
-                  />
-                  <Route path="/category/:category_id" component={Category} />
-                  <Route path="/filtered" component={FilteredProducts} />
-                </Switch>
-                <ScrollToTop />
-                <Footer />
-              </div>
-            </SearchContextProvider>
-          </CartContextProvider>
-        </SavedContextProvider>
+        <ApiContextProvider>
+          <SavedContextProvider>
+            <CartContextProvider>
+              <SearchContextProvider>
+                <div className="App">
+                  <Navbar />
+                  <Switch>
+                    <Route exact path="/" component={Home} />
+                    <Route path="/sign-up" component={SignUp} />
+                    <Route path="/sign-in" component={SignIn} />
+                    <Route path="/prescription" component={Prescription} />
+                    <Route path="/cart" component={Cart} />
+                    <Route path="/saved" component={SavedProducts} />
+                    <Route path="/about-us" component={AboutUs} />
+                    <Route path="/contact-us" component={ContactUs} />
+                    <Route path="/pharmacy-owner" component={PharmacyOwner} />
+                    <Route path="/privacy-policy" component={PrivacyPolicy} />
+                    <Route path="/terms-service" component={TermsOfService} />
+                    <Route path="/all-products" component={AllProducts} />
+                    <Route path="/account" component={Account} />
+                    <Route path="/all-brands" component={AllBrands} />
+                    <Route path="/brand/:brand_id" component={Brand} />
+                    <Route
+                      path="/product/:product_id"
+                      component={ProductDetails}
+                    />
+                    <Route path="/category/:category_id" component={Category} />
+                    <Route path="/filtered" component={FilteredProducts} />
+                  </Switch>
+                  <ScrollToTop />
+                  <Footer />
+                </div>
+              </SearchContextProvider>
+            </CartContextProvider>
+          </SavedContextProvider>
+        </ApiContextProvider>
       </AuthContextProvider>
     </BrowserRouter>
   );

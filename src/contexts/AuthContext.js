@@ -29,7 +29,9 @@ const AuthContextProvider = (props) => {
   const [currentUserPhone, setCurrentUserPhone] = useState("");
   const [currentUserGendre, setCurrentUserGendre] = useState("");
   const [waitToken, setWaitToken] = useState(true);
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(
+    localStorage.getItem("token") ? true : false
+  );
   const [signUpSuccess, setSignUpSuccess] = useState(false);
   const [signUpRePasswordError, setSignUpRePasswordError] = useState(false);
   const [loginError, setLoginError] = useState(false);

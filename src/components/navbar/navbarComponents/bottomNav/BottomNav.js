@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { CartContext } from "../../../../contexts/CartContext";
+import { ApiContext } from "../../../../contexts/ApiContext";
 import "./BottomNav.scss";
 
 const BottomNav = () => {
-  const { categories } = useContext(CartContext);
+  const { allCategories } = useContext(ApiContext);
 
   return (
     <div className="BottomNav ">
@@ -13,7 +13,7 @@ const BottomNav = () => {
           <li className="sub">
             <span>Sub Categories</span>
           </li>
-          {categories.map((category) => (
+          {allCategories.map((category) => (
             <li key={category._id}>
               <Link to={`/category/${category._id}`}>{category.name}</Link>
             </li>
