@@ -3,7 +3,6 @@
 .BottomNav {
   padding-top: 5px;
   padding-bottom: 5px;
-  // box-shadow: 0 4px 2px -2px lightgray;
   box-shadow: $box-shadow;
 
   ul {
@@ -17,25 +16,22 @@
     li {
       padding: 0px 9px;
       display: inline-block;
-      
+      font-weight: 500;
+    }
+
+    .active-category{
+      color: $primary-color;
     }
 
     a {
       text-decoration: none;
-      color: black;
+      color: #404040;
     }
 
   }
 
   ul::-webkit-scrollbar {
     display: none;
-  }
-
-  .sub {
-    padding: 0px 25px;
-    span {
-      color: gray;
-    }
   }
   
 }

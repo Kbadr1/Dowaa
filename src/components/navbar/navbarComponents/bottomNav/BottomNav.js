@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { ApiContext } from "../../../../contexts/ApiContext";
 import "./BottomNav.scss";
 
@@ -8,14 +8,16 @@ const BottomNav = () => {
 
   return (
     <div className="BottomNav ">
-      <div className="container">
+      <div className="container d-flex justify-content-center">
         <ul>
-          <li className="sub">
-            <span>Sub Categories</span>
-          </li>
           {categories.map((category) => (
             <li key={category._id}>
-              <Link to={`/category/${category._id}`}>{category.name}</Link>
+              <NavLink
+                activeClassName="active-category"
+                to={`/category/${category._id}`}
+              >
+                {category.name}
+              </NavLink>
             </li>
           ))}
         </ul>
