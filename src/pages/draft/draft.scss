@@ -1,0 +1,65 @@
+@import "../../styles/variables.scss";
+
+.Draft {
+  padding-top: 50px;
+
+  .product-container{
+    .product {
+      padding: 10px;
+      border-radius: 8px;
+      &:hover{
+        box-shadow: $box-shadow;
+        transition: 0.2s ease-in-out;
+      }
+      .product-header {
+          position: relative;
+          img {
+            width: 100%;
+          }
+        }
+       .product-buttons {
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+        padding: 30px 5px;
+        transform: translateY(30px);
+        transition: all 0.5s ease;
+        background-color: rgba(255, 255, 255, 0.308);
+        img {
+          width: 20px;
+        }
+        button {
+          border-radius: 0;
+          margin-right: 10px;
+          margin-left: 10px;
+          }
+        } 
+        .hidden-button{
+          opacity: 0;
+          z-index: -1;
+        }
+        .show-button{
+          opacity: 1;
+          z-index: 999;
+          }
+    
+          .product-details{
+            margin-top: 10px;
+            p {
+              font-size: 15px;
+            }
+            a {
+              text-decoration: none;
+              color: black;
+            }
+            h6 {
+              font-weight: 700;
+            }
+          }
+    
+        }
+  }
+
+ 
+
+}

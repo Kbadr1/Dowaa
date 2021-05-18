@@ -26,6 +26,7 @@ import AllBrands from "./pages/allBrands/AllBrands";
 import SavedProducts from "./pages/savedProducts/SavedProducts";
 import SavedContextProvider from "./contexts/SavedContext";
 import ApiContextProvider from "./contexts/ApiContext";
+import Draft from "./pages/draft/Draft";
 
 function App() {
   useEffect(() => {
@@ -63,6 +64,7 @@ function App() {
                   />
                   <Route path="/category/:category_id" component={Category} />
                   <Route path="/filtered" component={FilteredProducts} />
+                  <Route path="/draft" component={Draft} />
                 </Switch>
                 <ScrollToTop />
                 <Footer />

@@ -3,12 +3,9 @@ import "./category.scss";
 import axios from "axios";
 import Pagination from "../../components/pagination/Pagination";
 import { Link } from "react-router-dom";
-import { CartContext } from "../../contexts/CartContext";
-import { SavedContext } from "../../contexts/SavedContext";
+import Product from "../../components/product/Product";
 
 const Category = (props) => {
-  const { addToCart } = useContext(CartContext);
-  const { addToSaved } = useContext(SavedContext);
   const [currentCategory, setCurrentCategory] = useState("");
   const [products, setProducts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -88,32 +85,8 @@ const Category = (props) => {
       </div>
       <div className="row">
         {currentProducts.map((product) => (
-          <div className="product col-6 col-md-4 col-lg-3 ">
-            <div className="prdouct-content col-12">
-              <Link to={`/product/${product._id}`}>
-                <img src={product.image} alt="..." />
-              </Link>
-              <div class="prdouct-body">
-                <Link to={`/product/${product._id}`}>
-                  <p class="product-name">{product.name}</p>
-                </Link>
-                <h5 class="product-price">{product.price} EGP</h5>
-                <button
-                  onClick={() => addToCart(product)}
-                  type="button"
-                  class="btn btn-primary add-to-cart"
-                >
-                  Add to cart
-                </button>
-                <button
-                  onClick={() => addToSaved(product)}
-                  type="button"
-                  class="btn btn-primary add-to-saved"
-                >
-                  <i class="fas fa-heart"></i>
-                </button>
-              </div>
-            </div>
+          <div key={product._id} className="col-6 col-md-4 col-lg-3">
+            <Product product={product} />
           </div>
         ))}
       </div>

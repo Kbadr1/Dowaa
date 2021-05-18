@@ -5,11 +5,13 @@ import { SavedContext } from "../../contexts/SavedContext";
 import { ApiContext } from "../../contexts/ApiContext";
 import "./allProducts.scss";
 import Pagination from "../../components/pagination/Pagination";
+import Product from "../../components/product/Product";
 
 const AllProducts = () => {
   const { addToCart } = useContext(CartContext);
   const { addToSaved } = useContext(SavedContext);
   const { products } = useContext(ApiContext);
+  // pagination
   const [currentPage, setCurrentPage] = useState(1);
   const [productsPerPage, setProductsPerPage] = useState(12);
   const indexOfLastProduct = currentPage * productsPerPage;
@@ -18,7 +20,6 @@ const AllProducts = () => {
     indexOfFirstProduct,
     indexOfLastProduct
   );
-
   const pageNumbers = [];
   const totalProducts = products.length;
 
@@ -65,32 +66,8 @@ const AllProducts = () => {
       </div>
       <div className="row">
         {currentProducts.map((product) => (
-          <div className="product col-6 col-md-4 col-lg-3 " key={product._id}>
-            <div className="prdouct-content col-12">
-              <Link to={`/product/${product._id}`}>
-                <img src={product.image} alt="..." />
-              </Link>
-              <div class="prdouct-body">
-                <Link to={`/product/${product._id}`}>
-                  <p class="product-name">{product.name}</p>
-                </Link>
-                <h5 class="product-price">{product.price} EGP</h5>
-                <button
-                  onClick={() => addToCart(product)}
-                  type="button"
-                  class="btn btn-primary add-to-cart"
-                >
-                  Add to cart
-                </button>
-                <button
-                  onClick={() => addToSaved(product)}
-                  type="button"
-                  class="btn btn-primary add-to-saved"
-                >
-                  <i class="fas fa-heart"></i>
-                </button>
-              </div>
-            </div>
+          <div className="col-6 col-md-4 col-lg-3" key={product._id}>
+            <Product product={product} />
           </div>
         ))}
       </div>
