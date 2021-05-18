@@ -1,16 +1,17 @@
-import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../contexts/CartContext";
 import { SavedContext } from "../../contexts/SavedContext";
+import { ApiContext } from "../../contexts/ApiContext";
 import "./allProducts.scss";
+import Pagination from "../../components/pagination/Pagination";
 
 const AllProducts = () => {
   const { addToCart } = useContext(CartContext);
   const { addToSaved } = useContext(SavedContext);
-  const [products, setProducts] = useState([]);
+  const { products } = useContext(ApiContext);
   const [currentPage, setCurrentPage] = useState(1);
-  const [productsPerPage, setProductsPerPage] = useState(40);
+  const [productsPerPage, setProductsPerPage] = useState(12);
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
   const currentProducts = products.slice(
@@ -41,17 +42,6 @@ const AllProducts = () => {
     }
   };
 
-  useEffect(() => {
-    axios
-      .get("https://boiling-waters-85095.herokuapp.com/api/products")
-      .then((res) => {
-        setProducts(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
-
   return (
     <div className="AllProducts container">
       <div className="small-nav">
@@ -64,33 +54,13 @@ const AllProducts = () => {
           <h3 className="current-page">All Products</h3>
         </div>
         <div className=" offset-lg-6 col-lg-3">
-          <div className="pagination-nav">
-            <nav aria-label="Page navigation example">
-              <ul class="pagination justify-content-end">
-                <li class="page-item">
-                  <a class="page-link " href="#" onClick={previousPage}>
-                    Previous
-                  </a>
-                </li>
-                {pageNumbers.map((number) => (
-                  <li class="page-item" key={number}>
-                    <a
-                      class="page-link"
-                      onClick={() => paginate(number)}
-                      href="#"
-                    >
-                      {number}
-                    </a>
-                  </li>
-                ))}
-                <li class="page-item">
-                  <a class="page-link" href="#" onClick={nextPage}>
-                    Next
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </div>
+          <Pagination
+            previousPage={previousPage}
+            pageNumbers={pageNumbers}
+            paginate={paginate}
+            nextPage={nextPage}
+            currentPage={currentPage}
+          />
         </div>
       </div>
       <div className="row">
@@ -124,7 +94,14 @@ const AllProducts = () => {
           </div>
         ))}
       </div>
-      <div className="pagination-nav">
+      <Pagination
+        previousPage={previousPage}
+        pageNumbers={pageNumbers}
+        paginate={paginate}
+        nextPage={nextPage}
+        currentPage={currentPage}
+      />
+      {/* <div className="pagination-nav">
         <nav aria-label="Page navigation example">
           <ul class="pagination justify-content-end">
             <li class="page-item">
@@ -146,7 +123,7 @@ const AllProducts = () => {
             </li>
           </ul>
         </nav>
-      </div>
+      </div> */}
     </div>
   );
 };

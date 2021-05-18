@@ -18,38 +18,11 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+import { ApiContext } from "../../contexts/ApiContext";
+
 const Home = () => {
   const { addToCart } = useContext(CartContext);
-  const [brands, setBrands] = useState([]);
-  const [categories, setCategories] = useState([]);
-
-  const getAllBrands = () => {
-    axios
-      .get("https://boiling-waters-85095.herokuapp.com/api/brands")
-      .then((res) => {
-        setBrands(res.data);
-        console.log(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-
-  const getAllCategories = () => {
-    axios
-      .get("https://boiling-waters-85095.herokuapp.com/api/categories")
-      .then((res) => {
-        setCategories(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-
-  useEffect(() => {
-    getAllBrands();
-    getAllCategories();
-  }, []);
+  const { brands, categories } = useContext(ApiContext);
 
   // slick carousel best selling settings
   const bestSellingSettings = {
@@ -280,7 +253,7 @@ const Home = () => {
               <div className="presc-med col-6 col-md-4 col-lg-12">
                 <div className="presc-med-content col-12">
                   <img src={medicine} alt="" />
-                  <Link to="">Medicines</Link>
+                  <Link to="/category/60a373f6f9effb0015c75b55">Medicines</Link>
                 </div>
               </div>
               <div className="presc-med col-6 col-md-4 col-lg-12">
@@ -337,10 +310,10 @@ const Home = () => {
       </div>
       {/* sub categories */}
       <div className="sub-categories">
-        <h4>Sub Categories</h4>
+        <h4>Categories</h4>
         <div className="row">
-          {categories.map((category) => (
-            <div className="sub-categ-box col-2 col-md-1">
+          {categories.slice(0, 9).map((category) => (
+            <div key={category._id} className="sub-categ-box col-2 col-md-1">
               <Link to={`/category/${category._id}`}>
                 <img src={category.image} alt="" />
               </Link>

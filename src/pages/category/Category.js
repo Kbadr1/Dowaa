@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import "./category.scss";
 import axios from "axios";
+import Pagination from "../../components/pagination/Pagination";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../contexts/CartContext";
 import { SavedContext } from "../../contexts/SavedContext";
@@ -11,7 +12,7 @@ const Category = (props) => {
   const [currentCategory, setCurrentCategory] = useState("");
   const [products, setProducts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [productsPerPage, setProductsPerPage] = useState(40);
+  const [productsPerPage, setProductsPerPage] = useState(12);
 
   const getProductsByCategory = () => {
     let categoryId = props.match.params.category_id;
@@ -76,33 +77,13 @@ const Category = (props) => {
           <h3 className="current-category">{currentCategory}</h3>
         </div>
         <div className=" offset-lg-6 col-lg-3">
-          <div className="pagination-nav">
-            <nav aria-label="Page navigation example">
-              <ul class="pagination justify-content-end">
-                <li class="page-item">
-                  <a class="page-link " href="#" onClick={previousPage}>
-                    Previous
-                  </a>
-                </li>
-                {pageNumbers.map((number) => (
-                  <li class="page-item" key={number}>
-                    <a
-                      class="page-link"
-                      onClick={() => paginate(number)}
-                      href="#"
-                    >
-                      {number}
-                    </a>
-                  </li>
-                ))}
-                <li class="page-item">
-                  <a class="page-link" href="#" onClick={nextPage}>
-                    Next
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </div>
+          <Pagination
+            previousPage={previousPage}
+            pageNumbers={pageNumbers}
+            paginate={paginate}
+            nextPage={nextPage}
+            currentPage={currentPage}
+          />
         </div>
       </div>
       <div className="row">
@@ -136,29 +117,13 @@ const Category = (props) => {
           </div>
         ))}
       </div>
-      <div className="pagination-nav">
-        <nav aria-label="Page navigation example">
-          <ul class="pagination justify-content-end">
-            <li class="page-item">
-              <a class="page-link " href="#" onClick={previousPage}>
-                Previous
-              </a>
-            </li>
-            {pageNumbers.map((number) => (
-              <li class="page-item" key={number}>
-                <a class="page-link" onClick={() => paginate(number)} href="#">
-                  {number}
-                </a>
-              </li>
-            ))}
-            <li class="page-item">
-              <a class="page-link" href="#" onClick={nextPage}>
-                Next
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
+      <Pagination
+        previousPage={previousPage}
+        pageNumbers={pageNumbers}
+        paginate={paginate}
+        nextPage={nextPage}
+        currentPage={currentPage}
+      />
     </div>
   );
 };
