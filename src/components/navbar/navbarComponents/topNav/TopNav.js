@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./TopNav.scss";
 import logo from "../../../../styles/logo.png";
 
@@ -7,7 +7,7 @@ const TopNav = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
       <div className="container">
-        <a className="navbar-brand d-lg-none" href="#">
+        <NavLink className="navbar-brand d-lg-none" to="/">
           <img
             src={logo}
             width="50"
@@ -17,7 +17,7 @@ const TopNav = () => {
             loading="lazy"
           />
           <span className="logo">Dowaa</span>
-        </a>
+        </NavLink>
         <button
           className="navbar-toggler"
           type="button"
@@ -33,25 +33,41 @@ const TopNav = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mx-auto">
             <li className="nav-item">
-              <Link className="nav-link" to="/about-us">
+              <NavLink
+                activeClassName="activePage"
+                className="nav-link"
+                to="/about-us"
+              >
                 About Us
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/contact-us">
+              <NavLink
+                activeClassName="activePage"
+                className="nav-link"
+                to="/contact-us"
+              >
                 Contact Us
-              </Link>
+              </NavLink>
             </li>
 
             <li className="nav-item">
-              <Link className="nav-link" to="/pharmacy-owner">
+              <NavLink
+                activeClassName="activePage"
+                className="nav-link"
+                to="/pharmacy-owner"
+              >
                 Pharmacy Owner?
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <NavLink
+                activeClassName="activePage"
+                className="nav-link"
+                to="/install-app"
+              >
                 Install App
-              </a>
+              </NavLink>
             </li>
           </ul>
         </div>

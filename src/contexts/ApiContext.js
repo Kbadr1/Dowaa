@@ -45,7 +45,7 @@ const ApiContextProvider = (props) => {
     getAllProducts();
     getAllCategories();
     getAllBrands();
-  });
+  }, []);
 
   return (
     <ApiContext.Provider
