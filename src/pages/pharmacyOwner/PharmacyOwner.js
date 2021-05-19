@@ -9,15 +9,15 @@ const PharmacyOwner = () => {
           <i class="fas fa-briefcase-medical"></i>
           <h1>Are You A Pharmacy Owner?</h1>
           <p>
-            Dowaa App Helps Customers Order All Their Pharmacy Needs;
-            Pharmaceuticals & Non-Pharmaceuticals, To Be Directed To Nearest
-            Pharmacy Then Delivered To Customer, Hassle-Free.
+            Dowaa app helps customers order all their pharmacy needs;
+            pharmaceuticals & non-pharmaceuticals, to be directed to nearest
+            pharmacy then delivered to customer, hassle-free.
           </p>
           <p>
-            Increase Customer Base & Sales, Just Fill This Form To Join Dowaa
-            and Bring Your Pharmacy To The Digital Era
+            Increase customer base & sales, just fill this form to join dowaa
+            and bring your pharmacy to the digital era
           </p>
-          <p>For More Info, Fill The Form To Contact Us</p>
+          <p>For more info, fill the form to contact us</p>
         </div>
         <div className="form col-12 col-lg-7">
           <form>

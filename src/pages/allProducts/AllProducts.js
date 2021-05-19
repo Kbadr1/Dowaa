@@ -8,8 +8,6 @@ import Pagination from "../../components/pagination/Pagination";
 import Product from "../../components/product/Product";
 
 const AllProducts = () => {
-  const { addToCart } = useContext(CartContext);
-  const { addToSaved } = useContext(SavedContext);
   const { products } = useContext(ApiContext);
   // pagination
   const [currentPage, setCurrentPage] = useState(1);
@@ -78,29 +76,6 @@ const AllProducts = () => {
         nextPage={nextPage}
         currentPage={currentPage}
       />
-      {/* <div className="pagination-nav">
-        <nav aria-label="Page navigation example">
-          <ul class="pagination justify-content-end">
-            <li class="page-item">
-              <a class="page-link " href="#" onClick={previousPage}>
-                Previous
-              </a>
-            </li>
-            {pageNumbers.map((number) => (
-              <li class="page-item" key={number}>
-                <a class="page-link" onClick={() => paginate(number)} href="#">
-                  {number}
-                </a>
-              </li>
-            ))}
-            <li class="page-item">
-              <a class="page-link" href="#" onClick={nextPage}>
-                Next
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div> */}
     </div>
   );
 };

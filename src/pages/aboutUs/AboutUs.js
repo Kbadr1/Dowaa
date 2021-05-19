@@ -1,7 +1,8 @@
 import React from "react";
 import "./AboutUs.scss";
-import mobile from "./mobile.svg";
-import pharmacyOwner from "./pharmacyOwner.svg";
+import mobile from "../../images/downlaod-mobile.svg";
+import pharmacyOwner from "../../images/pharmacy-owner.svg";
+import { Link } from "react-router-dom";
 
 const AboutUs = () => {
   return (
@@ -133,9 +134,11 @@ const AboutUs = () => {
             </p>
             <br />
             <br />
-            <button type="button" class="btn btn-primary">
-              Join Dowaa Network Of Pharmacies Now
-            </button>
+            <Link to="/pharmacy-owner">
+              <button type="button" class="btn btn-primary shadow-none">
+                Join Dowaa Network Of Pharmacies Now
+              </button>
+            </Link>
           </div>
           <div className="col-md-6">
             <img src={pharmacyOwner} alt="" />

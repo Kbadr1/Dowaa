@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import "./cart.scss";
 import { CartContext } from "../../contexts/CartContext";
 import { Link } from "react-router-dom";
-import cartImage from "./cart.png";
+import cartImage from "../../images/empty-cart.svg";
 
 const Cart = () => {
   const { cart, removeFromCart, clearCart, getTotalSum, setQuantity } =
@@ -19,7 +19,10 @@ const Cart = () => {
               </div>
               <div className="col-6">
                 <Link to="/">
-                  <button type="button" class="btn btn-primary continue ">
+                  <button
+                    type="button"
+                    class="btn btn-primary shadow-none continue "
+                  >
                     Continue Shopping
                   </button>
                 </Link>
@@ -99,7 +102,7 @@ const Cart = () => {
           <div className="col-lg-4">
             <div className="right-shipment">
               <form className="form-inline">
-                <button type="button" class="btn btn-primary apply">
+                <button type="button" class="btn btn-primary shadow-none apply">
                   Apply
                 </button>
                 <div class="form-group">
@@ -117,8 +120,10 @@ const Cart = () => {
               <p className="total">
                 Total <span>{getTotalSum() + 15} EGP</span>
               </p>
-              <hr />
-              <button type="button" class="btn btn-primary checkout">
+              <button
+                type="button"
+                class="btn btn-primary shadow-none checkout"
+              >
                 Go to checkout
               </button>
             </div>
@@ -132,7 +137,7 @@ const Cart = () => {
             </div>
             <h4>Shopping Cart Is Empty</h4>
             <Link to="/">
-              <button type="button" className="btn btn-primary">
+              <button type="button" className="btn btn-primary shadow-none">
                 Start Shopping Now
               </button>
             </Link>

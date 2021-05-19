@@ -4,16 +4,19 @@
   padding-top: 20px;
   padding-bottom: 50px;
   .small-nav {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    margin-bottom: 20px;
     a {
       text-decoration: none;
+      color: $primary-color;
     }
     i {
       padding-left: 10px;
       padding-right: 10px;
+      color: #646464;
     }
     span {
-      color: #707070;
+      color: #a7a7a7;
     }
   }
 
@@ -29,14 +32,15 @@
       a{
         text-decoration: none;
         font-size: 14px;
+        color: $primary-color;
       }
       h6 {
-        padding-top: 20px;
+        padding-top: 30px;
         font-weight: 400;
-        margin-bottom: 24px;
+        margin-bottom: 30px;
       }
       h5 {
-        margin-bottom: 34px;
+        margin-bottom: 30px;
       }
       p{
         font-size: 14px;
@@ -53,6 +57,15 @@
       }
       span {
         font-weight: 500;
+      }
+      button {
+        margin-top: 20px;
+        font-weight: 500;
+        background-color: $primary-color;
+        border-color: $primary-color;
+        &:hover {
+          background-color: $secondary-color;
+        }
       }
       .add-to-cart {
         width: 60%;

@@ -9,7 +9,7 @@
       text-decoration: none;
     }
     img {
-      margin-top: -20px;
+      margin-top: -13px;
       width: 50px;
       height: 50px;
     }
@@ -60,6 +60,7 @@
   .dropdown-toggle {
     background-color: $primary-color;
     border: $primary-color;
+    font-weight: 500;
     &:focus {
       background-color: $secondary-color;
     }
@@ -72,6 +73,10 @@
     border-radius: 8px;
     a {
       margin-bottom: 10px;
+      font-weight: 500;
+      &:focus {
+        background-color: $primary-color;
+      }
     }
     .login {
       text-align: center;

@@ -190,7 +190,7 @@ const ProductDetails = (props) => {
       </div>
       <div className="order-description">
         <div className="container">
-          <h4>Order Description</h4>
+          <h4>Product Description</h4>
           <p>{product.richDescription}</p>
         </div>
       </div>

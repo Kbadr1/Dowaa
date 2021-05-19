@@ -36,10 +36,10 @@ const ContactUs = () => {
           <i class="fas fa-hands-helping"></i>
           <h1>Contact Us</h1>
           <p>
-            We Are Constantly Working to Ease Your Online Experience To Order
-            Your Medicine To By-Pass The Hassle Of Looking For Your Medicine
-            Across Pharmacies In Egypt. Please Reach Out To Us Through This Form
-            If You Have Complaints Or Suggestions To Serve You Better.
+            We are constantly working to ease your online experience to order
+            your medicine to by-pass the hassle of looking for your medicine
+            across pharmacies in egypt. Please reach out to us through this form
+            if you have complaints or suggestions to serve you better.
           </p>
         </div>
         <div className="form col-12 col-lg-7">

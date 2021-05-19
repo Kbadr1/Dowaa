@@ -116,14 +116,19 @@
       cursor: pointer;
       color: white;
       background-color: $primary-color;
-      padding: 10px;
+      padding: 12px 25px;
       border-radius: 5px;
       &:hover {
+        background-color: $secondary-color;
+        text-decoration: none;
+        color: white;
         transition: 0.3s ease-in-out;
-        transform: scale(1.1);
       }
     }
-
+    a {
+      text-decoration: none;
+        color: white;
+    }
     img {
       width: 100%;
     }

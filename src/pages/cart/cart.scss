@@ -3,11 +3,19 @@
 .Cart {
   padding-top: 50px;
   padding-bottom: 100px;
+  button {
+    font-weight: 500;
+  }
   .continue {
     color: $primary-color;
     background-color: white;
     border-color: $primary-color;
     float: right;
+    &:hover {
+      background-color: $secondary-color;
+      color: white;
+      transition: 0.3s ease-in-out;
+    }
   }
   .shipment{
     border: $border;
@@ -87,6 +95,11 @@
         padding-right: 20px;
         padding-left: 20px;
         background-color: $primary-color;
+        border: $primary-color;
+        &:hover {
+          background-color: $secondary-color;
+          transition: ease-in-out 0.3s;
+        }
       }
       input{
         background-color: #F7F7F7;
@@ -104,6 +117,11 @@
       border-radius: 8px;
       background-color: $primary-color;
       height: 50px;
+      border: $primary-color;
+      &:hover {
+        background-color: $secondary-color;
+        transition: ease-in-out 0.3s;
+      }
     }
   }
   .total {
@@ -126,6 +144,11 @@
       border-radius: 8px;
       height: 50px;
       background-color: $primary-color;
+      border: $primary-color;
+      &:hover {
+        transition: 0.3s ease-in-out;
+        background-color: $secondary-color;
+      }
     }
   }
 

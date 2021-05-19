@@ -70,7 +70,7 @@ const SecondNav = () => {
             <div className="col-6">
               <div className="dropdown d-flex justify-content-center">
                 <button
-                  className="btn btn-secondary dropdown-toggle"
+                  className="btn btn-secondary dropdown-toggle shadow-none"
                   type="button"
                   id="dropdownMenuButton"
                   data-toggle="dropdown"

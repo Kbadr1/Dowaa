@@ -3,6 +3,8 @@ import { SavedContext } from "../../contexts/SavedContext";
 import "./savedProducts.scss";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../contexts/CartContext";
+import brandImage from "../../images/brand.svg";
+import stockImage from "../../images/stock.svg";
 
 const SavedProducts = () => {
   const { saved, removeFromSaved } = useContext(SavedContext);
@@ -19,6 +21,7 @@ const SavedProducts = () => {
             <i class="fas fa-angle-right"></i>
             <span>Favourite Products</span>
           </div>
+          <h3>Saved products</h3>
           <div>
             <div className="row">
               {saved.map((product) => (
@@ -36,27 +39,32 @@ const SavedProducts = () => {
                         </Link>
                         <h5>{product.price} EGP</h5>
                         <p>
-                          <i class="fas fa-store brand-count"></i> Seller:{" "}
-                          <Link to={`/brand/${product._id}`}>
+                          <img src={brandImage} alt="" className="icon-image" />{" "}
+                          Seller:{" "}
+                          <Link to={`/brand/${product.brand._id}`}>
                             <span>{product.brand.name}</span>
                           </Link>
                         </p>
                         <p>
                           {" "}
-                          <i class="fas fa-box-open brand-count"></i> Count in
-                          stock: <span>{product.countInStock}</span>
+                          <img
+                            src={stockImage}
+                            alt=""
+                            className="icon-image"
+                          />{" "}
+                          Count in stock: <span>{product.countInStock}</span>
                         </p>
                         <button
                           onClick={() => addToCart(product)}
                           type="button"
-                          class="btn btn-primary"
+                          class="btn btn-primary shadow-none"
                         >
                           Add to cart
                         </button>
                         <button
                           onClick={() => removeFromSaved(product)}
                           type="button"
-                          class="btn btn-primary"
+                          class="btn btn-primary shadow-none"
                         >
                           <i class="far fa-trash-alt"></i>
                         </button>

@@ -1,12 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
-import { CartContext } from "../../contexts/CartContext";
 import "./home.scss";
-import axios from "axios";
+import SliderComponent from "../../components/sliderComponent/SliderComponent";
 import { Link } from "react-router-dom";
-// sub categories images
-import prescriptionIcon from "../../styles/icons/prescrption_icon.png";
-import Box from "../../styles/icons/box_icon.png";
-import medicine from "../../styles/icons/med_icon.png";
+import productsImage from "../../images/products.svg";
+import medicineImage from "../../images/medicine.svg";
+import prescriptionImage from "../../images/prescription.svg";
 // owl carousel
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
@@ -21,45 +19,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { ApiContext } from "../../contexts/ApiContext";
 
 const Home = () => {
-  const { addToCart } = useContext(CartContext);
-  const { brands, categories } = useContext(ApiContext);
-
-  // slick carousel best selling settings
-  const bestSellingSettings = {
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    swipeToSlide: true,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
+  const { brands, categories, products } = useContext(ApiContext);
   // slick carousel settings for new offers
   const newOffersSettings = {
     infinite: true,
@@ -96,7 +56,6 @@ const Home = () => {
       },
     ],
   };
-
   // slick carousel settings for brands
   const brandsSettings = {
     infinite: true,
@@ -246,19 +205,19 @@ const Home = () => {
             <div className="row">
               <div className="presc-med col-6 col-md-4 col-lg-12">
                 <div className="presc-med-content col-12">
-                  <img src={prescriptionIcon} alt="" />
+                  <img src={prescriptionImage} alt="" />
                   <Link to="/prescription">Prescription</Link>
                 </div>
               </div>
               <div className="presc-med col-6 col-md-4 col-lg-12">
                 <div className="presc-med-content col-12">
-                  <img src={medicine} alt="" />
+                  <img src={medicineImage} alt="" />
                   <Link to="/category/60a373f6f9effb0015c75b55">Medicines</Link>
                 </div>
               </div>
               <div className="presc-med col-6 col-md-4 col-lg-12">
                 <div className="presc-med-content col-12">
-                  <img src={Box} alt="" />
+                  <img src={productsImage} alt="" />
                   <Link to="/all-products">All Products</Link>
                 </div>
               </div>
@@ -332,79 +291,16 @@ const Home = () => {
           </div>
           <div className="col-6">
             <Link to="/all-products">
-              <button type="button" class="btn btn-primary float-right">
+              <button
+                type="button"
+                class="btn btn-primary show-all float-right"
+              >
                 Show all <i class="fas fa-angle-right"></i>
               </button>
             </Link>
           </div>
         </div>
-        <Slider {...bestSellingSettings}>
-          <div class="product">
-            <img
-              src="https://via.placeholder.com/200/5a0da6/FFFFFF/?text=Product+Image"
-              alt="..."
-            />
-            <div class="prdouct-body">
-              <p class="product-name">Sanosan Stretch Mark Cream 100ml</p>
-              <h5 class="product-price">100 EGP</h5>
-              <button type="button" class="btn btn-primary">
-                Add to cart
-              </button>
-            </div>
-          </div>
-          <div class="product">
-            <img
-              src="https://chefaa.com/public/uploads/products/VCDkt7c25war5HanVsgzyntlZzY5u63xlA9ditUm.png"
-              alt="..."
-            />
-            <div class="prdouct-body">
-              <p class="product-name">Sanosan Stretch Mark Cream 100ml</p>
-              <h5 class="product-price">100 EGP</h5>
-              <button type="button" class="btn btn-primary">
-                Add to cart
-              </button>
-            </div>
-          </div>
-          <div class="product">
-            <img
-              src="https://chefaa.com/public/uploads/products/VCDkt7c25war5HanVsgzyntlZzY5u63xlA9ditUm.png"
-              alt="..."
-            />
-            <div class="prdouct-body">
-              <p class="product-name">Sanosan Stretch Mark Cream 100ml</p>
-              <h5 class="product-price">100 EGP</h5>
-              <button type="button" class="btn btn-primary">
-                Add to cart
-              </button>
-            </div>
-          </div>
-          <div class="product">
-            <img
-              src="https://chefaa.com/public/uploads/products/VCDkt7c25war5HanVsgzyntlZzY5u63xlA9ditUm.png"
-              alt="..."
-            />
-            <div class="prdouct-body">
-              <p class="product-name">Sanosan Stretch Mark Cream 100ml</p>
-              <h5 class="product-price">100 EGP</h5>
-              <button type="button" class="btn btn-primary">
-                Add to cart
-              </button>
-            </div>
-          </div>
-          <div class="product">
-            <img
-              src="https://chefaa.com/public/uploads/products/VCDkt7c25war5HanVsgzyntlZzY5u63xlA9ditUm.png"
-              alt="..."
-            />
-            <div class="prdouct-body">
-              <p class="product-name">Sanosan Stretch Mark Cream 100ml</p>
-              <h5 class="product-price">100 EGP</h5>
-              <button type="button" class="btn btn-primary">
-                Add to cart
-              </button>
-            </div>
-          </div>
-        </Slider>
+        <SliderComponent products={products} />
       </div>
       {/* brands */}
       <div className="brands">
@@ -439,79 +335,16 @@ const Home = () => {
           </div>
           <div className="col-6">
             <Link to="/all-products">
-              <button type="button" class="btn btn-primary float-right">
+              <button
+                type="button"
+                class="btn btn-primary show-all float-right"
+              >
                 Show all <i class="fas fa-angle-right"></i>
               </button>
             </Link>
           </div>
         </div>
-        <Slider {...bestSellingSettings}>
-          <div class="product">
-            <img
-              src="https://chefaa.com/public/uploads/products/VCDkt7c25war5HanVsgzyntlZzY5u63xlA9ditUm.png"
-              alt="..."
-            />
-            <div class="prdouct-body">
-              <p class="product-name">Sanosan Stretch Mark Cream 100ml</p>
-              <h5 class="product-price">100 EGP</h5>
-              <button type="button" class="btn btn-primary">
-                Add to cart
-              </button>
-            </div>
-          </div>
-          <div class="product">
-            <img
-              src="https://chefaa.com/public/uploads/products/VCDkt7c25war5HanVsgzyntlZzY5u63xlA9ditUm.png"
-              alt="..."
-            />
-            <div class="prdouct-body">
-              <p class="product-name">Sanosan Stretch Mark Cream 100ml</p>
-              <h5 class="product-price">100 EGP</h5>
-              <button type="button" class="btn btn-primary">
-                Add to cart
-              </button>
-            </div>
-          </div>
-          <div class="product">
-            <img
-              src="https://chefaa.com/public/uploads/products/VCDkt7c25war5HanVsgzyntlZzY5u63xlA9ditUm.png"
-              alt="..."
-            />
-            <div class="prdouct-body">
-              <p class="product-name">Sanosan Stretch Mark Cream 100ml</p>
-              <h5 class="product-price">100 EGP</h5>
-              <button type="button" class="btn btn-primary">
-                Add to cart
-              </button>
-            </div>
-          </div>
-          <div class="product">
-            <img
-              src="https://chefaa.com/public/uploads/products/VCDkt7c25war5HanVsgzyntlZzY5u63xlA9ditUm.png"
-              alt="..."
-            />
-            <div class="prdouct-body">
-              <p class="product-name">Sanosan Stretch Mark Cream 100ml</p>
-              <h5 class="product-price">100 EGP</h5>
-              <button type="button" class="btn btn-primary">
-                Add to cart
-              </button>
-            </div>
-          </div>
-          <div class="product">
-            <img
-              src="https://chefaa.com/public/uploads/products/VCDkt7c25war5HanVsgzyntlZzY5u63xlA9ditUm.png"
-              alt="..."
-            />
-            <div class="prdouct-body">
-              <p class="product-name">Sanosan Stretch Mark Cream 100ml</p>
-              <h5 class="product-price">100 EGP</h5>
-              <button type="button" class="btn btn-primary">
-                Add to cart
-              </button>
-            </div>
-          </div>
-        </Slider>
+        <SliderComponent products={products} />
       </div>
       {/* two features */}
       <div className="two-features">

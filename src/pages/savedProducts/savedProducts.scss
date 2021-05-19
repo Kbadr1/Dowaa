@@ -1,21 +1,28 @@
 @import "../../styles/variables.scss";
 
 .SavedProducts{
-  padding-top: 30px;
-  padding-bottom: 100px;
+  padding-top: 20px;
+  padding-bottom: 75px;
   .small-nav {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     margin-bottom: 20px;
     a {
       text-decoration: none;
+      color: $primary-color;
     }
     i {
       padding-left: 10px;
       padding-right: 10px;
+      color: #646464;
     }
     span {
-      color: #707070;
+      color: #a7a7a7;
     }
+  }
+
+  h3 {
+    font-weight: 700;
+    margin-bottom: 30px;
   }
 
   .saved-product {
@@ -28,6 +35,7 @@
     }
     a {
       text-decoration: none;
+      color: $primary-color;
     }
 
     h6{
@@ -37,20 +45,26 @@
     h5 {
       margin-bottom: 25px;
     }
-    i {
-      color: $secondary-color;
-    }
     span {
       font-weight: 500;
     }
     button {
       background-color: $primary-color;
+      border: $primary-color;
       margin-right: 10px;
       margin-top: 20px;
+      font-weight: 500;
+      &:hover {
+        background-color: $secondary-color;
+        transition: 0.3s ease-in-out;
+      }
+    }
+    .icon-image {
+      width: 24px;
     }
 
     .fa-trash-alt {
-      color: white;
+      color: rgb(255, 255, 255);
     }
 
   }
