@@ -1,11 +1,10 @@
-import React, { useContext, useEffect, useState } from "react";
-import "./draft.scss";
-import { ApiContext } from "../../contexts/ApiContext";
+import React from "react";
+import "./sliderComponent.scss";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-import Product from "../../components/product/Product";
+import ProductDetails from "../../pages/productDetails/ProdutDetails";
+import Product from "../product/Product";
 
 function NextArrow(props) {
   const { style, onClick } = props;
@@ -25,8 +24,7 @@ function PrevArrow(props) {
   );
 }
 
-const Draft = () => {
-  const { products } = useContext(ApiContext);
+const SliderComponent = ({ products, product }) => {
   const settings = {
     infinite: true,
     speed: 500,
@@ -64,10 +62,11 @@ const Draft = () => {
       },
     ],
   };
+
   return (
-    <div className="Draft container">
+    <div className="SliderComponent">
       <Slider {...settings}>
-        {products.slice(0, 8).map((product) => (
+        {products.map((product) => (
           <Product product={product} />
         ))}
       </Slider>
@@ -75,4 +74,4 @@ const Draft = () => {
   );
 };
 
-export default Draft;
+export default SliderComponent;

@@ -2,6 +2,11 @@ import React, { useContext, useEffect, useState } from "react";
 import "./productDetails.scss";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import brandImage from "../../images/brand.svg";
+import stockImage from "../../images/stock.svg";
+import heart from "../../images/white-heart.svg";
+import redHeart from "../../images/red-heart.svg";
+
 //share buttons
 import {
   FacebookShareButton,
@@ -9,55 +14,18 @@ import {
   FacebookMessengerShareButton,
   WhatsappShareButton,
 } from "react-share";
-// slick
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import { CartContext } from "../../contexts/CartContext";
 import { SavedContext } from "../../contexts/SavedContext";
+import SliderComponent from "../../components/sliderComponent/SliderComponent";
 
 const ProductDetails = (props) => {
   const { addToCart } = useContext(CartContext);
-  const { addToSaved } = useContext(SavedContext);
+  const { addToSaved, saved } = useContext(SavedContext);
   const [product, setProduct] = useState({});
   const [category, setCategory] = useState({});
   const [brand, setBrand] = useState({});
   const [alsoLikeProducts, setAlsoLikeProducts] = useState([]);
-  const alsoLikeSettings = {
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    swipeToSlide: true,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
+  const [moreFromThisBrand, setMoreFromThisBrand] = useState([]);
 
   const getProductbyId = () => {
     let productId = props.match.params.product_id;
@@ -88,14 +56,29 @@ const ProductDetails = (props) => {
       });
   };
 
+  const getProductbyBrand = () => {
+    axios
+      .get(
+        `https://boiling-waters-85095.herokuapp.com/api/products/brands?brands=${brand._id}`
+      )
+      .then((res) => {
+        setMoreFromThisBrand(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   useEffect(() => {
     getProductbyId();
     getProductbyCategoryForAlsoLike();
-  }, [props.match.params.product_id, category._id]);
+    getProductbyBrand();
+  }, [props.match.params.product_id, category._id, brand._id]);
 
   return (
     <div className="ProductDetails">
       <div className="container">
+        {/* small nav */}
         <div className="small-nav">
           <Link to="/">Main</Link>
           <i class="fas fa-angle-right"></i>
@@ -105,10 +88,13 @@ const ProductDetails = (props) => {
           <i class="fas fa-angle-right"></i>
           <span>{product.name}</span>
         </div>
+        {/* headr */}
         <div className="header row">
+          {/* headr-left */}
           <div className="header-left mt-3 col-md-4">
             <img src={product.image} alt="" />
           </div>
+          {/* header-middle */}
           <div className="header-middle mt-3 col-md-5">
             <Link to={`/category/${category._id}`}>
               Show All {category.name} Products{" "}
@@ -117,38 +103,46 @@ const ProductDetails = (props) => {
             <h6>{product.name}</h6>
             <h5>{product.price} EGP</h5>
             <p>
-              <i class="fas fa-store brand-count"></i> Brand:{" "}
+              <img src={brandImage} alt="" /> Brand:{" "}
               <Link to={`/brand/${brand._id}`}>
                 <span>{brand.name}</span>
               </Link>
             </p>
             <hr />
             <p>
-              <i class="fas fa-box-open brand-count"></i> Count in stock:{" "}
+              <img src={stockImage} alt="" /> Count in stock:{" "}
               <span>{product.countInStock}</span>
             </p>
             <button
               onClick={() => addToCart(product)}
               type="button"
-              class="btn btn-primary add-to-cart"
+              class="btn btn-primary add-to-cart shadow-none"
             >
               Add To Cart
             </button>
             <button
               onClick={() => addToSaved(product)}
               type="button"
-              class="btn btn-primary add-to-saved"
+              class="btn btn-primary add-to-saved shadow-none"
             >
-              <i class="fas fa-heart"></i>
+              <img
+                src={
+                  saved.filter((e) => e._id === product._id).length > 0
+                    ? redHeart
+                    : heart
+                }
+                alt=""
+              />
             </button>
           </div>
+          {/* header-right */}
           <div className="header-right mt-3 col-md-3">
             <div className="row pt-4">
               <div className="col-2">
                 <i class="far fa-clock"></i>
               </div>
               <div className="col-10">
-                <p>Order is deliverd within 5 Business days</p>
+                <p>Order is deliverd within 1-2 hours</p>
               </div>
             </div>
             <hr />
@@ -157,12 +151,13 @@ const ProductDetails = (props) => {
                 <i class="fas fa-exclamation-circle"></i>
               </div>
               <div className="col-10">
-                <p>Products Prices & Availability Varies Per Area</p>
+                <p>
+                  Some products are Delivered Within 2 Business Days depending
+                  on availability
+                </p>
               </div>
             </div>
-
             <hr />
-
             <div className="share pt-3">
               <h6>Share</h6>
               <FacebookShareButton url={"https://www.Dowaa.com/"}>
@@ -199,37 +194,13 @@ const ProductDetails = (props) => {
           <p>{product.richDescription}</p>
         </div>
       </div>
-      <div className="also-like container">
+      <div className="more-from-this container">
+        <h4>More from {brand.name}</h4>
+        <SliderComponent products={moreFromThisBrand} product={product} />
+      </div>
+      <div className="more-from-this container">
         <h4>You May Also Like</h4>
-        <Slider {...alsoLikeSettings}>
-          {alsoLikeProducts.map((product) => (
-            <div class="product" key={product._id}>
-              <Link to={`/product/${product._id}`}>
-                <img src={product.image} alt="..." />
-              </Link>
-              <div class="prdouct-body">
-                <Link to={`/product/${product._id}`}>
-                  <p class="product-name">{product.name}</p>
-                </Link>
-                <h5 class="product-price">{product.price} EGP</h5>
-                <button
-                  onClick={() => addToCart(product)}
-                  type="button"
-                  class="btn btn-primary add-to-cart"
-                >
-                  Add to cart
-                </button>
-                <button
-                  onClick={() => addToSaved(product)}
-                  type="button"
-                  class="btn btn-primary add-to-saved"
-                >
-                  <i class="fas fa-heart"></i>
-                </button>
-              </div>
-            </div>
-          ))}
-        </Slider>
+        <SliderComponent products={alsoLikeProducts} product={product} />
       </div>
     </div>
   );

@@ -2,7 +2,7 @@
 
 .ProductDetails {
   padding-top: 20px;
-  padding-bottom: 100px;
+  padding-bottom: 50px;
   .small-nav {
     font-size: 0.9rem;
     a {
@@ -42,6 +42,9 @@
         font-size: 14px;
         font-weight: 300;
         
+      }
+      img {
+        width: 25px;
       }
       .brand-count{
         padding-right: 5px;
@@ -108,55 +111,12 @@
     }
   }
 
-  .also-like {
+  .more-from-this{
+    margin-bottom: 75px;
     h4 {
       font-weight: 700;
       margin-bottom: 30px;
     }
-    .slick-prev:before, .slick-next:before {
-      color: black;
-      opacity: 0.8;
-    }
-    .slick-slide {
-      padding: 2px 5px;
-    }
-    .product {
-      padding: 10px;
-      border-radius: 10px;
-      a {
-        text-decoration: none;
-      }
-      img {
-        width: 100%;
-        margin-bottom: 15px;
-        height: 200px;
-      }
-      p {
-        font-size: 14px;
-        color: #404040;
-        margin-bottom: 25px;
-      }
-      h5 {
-        color: #404040;
-        font-size: 16px;
-        font-weight: 700;
-      }
-      button {
-        background-color: $primary-color;
-        color: white;
-        border-radius: 8px;
-      }
-      .add-to-cart {
-        width: 75%;
-        margin-right: 5%;
-      }
-      .add-to-saved {
-        width: 20%;
-      }
-      &:hover {
-        box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.267);
-        transition: ease-in-out 0.2s;
-      }
-    }
+    
   }
 }
