@@ -7,7 +7,7 @@
   box-shadow: $box-shadow;
   border-radius: 8px;
   .left{
-    background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
+    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
 
     border-radius: 8px 0px 0px 8px;
     .profile-pic {
@@ -21,6 +21,7 @@
       color: white;
       text-transform: capitalize;
       padding-bottom: 100px;
+      font-weight: 700;
     }
   }
 

@@ -216,7 +216,9 @@
     font-weight: 300;
   }
   button{
-    background-color: $secondary-color;
+    background-color: white;
+    color: $primary-color;
+    border-color: white;
   }
   img {
     width: 100%;

@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import "./signUp.scss";
-import signUpImage from "./signup.svg";
+import signUpImage from "../../images/sign-up.svg";
 import { AuthContext } from "../../contexts/AuthContext";
 
 const SignUp = () => {
@@ -66,7 +66,7 @@ const SignUp = () => {
                 onChange={(e) => setPhone(e.target.value)}
               />
             </div>
-            <div class="form-group">
+            {/* <div class="form-group">
               <label for="exampleFormControlSelect1">Gendre</label>
               <select
                 class="form-control"
@@ -79,7 +79,7 @@ const SignUp = () => {
                 <option>Male</option>
                 <option>Female</option>
               </select>
-            </div>
+            </div> */}
 
             <div className="form-group">
               <label for="exampleInputPassword1">Password</label>

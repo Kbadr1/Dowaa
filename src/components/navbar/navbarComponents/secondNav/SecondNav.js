@@ -120,7 +120,11 @@ const SecondNav = () => {
               <Link className="nav-link" to="/saved">
                 <img className="heart" src={heart} alt="" />
                 {getSavedTotal() > 0 ? (
-                  <span className="saved-total">{getSavedTotal()}</span>
+                  getSavedTotal() == 1 ? (
+                    <span className="saved-total">{getSavedTotal()}</span>
+                  ) : (
+                    <span className="saved-total">+1</span>
+                  )
                 ) : (
                   ""
                 )}

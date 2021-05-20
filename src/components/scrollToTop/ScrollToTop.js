@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./scrollToTop.scss";
+import upArrow from "../../images/up.svg";
+import "animate.css";
 
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -27,7 +29,11 @@ const ScrollToTop = () => {
     <div className="ScrollToTOp">
       {isVisible && (
         <div onClick={toTop}>
-          <i class="fas fa-arrow-alt-circle-up" title="scroll to top"></i>
+          <img
+            className="animate__animated animate__pulse animate__infinite animate__faster"
+            src={upArrow}
+            alt=""
+          />
         </div>
       )}
     </div>

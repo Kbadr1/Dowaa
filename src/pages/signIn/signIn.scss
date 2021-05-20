@@ -45,18 +45,19 @@
       margin: 0px 5px;
       
     }
-    .fa-facebook-f {
-      background-color:  #4267B2;
-    }
-    .fa-google {
-      background-color: #DB4437;
-    }
 
     button {
       background-color: $primary-color;
+      border-color: $primary-color;
       width: 100%;
       padding-top: 13px;
       padding-bottom: 13px;
+      font-weight: 500;
+      &:hover {
+        background-color: $secondary-color;
+        border-color: $secondary-color;
+        transition: 0.3s ease-in-out;
+      }
     }
 
   }

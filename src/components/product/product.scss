@@ -32,6 +32,7 @@
     border-color: $primary-color;
     &:focus, &:hover {
       background-color: $secondary-color;
+      border-color: $secondary-color;
     }
   }
   } 

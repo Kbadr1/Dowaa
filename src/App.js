@@ -27,6 +27,7 @@ import SavedProducts from "./pages/savedProducts/SavedProducts";
 import SavedContextProvider from "./contexts/SavedContext";
 import ApiContextProvider from "./contexts/ApiContext";
 import Draft from "./pages/draft/Draft";
+import ProtectedRoute from "./components/protected/Protected.route";
 
 function App() {
   useEffect(() => {
@@ -55,7 +56,7 @@ function App() {
                   <Route path="/privacy-policy" component={PrivacyPolicy} />
                   <Route path="/terms-service" component={TermsOfService} />
                   <Route path="/all-products" component={AllProducts} />
-                  <Route path="/account" component={Account} />
+                  <ProtectedRoute path="/account" component={Account} />
                   <Route path="/all-brands" component={AllBrands} />
                   <Route path="/brand/:brand_id" component={Brand} />
                   <Route

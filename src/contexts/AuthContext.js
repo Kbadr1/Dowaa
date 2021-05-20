@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect } from "react";
 import axios from "axios";
-import { Redirect, useHistory } from "react-router";
+import { useHistory } from "react-router";
 
 export const AuthContext = createContext();
 

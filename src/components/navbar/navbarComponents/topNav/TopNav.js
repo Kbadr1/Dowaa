@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./TopNav.scss";
-import logo from "../../../../styles/logo.png";
+import logo from "../../../../images/logo.png";
 
 const TopNav = () => {
   return (

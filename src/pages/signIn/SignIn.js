@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "./signIn.scss";
-import signinImage from "./signin.svg";
+import signinImage from "../../images/sign-in.svg";
 import { AuthContext } from "../../contexts/AuthContext";
 
 const SignIn = () => {

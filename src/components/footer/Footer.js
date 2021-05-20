@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../../styles/Capture.PNG";
+import logo from "../../images/Capture.PNG";
 import "./footer.scss";
 
 const Footer = () => {

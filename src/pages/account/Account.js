@@ -1,39 +1,18 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Redirect } from "react-router";
 import { AuthContext } from "../../contexts/AuthContext";
 import "./account.scss";
-import femaleUser from "./female-user-img.png";
-import maleUser from "./male-user-img.png";
+import userImage from "../../images/user.svg";
 
 const Account = () => {
-  const {
-    loggedIn,
-    currentUser,
-    currentUserEmail,
-    currentUserGendre,
-    currentUserPhone,
-  } = useContext(AuthContext);
-
-  const [profilePic, setProfilePic] = useState("");
-
-  useEffect(() => {
-    if (currentUserGendre === "male") {
-      setProfilePic(maleUser);
-    } else {
-      setProfilePic(femaleUser);
-    }
-  }, []);
-
-  if (!loggedIn) {
-    return <Redirect to={"/sign-in"} />;
-  }
+  const { currentUser, currentUserEmail, currentUserPhone } =
+    useContext(AuthContext);
 
   return (
     <div className="Account container">
       <div className="row">
         <div className="left col-md-4">
           <div className="profile-pic">
-            <img src={profilePic} alt="" />
+            <img src={userImage} alt="" />
           </div>
           <div>
             <h2>{currentUser}</h2>

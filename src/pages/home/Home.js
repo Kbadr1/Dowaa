@@ -5,12 +5,11 @@ import { Link } from "react-router-dom";
 import productsImage from "../../images/products.svg";
 import medicineImage from "../../images/medicine.svg";
 import prescriptionImage from "../../images/prescription.svg";
+import mobile from "../../images/downlaod-mobile.svg";
 // owl carousel
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
-// mobile image
-import mobile from "./mobile.svg";
 // slick
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
