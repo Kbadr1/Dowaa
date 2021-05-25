@@ -120,12 +120,14 @@ const Cart = () => {
               <p className="total">
                 Total <span>{getTotalSum() + 15} EGP</span>
               </p>
-              <button
-                type="button"
-                class="btn btn-primary shadow-none checkout"
-              >
-                Go to checkout
-              </button>
+              <Link to="/checkout">
+                <button
+                  type="button"
+                  class="btn btn-primary shadow-none checkout"
+                >
+                  Go to checkout
+                </button>
+              </Link>
             </div>
           </div>
         </div>

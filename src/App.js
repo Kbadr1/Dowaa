@@ -28,6 +28,7 @@ import SavedContextProvider from "./contexts/SavedContext";
 import ApiContextProvider from "./contexts/ApiContext";
 import Draft from "./pages/draft/Draft";
 import ProtectedRoute from "./components/protected/Protected.route";
+import Checkout from "./pages/checkout/Checkout";
 
 function App() {
   useEffect(() => {
@@ -65,7 +66,8 @@ function App() {
                   />
                   <Route path="/category/:category_id" component={Category} />
                   <Route path="/filtered" component={FilteredProducts} />
-                  <Route path="/draft" component={Draft} />
+                  <ProtectedRoute path="/checkout" component={Checkout} />
+                  {/* <Route path="/draft" component={Draft} /> */}
                 </Switch>
                 <ScrollToTop />
                 <Footer />

@@ -25,6 +25,7 @@ const AuthContextProvider = (props) => {
   const [phone, setPhone] = useState("");
   const [gendre, setGendre] = useState("");
   const [currentUser, setCurrentUser] = useState("");
+  const [currentUserId, setCurrentUserId] = useState("");
   const [currentUserEmail, setCurrentUserEmail] = useState("");
   const [currentUserPhone, setCurrentUserPhone] = useState("");
   const [currentUserGendre, setCurrentUserGendre] = useState("");
@@ -110,6 +111,7 @@ const AuthContextProvider = (props) => {
     axios
       .get("https://boiling-waters-85095.herokuapp.com/api/users/me", config)
       .then((res) => {
+        setCurrentUserId(res.data._id);
         setCurrentUser(res.data.name);
         setCurrentUserEmail(res.data.email);
         setCurrentUserPhone(res.data.phone);
@@ -141,6 +143,7 @@ const AuthContextProvider = (props) => {
         currentUserEmail,
         currentUserGendre,
         currentUserPhone,
+        currentUserId,
         history,
         loggedIn,
         setLoggedIn,

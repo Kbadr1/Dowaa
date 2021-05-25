@@ -1,76 +1,64 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./draft.scss";
-import { ApiContext } from "../../contexts/ApiContext";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
-import Product from "../../components/product/Product";
-
-function NextArrow(props) {
-  const { style, onClick } = props;
-  return (
-    <div style={{ ...style, display: "block" }} onClick={onClick}>
-      <i class="fas fa-chevron-right slick-arrow-icon-right"></i>
-    </div>
-  );
-}
-
-function PrevArrow(props) {
-  const { style, onClick } = props;
-  return (
-    <div style={{ ...style, display: "block" }} onClick={onClick}>
-      <i class="fas fa-chevron-left slick-arrow-icon-left"></i>
-    </div>
-  );
-}
+import axios from "axios";
 
 const Draft = () => {
-  const { products } = useContext(ApiContext);
-  const settings = {
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 1000,
-    swipeToSlide: true,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
+  const [shippingAddress1, setShippingAddress1] = useState("");
+  const [shippingAddress2, setShippingAddress2] = useState("");
+  const [city, setCity] = useState("");
+  const [zip, setZip] = useState("");
+  const [phone, setPhone] = useState("");
+
+  const orderData = {
+    shippingAddress1: shippingAddress1,
+    shippingAddress2: shippingAddress2,
+    city: city,
+    zip: zip,
+    phone: phone,
   };
+
+  const submitOrder = (e) => {
+    e.preventDefault();
+    axios
+      .post(`https://boiling-waters-85095.herokuapp.com/api/orders`, orderData)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <div className="Draft container">
-      <Slider {...settings}>
-        {products.slice(0, 8).map((product) => (
-          <Product product={product} />
-        ))}
-      </Slider>
+      <form onSubmit={submitOrder}>
+        <input
+          type="text"
+          placeholder="address 1"
+          onChange={(e) => setShippingAddress1(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="address 2"
+          onChange={(e) => setShippingAddress2(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="city"
+          onChange={(e) => setCity(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="zip"
+          onChange={(e) => setZip(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="phone"
+          onChange={(e) => setPhone(e.target.value)}
+        />
+        <button type="submit">submit</button>
+      </form>
     </div>
   );
 };
