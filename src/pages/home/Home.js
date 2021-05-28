@@ -28,6 +28,8 @@ const Home = () => {
     autoplay: true,
     autoplaySpeed: 2000,
     swipeToSlide: true,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
     responsive: [
       {
         breakpoint: 1024,
@@ -64,6 +66,8 @@ const Home = () => {
     autoplay: true,
     autoplaySpeed: 2000,
     swipeToSlide: true,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
     responsive: [
       {
         breakpoint: 1024,
@@ -91,6 +95,24 @@ const Home = () => {
       },
     ],
   };
+
+  function NextArrow(props) {
+    const { style, onClick } = props;
+    return (
+      <div style={{ ...style, display: "block" }} onClick={onClick}>
+        <i class="fas fa-chevron-right slick-arrow-icon-right"></i>
+      </div>
+    );
+  }
+
+  function PrevArrow(props) {
+    const { style, onClick } = props;
+    return (
+      <div style={{ ...style, display: "block" }} onClick={onClick}>
+        <i class="fas fa-chevron-left slick-arrow-icon-left"></i>
+      </div>
+    );
+  }
 
   return (
     <div className="Home container">
