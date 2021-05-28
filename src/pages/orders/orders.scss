@@ -1,0 +1,89 @@
+@import "../../styles//variables.scss";
+
+.Orders {
+  
+  padding-top: 50px;
+  padding-bottom: 50px;
+  .order {
+    // border: $border;
+    box-shadow: $box-shadow;
+    padding: 20px;
+    border-radius: 8px;
+    .delivery{ 
+      .delivery-phases{
+        img {
+          width: 35px;
+        }
+        .horizontal-line:after {
+          content: "";
+          display: block;
+          width: 75px;
+          height: 3px;
+          background: #E5E5E5;
+          right: -36px;
+          top: 30%;
+          position: absolute;
+        }
+        text-align: center;
+        padding-top: 30px;
+      }
+    }
+    .details-button {
+      background-color: white;
+      border-color: $primary-color;
+      color: $primary-color;
+      font-weight: 500;
+      &:focus {
+        background-color: white;
+        border-color: $secondary-color;
+        color: $secondary-color;
+      }
+    }
+    .order-details {
+      // padding: 20px;
+      margin-top: 20px;
+      border-radius: 8px;
+      .shipping-details {
+        h6 {
+          margin-bottom: 20px;
+        }
+        p {
+          line-height: 16px;
+        }
+      }
+
+      .bill{
+        padding-top: 100px;
+        .bill-first-line{
+          border-top: 2px solid black;
+          margin-right: -30px;
+        }
+        .bill-second-line{
+          border-top: 2px solid black;
+          margin-right: 175px;
+        }
+      }
+      
+      table {
+        a {
+          color: black;
+          text-decoration: none;
+        }
+        img {
+          width: 100%;
+        }
+        width: 100%;
+        border: $border;
+        tr {
+          border: $border;
+        }
+        th {
+          padding: 10px;
+        }
+        td {
+          padding: 10px;
+        }
+      }
+    }
+  }
+}

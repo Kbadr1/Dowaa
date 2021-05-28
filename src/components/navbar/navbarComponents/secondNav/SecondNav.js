@@ -110,9 +110,9 @@ const SecondNav = () => {
                   <Link className="dropdown-item" to="/account">
                     <i className="far fa-user"></i> Account
                   </Link>
-                  <a className="dropdown-item" href="#">
+                  <Link className="dropdown-item" to="/orders">
                     <i className="fas fa-inbox"></i> Orders
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
