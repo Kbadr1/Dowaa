@@ -2,13 +2,16 @@ import axios from "axios";
 import React, { useContext, useState } from "react";
 import { ApiContext } from "../../contexts/ApiContext";
 import { Link } from "react-router-dom";
+
+import Pagination from "../../components/pagination/Pagination";
+import Product from "../../components/product/Product";
 import "./filteredProducts.scss";
 
 const FilteredProducts = () => {
   const { products, searchTerm } = useContext(ApiContext);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [productsPerPage, setProductsPerPage] = useState(40);
+  const [productsPerPage, setProductsPerPage] = useState(1200);
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
   const currentProducts = products.slice(
@@ -44,40 +47,20 @@ const FilteredProducts = () => {
       <div className="small-nav">
         <Link to="/">Main</Link>
         <i class="fas fa-angle-right"></i>
-        <span>Search Resuslts {searchTerm}</span>
+        <span>Search Resuslts for {searchTerm}</span>
       </div>
       <div className="row pb-3">
         <div className="col-lg-5">
           <h3 className="current-page">Searh Results for "{searchTerm}"</h3>
         </div>
         <div className=" offset-lg-4 col-lg-3">
-          <div className="pagination-nav">
-            <nav aria-label="Page navigation example">
-              <ul class="pagination justify-content-end">
-                <li class="page-item">
-                  <a class="page-link " href="#" onClick={previousPage}>
-                    Previous
-                  </a>
-                </li>
-                {pageNumbers.map((number) => (
-                  <li class="page-item" key={number}>
-                    <a
-                      class="page-link"
-                      onClick={() => paginate(number)}
-                      href="#"
-                    >
-                      {number}
-                    </a>
-                  </li>
-                ))}
-                <li class="page-item">
-                  <a class="page-link" href="#" onClick={nextPage}>
-                    Next
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </div>
+          <Pagination
+            previousPage={previousPage}
+            pageNumbers={pageNumbers}
+            paginate={paginate}
+            nextPage={nextPage}
+            currentPage={currentPage}
+          />
         </div>
       </div>
       <div className="row">
@@ -92,47 +75,18 @@ const FilteredProducts = () => {
             }
           })
           .map((product) => (
-            <div className="product col-6 col-md-4 col-lg-3 " key={product._id}>
-              <div className="prdouct-content col-12">
-                <Link to={`/product/${product._id}`}>
-                  <img src={product.image} alt="..." />
-                </Link>
-                <div class="prdouct-body">
-                  <Link to={`/product/${product._id}`}>
-                    <p class="product-name">{product.name}</p>
-                  </Link>
-                  <h5 class="product-price">{product.price} EGP</h5>
-                  <button type="button" class="btn btn-primary">
-                    Add to cart
-                  </button>
-                </div>
-              </div>
+            <div className="col-6 col-md-4 col-lg-3" key={product._id}>
+              <Product product={product} />
             </div>
           ))}
       </div>
-      <div className="pagination-nav">
-        <nav aria-label="Page navigation example">
-          <ul class="pagination justify-content-end">
-            <li class="page-item">
-              <a class="page-link " href="#" onClick={previousPage}>
-                Previous
-              </a>
-            </li>
-            {pageNumbers.map((number) => (
-              <li class="page-item" key={number}>
-                <a class="page-link" onClick={() => paginate(number)} href="#">
-                  {number}
-                </a>
-              </li>
-            ))}
-            <li class="page-item">
-              <a class="page-link" href="#" onClick={nextPage}>
-                Next
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
+      <Pagination
+        previousPage={previousPage}
+        pageNumbers={pageNumbers}
+        paginate={paginate}
+        nextPage={nextPage}
+        currentPage={currentPage}
+      />
     </div>
   );
 };

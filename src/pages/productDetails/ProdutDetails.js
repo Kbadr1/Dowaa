@@ -191,7 +191,7 @@ const ProductDetails = (props) => {
       <div className="order-description">
         <div className="container">
           <h4>Product Description</h4>
-          <p>{product.richDescription}</p>
+          <p>{product.description}</p>
         </div>
       </div>
       <div className="more-from-this container">
