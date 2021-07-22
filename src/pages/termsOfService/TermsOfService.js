@@ -8,28 +8,26 @@ const TermsOfService = () => {
       <div className="content">
         <div className="box">
           <h4>
-            Terms of service at <span>CHEFAA</span>
+            Terms of service at <span>DOWAA</span>
           </h4>
           <p>
             The following terms and conditions represent a binding agreement
-            between you and (Chefaa), so we hope you read the following
+            between you and (dowaa), so we hope you read the following
             conditions carefully, when you use mobile applications or the
             website, this means that you agree to these terms and conditions
             that govern your use of applications or the website, and in the
             event that you do not agree to these terms , You must stop the use
-            of applications and the website, and the phrases “Chefaa” or “we”
-            and their meanings refer to Chefaa application; the owner and
-            operator of the application and the site, as the phrase site,
-            website, application or applications refer to the services provided
-            by Chefaa, while the phrase ” you ” refers to the person who
-            installs or uses the application, or the entity represented by the
-            person acting.
+            of applications and the website, and the phrases “dowaa” or “we” and
+            their meanings refer to dowaa application; the owner and operator of
+            the application and the site, as the phrase site, website,
+            application or applications refer to the services provided by dowaa,
+            while the phrase ” you ” refers to the person who installs or uses
+            the application, or the entity represented by the person acting.
           </p>
         </div>
         <div className="box">
           <h4>
-            You are allowed to use the Chefaa Application in the following
-            cases:
+            You are allowed to use the dowaa Application in the following cases:
           </h4>
           <p>You can form a binding contract in your jurisdiction.</p>
           <p>Compliance with terms and conditions.</p>
@@ -38,7 +36,7 @@ const TermsOfService = () => {
           </p>
           <p>
             Acknowledgment that you are solely responsible for using the
-            application when logging in to Chefaa.
+            application when logging in to dowaa.
           </p>
           <p>
             Not to collect any personal information for commercial purposes
@@ -51,17 +49,16 @@ const TermsOfService = () => {
           </p>
           <p>
             Confirm that you have the necessary licenses, rights, powers, and
-            approvals to use and authorize Chefaa to use all trademarks, trade
+            approvals to use and authorize dowaa to use all trademarks, trade
             secrets, copyrights or other property rights in all entries to
-            enable inclusion and use through Chefaa application.
+            enable inclusion and use through dowaa application.
           </p>
           <p>
-            Granting each user of Chefaa, whether using Chefaa application or
-            any application developed by a third party, a non-exclusive license
-            to access your inputs through Chefaa, use, reproduce, distribute and
+            Granting each user of dowaa, whether using dowaa application or any
+            application developed by a third party, a non-exclusive license to
+            access your inputs through dowaa, use, reproduce, distribute and
             prepare products derived from it, display and execute such requests
-            as authorized by Chefaa application and under these terms of
-            service.
+            as authorized by dowaa application and under these terms of service.
           </p>
           <p>
             You will not provide copyrighted material or subject to third party
@@ -77,26 +74,26 @@ const TermsOfService = () => {
           </p>
         </div>
         <div className="box">
-          <h4>Your account and profile on Chefaa</h4>
+          <h4>Your account and profile on dowaa</h4>
           <p>
             You will need to register by creating an account with us, and when
-            creating an account or personal file on Chefaa application, you
-            agree to provide the registration information accurately and
-            completely, and you will update that information if necessary, and
-            that access to the application is not authorized by any person or
-            other party . By using your registration information you are
-            responsible for preventing such unauthorized use.
+            creating an account or personal file on dowaa application, you agree
+            to provide the registration information accurately and completely,
+            and you will update that information if necessary, and that access
+            to the application is not authorized by any person or other party .
+            By using your registration information you are responsible for
+            preventing such unauthorized use.
           </p>
           <p>
             After registering, we will issue you a special account number with
             your phone number or email address (user ID). As for individuals and
             entities who access the application or use the services and their
-            accounts have been previously terminated by Chefaa, they are not
+            accounts have been previously terminated by dowaa, they are not
             allowed to register for an account, and you may not allow any of
             these People use your account on your behalf.
           </p>
           <p>
-            Chefaa application relies on user IDs to determine if users of the
+            dowaa application relies on user IDs to determine if users of the
             application are allowed to do so, and if someone accesses the
             application using the user ID that we have issued to you, we will
             rely on this user ID, and we will assume that it really is you or
@@ -129,7 +126,7 @@ const TermsOfService = () => {
             pornography, immorality, abuse, threat, harassment or encouragement
             of behavior that would be considered a criminal offense, leading to
             civil liability, violation of regulations, or anything inappropriate
-            as determined by Chefaa at our discretion.
+            as determined by dowaa at our discretion.
           </p>
           <p>Everything is false or inaccurate.</p>
           <p>
@@ -162,7 +159,7 @@ const TermsOfService = () => {
           <h4>Confirm the purchase order</h4>
           <p>
             All requests received, will be confirmed and accepted through our
-            Chefaa app or website.
+            dowaa app or website.
           </p>
         </div>
         <div className="box">
@@ -178,7 +175,7 @@ const TermsOfService = () => {
         <div className="box">
           <h4>Delivery :</h4>
           <p>
-            Chefaa is happy to serve you all days of the week. The cost of
+            dowaa is happy to serve you all days of the week. The cost of
             delivery service may vary from one pharmacy to another.
           </p>
         </div>
@@ -202,31 +199,30 @@ const TermsOfService = () => {
         <div className="box">
           <h4>Products fulfilled by Sellers:</h4>
           <p>
-            Chefaa is not an auction house nor a bank, and does not offer
-            auction or banking services. Chefaa is an online platform allowing
-            for the sale and purchase of items between end-user sellers and
-            buyers.
+            dowaa is not an auction house nor a bank, and does not offer auction
+            or banking services. dowaa is an online platform allowing for the
+            sale and purchase of items between end-user sellers and buyers.
           </p>
           <p>
-            By providing the Wallet and COD payment facilities, Chefaa is merely
+            By providing the Wallet and COD payment facilities, dowaa is merely
             facilitating the making of online payments by buyers possible but
-            Chefaa is not involved in the process of buying and selling of such
+            dowaa is not involved in the process of buying and selling of such
             items on the platform.
           </p>
           <p>
             All sales and purchases on the platform continue to be bipartite
-            contracts between the buyer and the seller of an item(s) and chefaa
+            contracts between the buyer and the seller of an item(s) and dowaa
             is not responsible for any non-performance, breach or any other
             claim relating to or arising out of any contract entered into
-            between any buyers and sellers, nor does chefaa have any fiduciary
-            duty to any user. You acknowledge and agree that chefaa will hold
+            between any buyers and sellers, nor does dowaa have any fiduciary
+            duty to any user. You acknowledge and agree that dowaa will hold
             your funds at your own risk.
           </p>
         </div>
         <div className="box">
           <h4>Providing Feedback:</h4>
           <p>
-            Chefaa encourages users on the platform to provide feedback/rating
+            dowaa encourages users on the platform to provide feedback/rating
             after a transaction is closed.
           </p>
           <p>
@@ -241,7 +237,7 @@ const TermsOfService = () => {
             any person within any feedback.
           </p>
           <p>
-            And Chefaa reserves the right to suspend, limit or withdraw your
+            And dowaa reserves the right to suspend, limit or withdraw your
             access to the platform.
           </p>
         </div>
@@ -256,7 +252,7 @@ const TermsOfService = () => {
           <p>
             This User Agreement (as amended from time to time in accordance with
             the terms of this User Agreement) sets forth the entire
-            understanding and agreement between you and Chefaa with respect to
+            understanding and agreement between you and dowaa with respect to
             the subject matter hereof.
           </p>
         </div>
@@ -271,7 +267,7 @@ const TermsOfService = () => {
           <p>
             If you want to return the product or medicine after receiving it, it
             cannot be returned except in the event that it does not meet the
-            specifications in the original order sent. Chefaa does not support
+            specifications in the original order sent. dowaa does not support
             the replacement of the product.
           </p>
           <p>
@@ -290,8 +286,8 @@ const TermsOfService = () => {
             hand.
           </p>
           <p>
-            Chefaa reserves the right to cancel the request in the event that
-            the customer does not adhere to the fair use policy.
+            dowaa reserves the right to cancel the request in the event that the
+            customer does not adhere to the fair use policy.
           </p>
         </div>
       </div>

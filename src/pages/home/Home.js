@@ -20,43 +20,43 @@ import { ApiContext } from "../../contexts/ApiContext";
 const Home = () => {
   const { brands, categories, products } = useContext(ApiContext);
   // slick carousel settings for new offers
-  const newOffersSettings = {
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    swipeToSlide: true,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
+  // const newOffersSettings = {
+  //   infinite: true,
+  //   speed: 500,
+  //   slidesToShow: 4,
+  //   slidesToScroll: 1,
+  //   autoplay: true,
+  //   autoplaySpeed: 2000,
+  //   swipeToSlide: true,
+  //   nextArrow: <NextArrow />,
+  //   prevArrow: <PrevArrow />,
+  //   responsive: [
+  //     {
+  //       breakpoint: 1024,
+  //       settings: {
+  //         slidesToShow: 3,
+  //         slidesToScroll: 3,
+  //         infinite: true,
+  //         dots: true,
+  //       },
+  //     },
+  //     {
+  //       breakpoint: 600,
+  //       settings: {
+  //         slidesToShow: 2,
+  //         slidesToScroll: 2,
+  //         initialSlide: 2,
+  //       },
+  //     },
+  //     {
+  //       breakpoint: 480,
+  //       settings: {
+  //         slidesToShow: 1,
+  //         slidesToScroll: 1,
+  //       },
+  //     },
+  //   ],
+  // };
   // slick carousel settings for brands
   const brandsSettings = {
     infinite: true,
@@ -143,57 +143,52 @@ const Home = () => {
                   data-target="#carouselExampleIndicators"
                   data-slide-to="3"
                 ></li>
-                <li
+                {/* <li
                   data-target="#carouselExampleIndicators"
                   data-slide-to="4"
-                ></li>
-                <li
+                ></li> */}
+                {/* <li
                   data-target="#carouselExampleIndicators"
                   data-slide-to="5"
-                ></li>
+                ></li> */}
               </ol>
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img
-                    src="https://chefaa.com/public/uploads/sliders/sDpayAgAHRvDluy1BWDxqNpJEtgxpJnbYaCJJEVI.jpeg"
-                    class="d-block w-100"
-                    alt="..."
-                  />
+                  <Link to="/brand/60e2fcd2df7f19001546d65c">
+                    <img
+                      src="https://cdn.chefaa.com/filters:format(webp)/fit-in/1650x686/public/uploads/sliders/ZZtWzbYdLO2IXOHgvDFqSM3JX5ZEHqPlzZIoWXQ3.jpeg"
+                      class="d-block w-100"
+                      alt="..."
+                    />
+                  </Link>
                 </div>
                 <div class="carousel-item">
-                  <img
-                    src="https://chefaa.com/public/uploads/sliders/sDpayAgAHRvDluy1BWDxqNpJEtgxpJnbYaCJJEVI.jpeg"
-                    class="d-block w-100"
-                    alt="..."
-                  />
+                  <Link to="/brand/60e301a3df7f19001546d666">
+                    <img
+                      src="https://cdn.chefaa.com/filters:format(webp)/fit-in/1650x686/public/uploads/sliders/xQ2lwBIJvT0msq1awdNXN5ZGH1O5fu4g0Nt5FSqH.jpeg"
+                      class="d-block w-100"
+                      alt="..."
+                    />
+                  </Link>
                 </div>
                 <div class="carousel-item">
-                  <img
-                    src="https://chefaa.com/public/uploads/sliders/sDpayAgAHRvDluy1BWDxqNpJEtgxpJnbYaCJJEVI.jpeg"
-                    class="d-block w-100"
-                    alt="..."
-                  />
+                  <Link to="/product/60e30413df7f19001546d66f">
+                    <img
+                      src="https://cdn.chefaa.com/filters:format(webp)/fit-in/1650x686/public/uploads/sliders/B3pOjHsxxnoumPap7fgyDUy6zzQEd9e6TgVvcauD.jpeg"
+                      class="d-block w-100"
+                      alt="..."
+                    />
+                  </Link>
                 </div>
+
                 <div class="carousel-item">
-                  <img
-                    src="https://chefaa.com/public/uploads/sliders/sDpayAgAHRvDluy1BWDxqNpJEtgxpJnbYaCJJEVI.jpeg"
-                    class="d-block w-100"
-                    alt="..."
-                  />
-                </div>
-                <div class="carousel-item">
-                  <img
-                    src="https://chefaa.com/public/uploads/sliders/sDpayAgAHRvDluy1BWDxqNpJEtgxpJnbYaCJJEVI.jpeg"
-                    class="d-block w-100"
-                    alt="..."
-                  />
-                </div>
-                <div class="carousel-item">
-                  <img
-                    src="https://chefaa.com/public/uploads/sliders/sDpayAgAHRvDluy1BWDxqNpJEtgxpJnbYaCJJEVI.jpeg"
-                    class="d-block w-100"
-                    alt="..."
-                  />
+                  <Link to="/brand/60e3055adf7f19001546d670">
+                    <img
+                      src="https://chefaa.com/public/uploads/sliders/sDpayAgAHRvDluy1BWDxqNpJEtgxpJnbYaCJJEVI.jpeg"
+                      class="d-block w-100"
+                      alt="..."
+                    />
+                  </Link>
                 </div>
               </div>
               <a
@@ -247,7 +242,7 @@ const Home = () => {
         </div>
       </div>
       {/* new offers */}
-      <div className="new-offers">
+      {/* <div className="new-offers">
         <h4>New Offers</h4>
         <Slider {...newOffersSettings}>
           <div className="slide">
@@ -287,7 +282,7 @@ const Home = () => {
             />
           </div>
         </Slider>
-      </div>
+      </div> */}
       {/* sub categories */}
       <div className="sub-categories">
         <h4>Categories</h4>
@@ -348,6 +343,27 @@ const Home = () => {
           ))}
         </Slider>
       </div>
+      {/* two features */}
+      <div className="two-features">
+        <div className="row">
+          <div className="col-md-6 col-12">
+            <Link to="/category/609f479cddd57f0015b6962c">
+              <img
+                src="https://cdn.chefaa.com/filters:format(webp)/fit-in/1110x534/public/uploads/add/Gqi89FNbxycgIADvSmUgFFMJFj2ZlcOk65xppWOQ.png"
+                alt=""
+              />
+            </Link>
+          </div>
+          <div className="col-md-6 col-12">
+            <Link to="/category/609f479bddd57f0015b6962a">
+              <img
+                src="https://cdn.chefaa.com/filters:format(webp)/fit-in/1110x534/public/uploads/add/YhwA76WNzAwm86uzm5Tvdlcdozg82jQztLBTBcv2.png"
+                alt=""
+              />
+            </Link>
+          </div>
+        </div>
+      </div>
       {/* latest offers */}
       <div className="latest-offers">
         <div className="row">
@@ -371,16 +387,20 @@ const Home = () => {
       <div className="two-features">
         <div className="row">
           <div className="col-md-6 col-12">
-            <img
-              src="https://chefaa.com/public/uploads/add/bpwVa75p5uyvozTZ6zHB5K6mGb7dRUEvBcJpuqns.png"
-              alt=""
-            />
+            <Link to="/category/609f4798ddd57f0015b69627">
+              <img
+                src="https://cdn.chefaa.com/filters:format(webp)/public/uploads/add/GHexuBiyCUSfxC33QSz58BhKab94Bm5QiVAmLzzr.png"
+                alt=""
+              />
+            </Link>
           </div>
           <div className="col-md-6 col-12">
-            <img
-              src="https://chefaa.com/public/uploads/add/bpwVa75p5uyvozTZ6zHB5K6mGb7dRUEvBcJpuqns.png"
-              alt=""
-            />
+            <Link to="/category/609f4799ddd57f0015b69628">
+              <img
+                src="https://cdn.chefaa.com/filters:format(webp)/public/uploads/add/bpwVa75p5uyvozTZ6zHB5K6mGb7dRUEvBcJpuqns.png"
+                alt=""
+              />
+            </Link>
           </div>
         </div>
       </div>
